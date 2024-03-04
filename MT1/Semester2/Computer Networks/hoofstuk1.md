@@ -107,11 +107,18 @@ De meest voorkomende soorten netwerken zijn:
 | Beheerd door één persoon of organisatie | Vaak beheerd door verschillende service providers |
 | Voorziet interne apparaten van een hoge snelheid bandbreedte | Vaak lagere snelheden tussen de LAN-netwerken |
 
-![LAN](src/lan.png)
-LAN-netwerk
+LAN-netwerk:
 
-![WAN](src/wan.png)
-WAN-netwerk
+<p align="center">
+    <img src="src/lan.png" alt="lan-netwerk" width="50%">
+</p>
+
+WAN-netwerk:
+
+<p align="center">
+    <img src="src/wan.png" alt="wan-netwerk" width="50%">
+</p>
+
 
 ### Het internet
 
@@ -131,3 +138,6 @@ Het internet is geen eigendom van een persoon of organisatie. Volgende groepen z
 
 ### Intranet en Extranet
 
+Een **intranet** is een private collectie van LAN- en WAN-netwerken die intern behoren tot een organisatie. De bedoeling hiervan is dat deze enkel toegankelijk zijn voor leden van de organisatie.
+
+Een organisatie kan gebruik maken van een **extranet** om beveiligde toegang to hun netwerk te geven voor individuelen die werken voor een andere organisatie maar nog steeds toegang to data op hun netwerk nodig hebben.
