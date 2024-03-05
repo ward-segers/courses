@@ -141,3 +141,22 @@ Het internet is geen eigendom van een persoon of organisatie. Volgende groepen z
 Een **intranet** is een private collectie van LAN- en WAN-netwerken die intern behoren tot een organisatie. De bedoeling hiervan is dat deze enkel toegankelijk zijn voor leden van de organisatie.
 
 Een organisatie kan gebruik maken van een **extranet** om beveiligde toegang to hun netwerk te geven voor individuelen die werken voor een andere organisatie maar nog steeds toegang to data op hun netwerk nodig hebben.
+
+## Internet connections
+
+### Internet Access Technologies
+
+Er zijn verschillende manieren om gebruikers en organisaties met het internet te verbinden:
+- Populaire diensten voor kleine kantoren of thuis-netwerken: broadband cable, broadband digital subscriber line (DSL), wireless WAN's en mobiele diensten.
+- Organisaties hebben nood aan snellere verbindingen ter ondersteuning van IP telefoons, video conferencing en data center opslag.
+- Verbindingen op business niveau worden vaak voorzien door Service providers (SP) en kunnen de volgende zijn: business DSL, leased lines, and Metro Ethernet
+
+### Home and Small Office Internet Connections
+
+| Verbinding | Beschrijving |
+| ---------- | ------------ |
+| Kabel | Hoge bandbreedte, altijd ingeschakeld, internet geleverd door kabel televisie dienstlevers |
+| DSL | Hoge bandbreedte, altijd ingeschakeld, internet verbinding dat loopt over een telefonielijn |
+| Cellular | Maakt gebruik van een telefoonnetwerk om verbinding te maken met het internet |
+| Satellite | Groot voordeel voor landelijke regios zonder service providers |
+| Dial-up telephone | Een low-cost, lage bandbreedte optie die gebruik maakt van een modem |
