@@ -78,7 +78,7 @@ Netwerk diagrammen geven een visuele weergave over hoe het netwerk verbonden is.
 
 **Logische netwerk diagrammen ** illustreren toestellen, poorten en het addressenschema van een netwerk
 
-![logische netwerk diagrammen](image3.png)
+![logische netwerk diagrammen](src/image3.png)
 
 ## Veel voorkomende netwerken
 
@@ -160,3 +160,32 @@ Er zijn verschillende manieren om gebruikers en organisaties met het internet te
 | Cellular | Maakt gebruik van een telefoonnetwerk om verbinding te maken met het internet |
 | Satellite | Groot voordeel voor landelijke regios zonder service providers |
 | Dial-up telephone | Een low-cost, lage bandbreedte optie die gebruik maakt van een modem |
+
+<p align="center">
+    <img src="src/soho.png" alt="soho" width="50%">
+</p>
+
+### Business Internet Connections
+
+Zakelijke internet connecties hebben vaak het volgende nodig:
+- Hogere bandbreedte
+- Toegewijde verbindingen (dedicated connections)
+- Beheerde diensten
+
+| Connectie-type | Beschrijving |
+| -------------- | ------------ |
+| Dedicated Leased Line | Deze verbindingen zijn gereserveerde circuits binnen een service provider's |
+| Ethernet WAN | Deze verbinding verlengt LAN toegangs technologie naar een WAN |
+| DSL | Een zakelijke DSL lijn is beschikbaar in verschillende formaten, waaronder Symmetric Digital Subscriber Lines (SDSL) |
+| Satteliet | Deze verbinding kan een connectie voorzien wanneer een bekabelde verbinding geen oplossing is |
+
+<p align="center">
+    <img src="src/bic.png" alt="business internet connections" width="50%">
+</p>
+
+### The Converging Network
+
+Voor samengevoegde netwerken bestonden moest een organisatie aparte kabels hebben voor telefoon, video en data. Elk van deze netwerken gebruikte een verschillende technologie om dit signaal de verplaatsen.
+
+Deze netwerken hadden ook steeds hun eigen regels en standaarden.
+
