@@ -189,3 +189,56 @@ Voor samengevoegde netwerken bestonden moest een organisatie aparte kabels hebbe
 
 Deze netwerken hadden ook steeds hun eigen regels en standaarden.
 
+Samengestelde netwerken voeren verschillende diensten uit op eenzelfde link.
+Samengestelde netwerken kunn dus zowel data, geluid als video over dezelfde netwerk infrastructuur opleveren. Dit netwerk gebruikt voor alle diensten dezelfde regels en standaarden.
+
+## Vertrouwelijke netwerken
+
+### Netwerk architectuur
+
+**Netwerk architectuur** verwijst naar de technologieën die de infrastructuur ondersteund die de gegevens over het netwerk verplaatst.
+
+Er zijn vier eigenschappen waaraan de onderliggende architectuur moet voldoen om de verwachting van de gebruikers te behalen:
+- Fouttolerantie
+- Schaalbaarheid
+- Quality of Service (QoS)
+- Beveiliging
+
+#### Fouttolerantie
+
+Een fouttolerant netwerk beperkt de impact van fouten door het aantal betrokken apparaten in te beperken. 
+
+Betrouwbare netwerken bieden redundantie door een pakketgeschakeld netwer te implementeren:
+- Pakketschakelen splits verkeer op in pakketten die over een netwerk geroute worden
+- Elk pakket kan in theorie een ander pad naar de bestemming nemen.
+
+Dit is niet mogelijk bij circuitgeschakelde netwerken, die special circuits tot stand brengen.
+
+#### Schaalbaarheid
+
+Een schaalbaar netwerk  kan snel en eenvoudig uitgebreid worden om nieuwe gebruikers en applicaties te ondersteunen, zonder de diensten of performantie van de reeds bestaande gebruikers te impacteren.
+
+Netwerk designers volgen algemene standaarden en protocollen om netwerken schaalbaar te maken.
+
+#### Quality of Service (QoS)
+
+Geluid en live video transmissie vereisen een hogere verwachtingen om die diensten te leveren.
+
+Vertragingen en onderbrekingen onstaan door een hogere nood aan bandbreedte en de QoS die niet geconfigureerd is.
+
+- QoS is het hoofdzakelijke mechanisme dat gebruikt word om zeker te zijn van de betrouwbare kwaliteit van gegevens die aan de gebruikers geleverd wordt.
+- Met een QoS policy kan de router makkelijker de flow van data en geluid verkeer beheren.
+
+#### Netwerkbeveiliging
+
+Er zijn twee hoofdzakelijke netwerbeveiligingen:
+- Netwerk-infrastructuur beveiliging:
+    - Fysieke beveiliging van netwerk apparatuur
+    - Vermijden van onbevoegde toegang tot de apparatuur
+- Informatie beveiliging:
+    -  Beveiliging van de informatie of gegevens die verzonden worden over het netwerk
+
+Er zijn drie doelen bij netwerkbeveiliging:
+- Vertrouwelijk - enkel de bevoegde personen kunnen de data lezen
+- Integriteit - zekerheid dat de gegevens niet gewijzigd zijn tijdens de overdracht
+- Beschikbaarheid - zekerheid van tijdelijk en betrouwbare toegang tot de gegevens voor de bevoegde personen
