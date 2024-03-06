@@ -288,3 +288,24 @@ Deze vinden we vaker terug in een landelijke regio. Een Wireless Internet Servic
 - Gebruikt dezelfde mobiele technologie als een smartphone
 - Een antenna is geïnstalleerd buiten het huis
 
+### Netwerk Security
+
+- Netwerkbeveiliging maakt een belangrijk deel van netwerken, ongeacht de grootte van een netwerk.
+- Een netwerkbeveiling dat wordt geïmplementeerd moet rekeninghouden met de omgeving bij het beveiligen van de data, maar moet tevens de quality of service behouden
+- Een netwerk beveiligen heeft verschillende protocollen, technologieën, toestellen, tools, en technieken om de gegevens te beveiligen en bedreigingen te beperken
+
+**Externe bedreigingen**:
+- Virusses, worms, Trojan horses
+- Spyware and adware
+- Zero-day attacks
+- Threat Actor attacks
+- Denial of service attacks
+- Data interception and theft
+- Identity theft
+
+**Interne bedreigingen**:
+- Verloren of gestolen toestellen
+- Per ongeluk verkeerd gebruik door werknemers
+- Kwaadwillige medewerkers
+
+#### Security Solutions
