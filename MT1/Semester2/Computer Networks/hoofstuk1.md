@@ -242,3 +242,49 @@ Er zijn drie doelen bij netwerkbeveiliging:
 - Vertrouwelijk - enkel de bevoegde personen kunnen de data lezen
 - Integriteit - zekerheid dat de gegevens niet gewijzigd zijn tijdens de overdracht
 - Beschikbaarheid - zekerheid van tijdelijk en betrouwbare toegang tot de gegevens voor de bevoegde personen
+
+### Netwerk trends
+
+De rol van een netwerk moet constant bijgewerkt zijn om mee te kunnen zijn met de laatste technologieën en apparaten.
+
+Enkel nieuwe trends die organisaties en klanten impacteren:
+- Bring Your Own Device (BYOD): staat de gebruiker in zijn eigen toestel te gebruiken om informatie te raadplegen en te communiceren.
+- Online collaboration: 
+    - Staat gebruikers toe samen te werken voor projecten over een netwerk
+    - Hoge prioriteit voor bedrijven en onderwijs
+    - Tools zoals, teams, zoom,... staan gebruikers toe online te verbinden en te communiceren
+- Video communications:
+    - Krachtige tool om onderling te communiceren
+    - Kritische requirement voor een effectieve samenwerking
+- Cloud computing:
+    - Laat ons toe persoonlijke bestanden op te slaan of onze data te backuppen op servers over het internet
+        - We kunnen ook applicaties raadplegen door gebruik te maken van de cloud
+        - Bedrijven kunnen deliverables brengen naar elk apparaat over de wereld
+    - Mogelijk door data centers
+    - Soorten clouds:
+        1. **Public clouds**: toegankelijk voor iedereen door een pay-per-use model
+        2. **Private clouds**: specifiek voor een organisaties of eenheid zoals de overheid
+        3. **Hybrids clouds**: samenstelling van verschillende types clouds. Elk deel bestaat apart maar zijn verbonden door dezelfde architectuur
+        4. **Custom clouds**: speciaal voor een specifieke industrie, kan zowel publiek als privè zijn
+
+#### Technology trends at home
+
+- Smart home technologie is een trend die toestaat dat technologieën geïntegreerd worden met dagelijkse appartuur
+- Zo kan een oven weten wanneer een maaltijd klaar moet gemaakt worden door te synchroniseren met je agenda
+
+#### Powerline technology
+
+- Powerline netwerken kunnen toestellen toelaten te verbinden met een LAN wanneer een datanetwerkkabel of een draadloze verbinding geen optie is
+- Door gebruik te maken van een standaar powerline adapter kan een toestel verbinden met een LAN waar een stopcontact beschikbaar is
+
+> Powerline netwerken is nuttig wanneer een wireless access point niet alle apparatuur kan verbinden
+
+#### Wireless broadband
+
+Buiten DSL en kabel kunnen we apparaten verbinden via een draadloos breedbandnetwerk.
+
+Deze vinden we vaker terug in een landelijke regio. Een Wireless Internet Service Provider (WISP) is een ISP dat gebruikers verbind met speciaal toegeweren access points of hotspots.
+
+- Gebruikt dezelfde mobiele technologie als een smartphone
+- Een antenna is geïnstalleerd buiten het huis
+
