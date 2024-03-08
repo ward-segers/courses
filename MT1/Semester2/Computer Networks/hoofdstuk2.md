@@ -33,9 +33,15 @@ Een CLI-gebaseerd netwerk operating system laat een netwerk technieker toe volge
 
 - **Console**: Een fysieke beheerpoort die wordt gebruikt om toegang te krijgen tot een apparaat voor onderhoud, zoals het uitvoeren van de eerste configuratie
 - **Secure Shell (SSH)**: Opstellen van een beveiligde afstands CLI connectie naar een toestel, doormiddel van een virtuele interface over een netwerk.
-    > Best practise: Gebruik SSH om remotely te verbinden met een device
+
+>[!TIP]
+> Best practise: Gebruik SSH om remotely te verbinden met een device
 
 - **Telnet**: Opstellen van een onveilige afstands CLI verbinding met een toestel over het netwerk.
 
-    > [!CAUTION]
-    > Gebruiker Authenticatie, passwoord en commando's worden over het netwerk in tekstvorm verzonden!
+> [!CAUTION]
+> Bij telnet wordt de gebruikers authenticatie, passwoord en commando's over het netwerk in tekstvorm verzonden!
+
+### Terminal Emulation Programs
+
+Terminal Emulation Programs zijn programma's die gebruikt worden om verbinding te maken met een netwerk apparaat door een console poort of door een SSH/Telnet verbinding. (voorbeelden: )
