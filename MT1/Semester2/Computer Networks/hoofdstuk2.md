@@ -86,7 +86,7 @@ Switch(config-if)#
 
 ### Navigation Between IOS Modes
 
-- **Privileged Exec Mode**: Om om te schakelen van gebruiker EXEC mode naar privilege EXEC mode gebruiken we het commando `enabled`
+- **Privileged Exec Mode**: Om om te schakelen van gebruiker EXEC mode naar privilege EXEC mode gebruiken we het commando `enable`
 ```
 Switch> enable
 Switch#
@@ -104,5 +104,21 @@ Switch#
 Switch(config)#line console 0
 Switch(config-line)#exit
 Switch(config)#
+```
+
+- **Subconfiguration Modes**: 
+
+1. Om eender welke subconfiguration mode te verlaten en terug naar de global configuration mode te gaan gebruiken we het commando `exit`. Om terug te keren naar de privilege EXEC mode gebruiken we het `end` commando of doormiddel van de toetsencombinatie `ctrl + z`. 
+
+```
+Switch(config)#line console 0
+Switch(config-line)#end
+Switch(config)#
+```
+2. Om direct van een subconfiguratie naar een andere te schakelen, voeren we het commando in dat overeenkomt met de subconfiguratie. In het voorbeeld veranderd de command prompt van `(config-line)#` naar `(config-if)#`
+
+```
+Switch(config-line)#interface FastEthernet 0/1
+Switch(config-if)#
 ```
 
