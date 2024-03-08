@@ -34,7 +34,7 @@ Een CLI-gebaseerd netwerk operating system laat een netwerk technieker toe volge
 - **Console**: Een fysieke beheerpoort die wordt gebruikt om toegang te krijgen tot een apparaat voor onderhoud, zoals het uitvoeren van de eerste configuratie
 - **Secure Shell (SSH)**: Opstellen van een beveiligde afstands CLI connectie naar een toestel, doormiddel van een virtuele interface over een netwerk.
 
->[!TIP]
+> [!TIP]
 > Best practise: Gebruik SSH om remotely te verbinden met een device
 
 - **Telnet**: Opstellen van een onveilige afstands CLI verbinding met een toestel over het netwerk.
@@ -44,4 +44,65 @@ Een CLI-gebaseerd netwerk operating system laat een netwerk technieker toe volge
 
 ### Terminal Emulation Programs
 
-Terminal Emulation Programs zijn programma's die gebruikt worden om verbinding te maken met een netwerk apparaat door een console poort of door een SSH/Telnet verbinding. (voorbeelden: )
+Terminal Emulation Programs zijn programma's die gebruikt worden om verbinding te maken met een netwerk apparaat door een console poort of door een SSH/Telnet verbinding. (voorbeelden: PuTTY, Tera Term en SecureCRT)
+
+## IOS Navigation
+
+### Primary Command Modes
+
+- **User Exec Mode**:
+    - Geeft toegang tot een gelimiteerd aantal basic monitoring commando's
+    - Herkenbaar door het `>` symbool in de console
+
+    ```
+    Router>
+
+    Switch>
+    ```
+- **Privileged Exec Mode**:
+    - Geeft toegang tot alle mogelijke commando's
+    - Herkenbaar door het `#` symbool in de console
+
+    ```
+    Router#
+
+    Switch#
+    ```
+
+### Configuration Mode and Subconfiguration Modes
+
+- **Gobal Configuration Mode**: Wordt gebruikt om de configuratie opties op het toestel te raadplegen
+```
+Switch(config)#
+```
+- **Line Configuration Mode**: Wordt gebruikt om de console, SSH, Telnet of AUX toegangen te configureren
+```
+Switch(config-line)#
+```
+- **Interface Configuration Mode**: Gebruikt om de switch port of een router interface te configureren
+```
+Switch(config-if)#
+```
+
+### Navigation Between IOS Modes
+
+- **Privileged Exec Mode**: Om om te schakelen van gebruiker EXEC mode naar privilege EXEC mode gebruiken we het commando `enabled`
+```
+Switch> enable
+Switch#
+```
+
+- **Global Configuration Mode**: Om te schakelen tussen global configuration mode, maken we gebruik van het `configure terminal` commando. Om terug te keren naar de privilege EXEC mode gebruiken we het `exit` commando.
+```
+Switch(config)#
+Switch(config)# exit
+Switch#
+```
+
+- **Line Configuration Mode**: Om te schakelen tussen de line configuration mode gebruiken we het `line` commando gevolgd door het "management line type". Om terug te keren naar de global configuration mode gebruiken we het `exit` commando.
+```
+Switch(config)#line console 0
+Switch(config-line)#exit
+Switch(config)#
+```
+
