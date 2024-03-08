@@ -294,7 +294,7 @@ Deze vinden we vaker terug in een landelijke regio. Een Wireless Internet Servic
 - Een netwerkbeveiling dat wordt geïmplementeerd moet rekeninghouden met de omgeving bij het beveiligen van de data, maar moet tevens de quality of service behouden
 - Een netwerk beveiligen heeft verschillende protocollen, technologieën, toestellen, tools, en technieken om de gegevens te beveiligen en bedreigingen te beperken
 
-**Externe bedreigingen**:
+_Externe bedreigingen_:
 - Virusses, worms, Trojan horses
 - Spyware and adware
 - Zero-day attacks
@@ -303,9 +303,22 @@ Deze vinden we vaker terug in een landelijke regio. Een Wireless Internet Servic
 - Data interception and theft
 - Identity theft
 
-**Interne bedreigingen**:
+_Interne bedreigingen_:
 - Verloren of gestolen toestellen
 - Per ongeluk verkeerd gebruik door werknemers
 - Kwaadwillige medewerkers
 
 #### Security Solutions
+
+Beveiliging kan best geimplementeerd worden op verschillende lagen gebruik maken van verschillende manieren.
+
+_Netwerkbeveiliging onderdelen voor een klein netwerk:_
+- Antivirus en antispyware software op end devices
+- Firewall filtering om onbevoegde toegang tot het netwerk te blokkeren
+
+_Netwerkbeveiling onderdelen voor een groter netwerk:_
+- Dedicated firewall system
+- Access control lists (ACL)
+- Intrusion prevention systems (IPS)
+- Virtual private networks (VPN)
+
