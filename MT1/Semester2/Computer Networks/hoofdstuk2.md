@@ -37,5 +37,5 @@ Een CLI-gebaseerd netwerk operating system laat een netwerk technieker toe volge
 
 - **Telnet**: Opstellen van een onveilige afstands CLI verbinding met een toestel over het netwerk.
 
-> [!CAUTION]
-> Gebruiker Authenticatie, passwoord en commando's worden over het netwerk in tekstvorm verzonden!```
+    > [!CAUTION]
+    > Gebruiker Authenticatie, passwoord en commando's worden over het netwerk in tekstvorm verzonden!
