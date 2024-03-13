@@ -166,38 +166,37 @@ Er zijn twee verschillende soorten help beschikbaar: context-sensitive help en c
 |`Router#ping ?`||
 
 <table>
-    <thead>
-        <tr>
-            <td>Context-sensitve</td>
-            <td>Command syntax</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td><ul><li>Welke commando's zijn beschikbaar in welke mode?</li><li>Welke commando's starten met specifieke characters of groep van characters</li><li>Welke argumenten en keywords zijn beschikbaar in sommige commando's?</li></ul></td>
-            <td><ul><li>Gaat na indien een correct commando werd ingegeven door de gebruiker</li><li>Als het ingegeven commando niet begrepen werd, zal er feedback geschreven worden omtrent wat er verkeerd is met het commando</li></ul></td>
-        </tr>
-        <tr>
-            <td>
+<thead>
+<tr>
+<td>Context-sensitve</td>
+<td>Command syntax</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><ul><li>Welke commando's zijn beschikbaar in welke mode?</li><li>Welke commando's starten met specifieke characters of groep van characters</li><li>Welke argumenten en keywords zijn beschikbaar in sommige commando's?</li></ul></td>
+<td><ul><li>Gaat na indien een correct commando werd ingegeven door de gebruiker</li><li>Als het ingegeven commando niet begrepen werd, zal er feedback geschreven worden omtrent wat er verkeerd is met het commando</li></ul></td>
+</tr>
+<tr>
+<td>
 
-            ↑ Blank line!
-            ```json
-            json
-            {
-                "id": 10,
-                "username": "alanpartridge",
-                "email": "alan@alan.com",
-                "password_hash": "$2a$10$uhUIUmVWVnrBWx9rrDWhS.CPCWCZsyqqa8./whhfzBZydX7yvahHS",
-                "password_salt": "$2a$10$uhUIUmVWVnrBWx9rrDWhS.",
-                "created_at": "2015-02-14T20:45:26.433Z",
-                "updated_at": "2015-02-14T20:45:26.540Z"
-            }
-            ```
-            ↓ Blank line!
+```shell
+Router#ping ?
+    WORD    Ping destination or hostname
+    ip      IP echo
+    ipv6    IPv6 echo
+```
 
-            </td>
+</td>
+<td>
 
-            <td>Test</td>
-        </tr>
-    </tbody>
+```shell
+Switch#interface fastEthernet 0/1
+                ^
+% Invalid input detecter at '^' marker
+```
+
+</td>
+</tr>
+</tbody>
 </table>
