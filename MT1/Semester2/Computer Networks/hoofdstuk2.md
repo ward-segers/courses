@@ -163,4 +163,11 @@ Er zijn twee verschillende soorten help beschikbaar: context-sensitive help en c
 | Context-sensitve | Command syntax |
 | ---------------- | -------------- |
 | <ul><li>Welke commando's zijn beschikbaar in welke mode?</li><li>Welke commando's starten met specifieke characters of groep van characters</li><li>Welke argumenten en keywords zijn beschikbaar in sommige commando's?</li></ul> | <ul><li>Gaat na indien een correct commando werd ingegeven door de gebruiker</li><li>Als het ingegeven commando niet begrepen werd, zal er feedback geschreven worden omtrent wat er verkeerd is met het commando</li></ul> |
+|`Router#ping ?`||
 
+<table>
+    <tr>
+        <td>test</td>
+        <td>test</td>
+    </tr>
+</table>
