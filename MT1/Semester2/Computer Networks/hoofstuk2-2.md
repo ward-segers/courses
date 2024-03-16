@@ -5,7 +5,10 @@ Configuratie bestanden kunnen ook opgeslagen en gearchiveerd worden naar een tek
 - **Stap 1**: Open een terminal emulation software, zoals PuTTY of Tera Term, dat reeds met een switch verbonden is.
 - **Stap 2**: Schakel het aanmelden bij de terminalsoftware in en wijs een naam en bestandslocatie toe om het logbestand op te slaan. De afbeelding toont dat "All session output" wordt opgeslagen naar het gespecifieerd bestand.
 
-<p align="center"><img src="src/putty1.png" alt="putty configuratie" width="50%></p>
+<p align="center">
+    <img src="src/putty1.png" alt="putty configuratie" width="50%">
+</p>
+
 
 - **Stap 3**: Voer de commando's `show running-config` en `show startup-config` uit in privileged EXEC mode. De tekst die weergegeven wordt in het terminal scherm zal in het gekozen tekst-bestand worden weergegeven.
 - **Stap 4**: Schakel het aanmelden in de terminal software uit. Door de optie "none" te selecteren bij session logging option. (zie afbeelding)
