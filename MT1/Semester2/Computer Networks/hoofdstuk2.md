@@ -160,11 +160,6 @@ Een commando kan een of meerdere argumenten nodig hebben. Om te achterhalen welk
 
 Er zijn twee verschillende soorten help beschikbaar: context-sensitive help en command syntaxt help
 
-| Context-sensitve | Command syntax |
-| ---------------- | -------------- |
-| <ul><li>Welke commando's zijn beschikbaar in welke mode?</li><li>Welke commando's starten met specifieke characters of groep van characters</li><li>Welke argumenten en keywords zijn beschikbaar in sommige commando's?</li></ul> | <ul><li>Gaat na indien een correct commando werd ingegeven door de gebruiker</li><li>Als het ingegeven commando niet begrepen werd, zal er feedback geschreven worden omtrent wat er verkeerd is met het commando</li></ul> |
-|`Router#ping ?`||
-
 <table>
 <thead>
 <tr>
@@ -199,4 +194,139 @@ Switch#interface fastEthernet 0/1
 </td>
 </tr>
 </tbody>
+</table>
+
+### Hot keys and shortcuts
+
+- Het IOS CLI voorziet hot kets en shortcuts dat ervoor zorgt configureren, monitoren en troubleshooten gemakkelijker is.
+- Commando's en keywords kunnen ingekort worden tot een minimaal aantal characters zodat deze steeds een uniek woord zijn.
+
+<table>
+<tr>
+<td>
+
+```shell
+Router#con
+%   Ambiguous command: "con"
+Router#con?
+configure   connect
+```
+
+</td>
+<td>
+
+```shell
+Router#conf t
+Enter configuration commands, one per line. End with CNTL/Z.
+Router(config)#
+```
+
+</td>
+</tr>
+</table>
+
+- Onderstaande tabel is een korte lijst of keyboard-shortcuts die het werken in de commandline gemakkelijker maakt.
+
+| Keyboard-shortcut | Beschrijving |
+| ----------------- | ----------- |
+| Tab | Vervolledigt een deel van de commando invoer |
+| Backspace | Verwijdert het character links van de cursor |
+| Linker pijl of `Ctrl+B` | Verplaatst de cursor een character naar links |
+| Rechter pijl of `Ctrl+F`| Verplaatst de cursor een character naar rechts |
+| Pijl naar boven of `Ctrl+P` | Toont het laatst uitgevoerde commando |
+
+Wanneer een commando meer tekst output heeft dan er kan weergegeven worden in het terminal venster. De IOS zal `--More--` op het scherm weergeven. Onderstaande toetsencombinaties kunnen gebruikt worden om daarin te navigeren.
+
+| Keyboard-shortcut | Beschrijving |
+| ----------------- | ------------ |
+| `Enter` | Toont de volgende lijn |
+| `Spatie` | Toont het volgende scherm |
+| Elke andere toets | Sluit het uitgebreid scherm af en keert terug naar de "Privileged EXEC mode |
+
+Onderstaande tabel toont alle combinaties die kunnen gebruikt worden om een operatie af te sluiten.
+
+| Keyboard-shortcut | Beschrijving |
+| ----------------- | ------------ |
+| `Ctrl+C` | Wanneer we in een configuratie mode zijn, sluit dit de configuratie mode af en keren we terug naar de "Privileged EXEC mode" |
+| `Ctrl+Z` | Wanneer we in een configuratie mode zijn, sluit dit de configuratie mode af en keren we terug naar de "Privileged EXEC mode" |
+| `Ctrl+Shift+6` | Algemeen gebruikt commando om een sequentie af te sluiten DNS lookups, traceroutes, pings, etc. |
+
+## Basic Device Configuration
+
+### Device Names
+
+> [!TIP]
+> **Best practise**: het eerste configuratie commando op een toestel zou moeten zijn om het toestel een unieke hostnaam te geven.
+
+- Standaard wordt elk toestel een naam gegeven. Bv. Bij een Cisco IOS switch is dit `Switch`
+
+- Richtlijnen voor de naamgeving van toestellen:
+    - Begint met een letter
+    - Bevat geen spaties
+    - Eindigt met een letter of cijfer
+    - Gebruik alleen letters, cijfers of streepjes
+    - Moet minder dan 64 characters lang zijn
+
+Verander van een hostname:
+
+```shell
+Switch# configure terminal
+Switch(config)# hostname Sw-Floor-1
+Sw-Floor-1(config)#
+```
+
+### Password Guidelines
+
+- Het gebruik van zwakke of makkelijk te raden passwoorden is een veiligheidszorg.
+- Alle netwerk toestellen zouden best administratieve toegangen beperken door "Privileged EXEC", "user EXEC" en remote Telnet toegangen te beveiligen met passwoorden.
+- Passwoord regelgevingen:
+    - Gebruik passwoorden die langer dan 9 characters zijn
+    - Gebruik een combinatie van klein- of hoofdletters, cijfers, speciale characters, en/of numerieke sequenties
+    - Vermijd het gebruik van hetzelfde passwoord voor alle toestellen
+    - Gebruik geen veel gebruikte woorden, deze zijn gemakkelijk te raden.
+
+### Configure passwords
+
+<table>
+<tr>
+<td>
+
+Beveilingen van de user EXEC mode toegang:
+- Ga eerst in line configuration mode door het commando `line console 0` te gebruiken in de global configuration mode
+- Daarna specifieer je het passwoord voor de user EXEC mode door het gebruik van het `passwoord` commando, als parameter geef je het gewenste passwoord (_pw_) op.
+- Al laatste, schakel de user EXEC toegang in door het gebruik van het `enable` commando
+
+</td>
+<td>
+
+```shell
+Sw-Floor-1# configure terminal
+Sw-Floor-1(config)# line console 0
+Sw-Floor-1(config-line)# password pw
+Sw-Floor-1(config)# login
+Sw-Floor-1(config)# end
+Sw-Floor-1#
+```
+
+</td>
+</tr>
+<tr>
+<td>
+
+Beveiligen van de privileged user EXEC mode toegang:
+- Ga eerst in global configuration mode
+- Gebruik hierna het commando `enable secret` met als parameter (_pw_) het passwoord om het passwoord in te stellen.
+
+</td>
+<td>
+
+```shell
+Sw-Floor-1# configure terminal
+Sw-Floor-1(config)# enable secret password pw
+Sw-Floor-1(config)# exit
+Sw-Floor-1#
+```
+
+</td>
+</tr>
 </table>
