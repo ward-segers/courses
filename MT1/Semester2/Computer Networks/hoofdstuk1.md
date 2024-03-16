@@ -66,7 +66,9 @@ Enkele belangrijke begrippen:
 - Physical port (fysieke poort)
 - Interface
 
-![netwerk devices](src/image.png)
+
+<p align='center'><img src='src/image.png' alt='netwerk devices' width='50%'></p>
+
 
 ### Netwerk diagrammen
 
@@ -74,11 +76,15 @@ Netwerk diagrammen geven een visuele weergave over hoe het netwerk verbonden is.
 
 **Fysieke netwerk diagrammen** illustreren de fysieke locatie van tussenliggende netwerkapparatuur en kabel installaties.
 
-![fysiek netwerk diagrammen](src/image2.png)
+
+<p align='center'><img src='src/image2.png' alt='Fysieke netwerkt diagrammen' width='50%'></p>
+
 
 **Logische netwerk diagrammen ** illustreren toestellen, poorten en het addressenschema van een netwerk
 
-![logische netwerk diagrammen](src/image3.png)
+
+<p align='center'><img src='src/image3.png' alt='Logische netwerk diagrammen' width='50%'></p>
+
 
 ## Veel voorkomende netwerken
 
