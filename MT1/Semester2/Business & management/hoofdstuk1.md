@@ -38,3 +38,5 @@ Het is zaak om het verschil groot genoeg te houden zodat het voor de klant nutti
 - _Product_: Moet voldoen aan de nodige kwaliteit, functies en design.
 - _Service_: Voordelig om extra diensten aan te bieden naast de reeds beschikbare diensten, zoals garantie, installatie, onderhoud.c
 - _Merk (imago)_: Elk merk heeft een imago, kennen we het merk niet zal onze perceptie van het merk minder zijn, kennen we het merk goed is dit beter en zijn we hierdoor geneigd het product eerder aan te schaffen. Onze _psychologische behoeften_ worden dus bepaald naarmate we een merk goed of slecht kennen.
+- _Relationele voordelen_: Producten worden eerder aangeschaft wanneer de gebruiker een relatie heeft met het merk/bedrijf. Opbouwen van relaties kan door sociale media, FAQ, chatbot,...
+- _Maatschappelijke voordelen_: MVO (Maatschappelijk verantwoord ondernemen), producten die op een duurzame manier geproduceerd worden.
