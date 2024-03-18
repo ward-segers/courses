@@ -62,3 +62,36 @@ Het gaat dus om maatschappelijke, soms internationale, ontwikkelingen in verschi
 5. **Ecologische omgevingsfactoren**: krachten die de ecologische context vormen, zoals groeiend tekort in grondstoffen en natuurlijke bronnen, milieuvervuiling en klimaatverandering. 
 6. **Politiek-juridische omgevingsfactoren**: Wetten en overheden die organisaties en individuen in een maatschappij beïnvloeden en beperken.
 
+## Voorbeelden Trendanalyse omgeving
+
+<p align='center'><img src='src/voorbeelden_trendanalyse.png' alt='Voorbeelden trendanalyse' width='100%'></p>
+
+## Maatschappelijk Verantwoord Ondernemen (MVO)
+
+MVO of Maatschappelijk Verantwoord Ondernemen is de verantwoordelijkheid van een organisatie voor de effecten van haar besluiten en activiteiten op de maatschappij en het milieu.
+
+MVO houdt in dat organisaties aandacht hebben voor mensenrechten, consumentennbelangen en sociale, ethische en milieukwesties.
+
+### Maturiteitsniveaus MVO
+
+MVO is tijdens de voorbije jaren geleidelij aan veranderd. Zowel op het vlak van invulling als op het vlak van maatschappelijke bewustwording:
+- eerst wetenschappers
+- later politici, bedrijven,...
+- tenslotte de mensen in het algemeen
+
+Zo onderscheiden we verschillende maturiteitsniveaus bij commerciële sectoren.
+
+<p align='center'><img src='src/maturiteitsniveaus_mvo.png' alt='Maturiteitsniveaus MVO' width='50%'></p>
+
+1. **Focus op winst**: deze vorm van MVO gaat voornamelijk om het scheppen van werkgelegenheid en het verschaffen van een inkomen aan gezinnen. Organisaties moeten er dus alles aan doen om continuiteit te realiseren.
+
+2. **Bijdrage aan goede doelen**: bedrijven beseffen dat naast commerciële sectoren ook andere organisaties bestaan die belangrijk zijn. Een deel van de winst gebruiken om maatschappelijke behoeften te ondersteunen.
+
+3. **Duurzame acties als promoties**: het imago van een bedrijf wordt belangrijker omdat klanten krischer worden. Daarom worden eenmalige donaties vervangen door langetermijn sponsering als blijk van maatschappelijke betrokkenheid.
+
+4. **Duurzaamheid als strategie**: bedrijven gooien het roer om en gaan op verschillende niveaus de bedrijfsvoering vanuit een duurzaam perspectief aanpakken:
+    - stapsgewijs
+    - radicale ommezwaai
+
+>[!CAUTION]
+>**Misbruik**: _Greenwashing_ is het zich groener of maatschappelijk verantwoorder voordoen dan een bedrijf of organisatie daadwerkelijk is. 
