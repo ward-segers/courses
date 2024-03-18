@@ -2,7 +2,7 @@
 
 **Doel van Business & Managment**: inzicht geven hoe een bedrijf in grote lijnen functioneert, welke keuzes er zijn die moeten gemaakt worden en hoe de IT daarin een rol kan spelen.
 
->[!CAUTION]
+>[!WARNING]
 >**Business** :
 > - is een zaak die met een commercieel doel wordt opgericht
 > - De activiteiten die nodig zijn om een zaak draaiende te houden
@@ -82,7 +82,7 @@ Elk product belooft behoeftebevreding en wenst de aangeboden voordelen en wenst 
 
 ## Management
 
->[!CAUTION]
+>[!WARNING]
 > Management is de manier waarop een zaak wordt geleid om de continuiteit te kunnen realiseren.
 
 Management is een geheel van verschillende activiteiten:
