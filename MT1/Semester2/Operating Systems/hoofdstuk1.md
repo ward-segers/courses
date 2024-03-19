@@ -166,4 +166,8 @@ Wanneer een gebruiker een opdracht geeft, verzorgen de utitilies het grootste de
 
 Er bestaan verschillende soorten multi-user-computers, afhankelijk van de soorten programma's die ze aankunne:
 
-- **Interactieve programma's**: 
+- **Interactieve programma's**: Dit is een programma dat een gebruiker vanaf de terminal activeert. Over het algemeen zijn die korte opdrachten die het besturingssysteem vertaalt en dan actie onderneemt. Het systeem zet vervolgens een prompt-teken en laat de gebruiker een volgende opdracht invoeren. Dit kan blijven herhaald worden. De gebruiker werkt met het besturingssysteem als het ware op een conversatie-achtige manier, _interactieve mode_ genoemd. Interactieve gebruikers verwachten snelle respons daarom geeft het besturingssysteem voorrang aan interactieve gebruikers.
+
+- **Batch-programma's**: Een gebruiker kan opdrachten in een file opslaan en deze aan de batch queue (wachtrij voor batch-programma's) toevoegen. Batch-gebruikers verschillen van interactieve gebruikers omdat zijn geen directe respons verwachten. Bij schedulling houdt het besturingssysteem hiermee rekening.
+
+- **Real-time programma's**: Real-time programmering legt aan de respons een tijdsbeperking op. Het wordt gebruikt wanneer een snelle repons essentieel is. Interactieve gebruikers geven voorkeur aan snelle respons, maar real-time gebruikers eisen dit zelfs. (bv. controlesystemen voor luchtverkeer, robots,...)
