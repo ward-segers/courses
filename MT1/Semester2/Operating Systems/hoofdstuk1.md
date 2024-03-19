@@ -171,3 +171,57 @@ Er bestaan verschillende soorten multi-user-computers, afhankelijk van de soorte
 - **Batch-programma's**: Een gebruiker kan opdrachten in een file opslaan en deze aan de batch queue (wachtrij voor batch-programma's) toevoegen. Batch-gebruikers verschillen van interactieve gebruikers omdat zijn geen directe respons verwachten. Bij schedulling houdt het besturingssysteem hiermee rekening.
 
 - **Real-time programma's**: Real-time programmering legt aan de respons een tijdsbeperking op. Het wordt gebruikt wanneer een snelle repons essentieel is. Interactieve gebruikers geven voorkeur aan snelle respons, maar real-time gebruikers eisen dit zelfs. (bv. controlesystemen voor luchtverkeer, robots,...)
+
+### Processen
+
+>[!warning]
+>**Een proces** is één of meerdere reeksen opdrachten die door een besturingsprogramma worden beschouwd als een werkeenheid
+
+Elk proces is een onafhankelijk uitgevoerde entiteit die meedingt naar het gebruik van bronnen (resources). 
+
+Het aantal programma's per gebruiker en het aantal processen per programma varieert. Eenvoudige programma's bestaan meestal maar uit één proces, terwijl complexere programma's vaak uit meerdere processen bestaan, en het aantal kan variëren in de tijd.
+
+Een besturingssysteem bekommert zich typisch njiet om de gebruiker en ook niet om het programma, maar focust op de uitvoering van processen. Het bepaald welke processen momenteel uitgevoerd worden en welke bronnen toegekend worden aan welke processen.
+
+### Resources
+
+Het besturingssysteem moet open staan voor de behoeften van een proces. In de eeste plaats speken processen resources (=bronnen) aan. Deze resources omvatten persistente opslag (bestanden), RAM geheugen, uitvoeringstijd op de CPU en eventuele communicatie met randapparatuur. Het besturingssysteem moet er dus voor zorgen dat elk proces toegang krijgt tot de nodige resources.
+
+Een besturingssysteem moet:
+
+- _zorgen voor voldoende **geheugen** het proces_: <br>
+Een proces heeft geheugen nodig waarin het zijn instructies en gegevens kan opslaan. Echter is geheugen geen _eindige resource_ daarom moet het besturingssysteem zorgen dat het proces niet zoveel geheugen inneemt zodat de andere processen niet meer kunnen runnen.
+Ook mag een proces niet instaat zijn eigenmatig toegang toegang tot het geheugen van een ander proces verschaffen. **Het besturingssysteem moet de resource niet enkel toewijzen, maar ook regelen.**
+
+- _het gebruik van de CPU regelen_: De CPU is ook een resource die elk proces nodig heeft om zijn instructies te kunnen uitvoeren. Aangezien er meer processen als CPU's zijn moet het besturingssysteem ook het gebruik van de CPU regelen. Belangrijkere processen krijgen de CPU snel ter beschikking, minder belangrijke processen mogen de CPU niet gebruiken ten koste van anderen.
+
+- _de gegevensstroom regelen van of naar randapparatuur_: randapparatuur of devices zijn onder andere printers, tapedrivers, en diskdrives. Er zijn gewoonlijk meer gebruikers dan devices. Wat gebeurt er wanneer er verschillende processen naar dezelfde printer of dezelfde drive willen schrijven? Het besturingssysteem moet dan uitzoeken wie toegang heeft tot wat. Het moet de gegevensstroom regelen wanneer de processen van devices lezen of naar devices schrijven.
+
+- _bestanden en records kunnen lokaliseren_: Het besturingssysteem wordt verondersteld snel een bepaald bestand te kunnen lokaliseren. Ook wordt verwacht dat het snel een bepaalde record in een bepaald bestand kan lokaliseren.
+
+### Schedulling
+
+>[!warning]
+>Schedulling verwijst naar de manier waarop aan processen prioriteiten worden gegeven, vaak in combinatie met een prioriteitenwachtrij.
+
+Vaak zal een besturingssysteem aan elk programma, of zelfs aan elk proces een bepaalde prioriteit toekennen. Maar hoe weet het besturingssysteem welk programma welke prioriteit krijgt? <br>
+:fast_forward: Schedulling is het concept dat deze prioriteiten toekent. 
+
+### Concurrency
+
+In de meeste moderne systemen kunnen verschillende processen gelijktijdig uitgevoerd worden. Wanneer 2 of meer processen gelijktijdig uitgevoerd worden en geen gemeenschappelijke bronnen gebruiken is er meestal geen probleem. De moeilijkheden onstaan echter wanneer de processen gedeelde bronnen zoals gemeenschappelijk geheugen aanspreken. In dit geval kunnen er conflicten ontstaan. Het besturingssysteem zal deze dus moeten detecteren en indien mogelijk oplossen, bijvoorbeeld door een volgorde op te leggen waarin processen afgehandeld worden (_synchronisatie_)
+
+### Ontwerp-criteria
+
+Vaak is het onmogelijk om alle criteria te voldoen en worden sommige opgeofferd ten gunste van andere.
+
+Enkel belangrijke ontwerp-criteria voor een besturingssysteem zijn:
+
+- **:heavy_exclamation_mark: Consistentie**: Als het aantal processen, dat van een computer gebruik maakt, vrijwel constant blijft, hoort dat ook voor de respons te gelden.
+
+- **Flexibiliteit**: Een besturingssysteem hoort zo te zijn geschreven dat een nieuwe versie het draaien van oude applicaties niet onmogelijk maakt. Bij een besturingssysteem moeten ook eenvoudige nieuwe randapparaten kunnen worden toegevoegd.
+
+- **Overdraagbaarheid**: Dit houdt in dat het besturingssysteem op verscheidene soorter computers werkt. Overdraagbaarheid geeft de gebruiker meer flexibiliteit.
+
+>[!caution]
+>Al deze ontwerp-criteria zijn belangrijk. Helaas is het meestal onmogelijk om aan alle te voldoen. Vaak moet het ene criterium worden opgeofferd worden voor het andere. Ontwerpers moet kunnen bepalen welke het belangrijkste is voor de gebruiker.
