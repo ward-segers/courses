@@ -124,3 +124,127 @@ Netwerk protocollen definiëren een aantal regels:
 </tbody>
 </table>
 
+### Netwerk Protocol Functions
+
+:heavy_exclamation_mark:  Apparaten gebruiken vooraf afgesproken protocollen om te communiceren.
+
+<table>
+<thead>
+<tr>
+<th>Functie</th>
+<th>Beschrijving</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Addressing</th>
+<td>Identificeerd de zender en ontvanger</td>
+</tr>
+<tr>
+<th>Reliability</th>
+<td>Verzorgt gegarandeerde levering</td>
+</tr>
+<tr>
+<th>Flow Control</th>
+<td>Zorgt voor een efficiënte gegevensstroom</td>
+</tr>
+<tr>
+<th>Sequencing</th>
+<td>Geeft een uniek label aan elk van de verstuurde segmenten data</td>
+</tr>
+<tr>
+<th>Error Detection</th>
+<td>Bepaald indien de gegevens corrupted zijn gedurende de transmissie</td>
+</tr>
+<tr>
+<th>Application Interface</th>
+<td>Process-to-Process communicatie tussen netwerk applicaties</td>
+</tr>
+</tbody>
+</table>
+<br>
+<p align='center'><img src='src/netwerk_protocol_functies.png' alt='Network Protocol Functions' width='50%'></p>
+
+
+### Protocol Interaction
+
+<br>
+
+<table>
+<thead>
+<tr>
+<th>Protocol</th>
+<th>Functie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Hypertext Transfer Protocol (HTTP)</th>
+<td>
+
+- Beheerd de manier waarop een webserver en een webclient interageren
+- Bepaald de inhoud en het formaat
+
+</td>
+</tr>
+<tr>
+<th>Transmission Control Protocol (TCP)</th>
+<td>
+
+- Beheerd individuele conversaties
+- Verzekert een gegarandeerde levering
+- Beheerd de gegevensstroom
+
+</td>
+</tr>
+<tr>
+<th>Internet Protocol (IP)</th>
+<td>Bezorgd berichten globaal gezien van zender naar ontvanger. Wordt door routers gebruikt om berichten over netwerken te versturen</td>
+</tr>
+<tr>
+<th>Ethernet</th>
+<td>Verzend bericht van het ene NIC naar de andere NID op hetzelfde Ethernet Local Area Network (LAN)</td>
+</tr>
+</tbody>
+</table>
+
+## Protocol Suites
+
+### Network Protocol Suites
+
+Het is noodzakelijk dat protocollen onderling met elkaar kunnen werken.
+
+>[!warning]
+>**Protocol Suites** is een groep van onderling verbonden protocollen die nodig zijn om de communiceren. 
+>Een aantal regels die samenwerken om een probleemstelling te verhelpen.
+
+Protocollen worden aanzien vanuit verschillende lagen:
+- Higher layers
+- Lower layers: hebben de taak om gegevens en diensten te bezorgen aan de "higher layers"
+
+
+### Evolution of Protocol Suites
+
+- **Internet Protocol Suite or TCP/IP**: de meest gebruikte protocol suite en beheer door _the Internet Engineering Task Force_
+- **Open Systems Interconnection (OSI) protocols**: Ontwikkels door _the International Organization for Starndardization (ISO)_ en _the International Telecommunications Union (ITU)_
+- **AppleTaks**: Proprietary suite release by _Apple Inc_
+- **Novell NetWare**: Proprietary suite developped by _Novell Inc_
+
+### TCP/IP Protocol Example
+
+- TCP/IP protocollen werken op applicatie, transport en internet lagen.
+- De meest gebruikte LAN netwerklaag zijn Ethernet en WLAN (wireless LAN). 
+
+<br>
+
+<p align='center'><img src='src/tcp_ip.png' alt='TCP/IP Example' width='50%'></p>
+
+### TCP/IP Protocol Suite
+
+- De TCP/IP protocol suite wordt gebruikt door het internet en bevat verschillende protocollen.
+- TCP/IP is:
+    - Een open-standaard protocol suite dat vrij toegankelijk is voor een publiek en door elke verkoper gebruikt kan worden
+    - Een op standaarden gebaseerde protocolsuite die wordt onderschreven door de netwerkindustrie en goedgekeurd door een standaardenorganisatie om interoperabiliteit te garanderen 
+
+<p align='center'><img src='src/tcp_ip_protocol_suite.png' alt='TCP/IP Protocol Suite' width='75%'></p>
+
