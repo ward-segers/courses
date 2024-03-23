@@ -61,3 +61,4 @@ Methode bevat verschillende info over de klasse, die via hulpmethodes kan aanger
 
 >[!tip]
 >De `contains`-methode gebruikt de `equals`-methode om na te gaan of een object reeds bestaat in een lijst. Als we in een klasse zelf een `equals`-methode gespecifieer hebben zal hij ook deze gebruiken.
+
