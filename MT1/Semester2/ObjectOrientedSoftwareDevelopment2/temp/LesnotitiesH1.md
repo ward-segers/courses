@@ -62,3 +62,20 @@ Methode bevat verschillende info over de klasse, die via hulpmethodes kan aanger
 >[!tip]
 >De `contains`-methode gebruikt de `equals`-methode om na te gaan of een object reeds bestaat in een lijst. Als we in een klasse zelf een `equals`-methode gespecifieer hebben zal hij ook deze gebruiken.
 
+
+Wanneer krijgt een final attribuut zijn waarde?
+- `static final` attribuut :arrow_right: bij declaratie van het attribuut
+- `final` attribuut :arrow_right: krijgt waarde toegekend in constructor
+
+>[!tip]
+>Zoveel mogelijk `final` gebruiken
+
+>[!important]
+>Final objecten of arrays kunnen wel nog wijzigen. Het is enkel de referentie die final is
+
+>[!caution]
+>Private methode in de superklasse kan in de subklasse niet overschreven worden. De methode is private en dus niet toegankelijk
+
+Indien een klasse final is zijn ook alle methodes binnen die klasse final
+
+Abstracted-methodes zijn handig indien we op een referentie object (superklasse) de methode willen aanroepen. Vaak weten we op de moment van het aanroepen nog niet wat de implementatie van de methode zal zijn.

@@ -126,6 +126,9 @@ De methodes `equals` en `hashCode` horen beide samen. Indien beide objecten aan 
 >[!tip]
 >Beide methodes kunnen automatisch gegenereerd worden door Eclipse. `right click > Source > "Generate hashCode() and equals()..."`
 
+>[!tip]
+>De `contains`-methode gebruikt de `equals`-methode om na te gaan of een object reeds bestaat in een lijst. Als we in een klasse zelf een `equals`-methode gespecifieer hebben zal hij ook deze gebruiken.
+
 #### `toString` - methode
 
 De `toString` - methode geeft een string voorstelling weer, meestal met een in mensentaal begrijpbare beschrijving van het object.
@@ -141,3 +144,103 @@ Wanneer `getClass()` wordt aangeroepen zal dit altijd de rechthoek-klasse terugg
 Methode bevat verschillende info over de klasse, die via hulpmethodes kan aangeroepen worden
 - `getClass().getSimpleName()`: geeft String ipv java.lang.String
 - `getClass().getSuperClass()`: geeft de superklasse van de klasse
+
+## Initialisatie van een hiërarchie
+
+:exclamation: Constructoren worden nooit overgeërfd: ze kunnen dus ook niet overschreven worden.
+
+>[!important]
+>Als een klass geen declaratie voorziet van een constructor, dan wordt er impliciet een default constructor gedeclareerd.
+
+Het eerste statement binnen een constructor body mag een expliciete aanroep zijn naar een constructor van dezelfde klasse, of de direct superklasse.
+
+>[!note]
+>Als het eerste statement binnen een constructor body geen expliciete aanroep is van een andere constructor (en het gaat niet om de klasse Object) dan zal de constructor bodu **impliciet** beginnen met het aanroepen van de superklasse constructor `super()`, een aanroep van diens default constructor.
+>Als de default constructor niet bestaat zal een constructor met de juiste parameters expliciet moeten aangeroepen worden.
+
+
+## Specialisatie van een klasse
+
+>[!warning]
+>Wanneer een methode gedeclareerd en geïmplementeerd is in een superklasse en later overschreven wordt in een subklasse, spreken we van **een specialisatie van een klasse**
+
+>[!tip]
+>Vergeet hierbij niet om steeds de prefix `@Override` te vermelden.
+
+## Scope van een declaratie
+
+>[!warning]
+>**De scope** van een declaratie is de 'omgeving' in het programma waarbinnen men kan refereren naar de gedeclareerde entiteit (de variabele, methode of klasse/interface) gebruik makende van zijn 'simple name', voor zover deze naam niet in de schaduw werd geplaatst.
+
+### Schaduwen
+
+Sommige declaraties kunnen in de schaduw geplaatst worden binnen een deel van hun scope door een andere declaratie met dezelfde naam. Binnen dit deel kan de _simple name_ van de in schaduw geplaatste declaratie niet meer gebruikt worden om naar die gedeclareerde entiteit te verwijzen.
+- De declaratie van een type kan de declaratie van een ander type met dezelfde naam in de schaduw plaatsen.
+- De declaratie van een attribuut of formele parameter kan de declaratie van een andere variable met dezelfde naam in de schaduw plaatsen.
+- De declaratie van een lokale variabele of exception parameter kan de declaratie van een attribuut met dezelfde naam in de schaduw plaatsen.
+- De declaratie van een methode kan de declaratie van een andere methode met dezelfde naam in de schaduw plaatsen.
+
+>[!note]
+>Vaak kunnen we de in schaduw geplaatste variabele/attribuut raadplegen door het aan te spreken via `this.naam_attribuut`
+
+## `abstract` keyword
+
+Van _een abstracte klasse_ kan geen instantie gecreëerd worden.
+We kunnen een methode of klasse abstract maken door het aanroepen van het keyword `abstract`
+
+>[!warning]
+>**Een abstracte klasse** is een klasse die kan aanzien worden als nog niet volledig afgewerkt of het is expliciet de bedoeling dat deze klasse niet kan geïntstantieerd kan worden
+
+Indien een klasse abstract is kan deze ook abstracte methodes declareren. Deze bevatten enkel een declaratie, zonder implementatie van de methode.
+
+>[!note]
+>Een niet abstracte klasse of methode benoemen we als **een concrete klasse of methode**
+
+>[!warning]
+>Een declaratie van **een abstracte methode** introduceert een methode als gedrag, waaronder zijn handtekening, return value en throws clausule indien gewenst, maar zonder de implementatie van de methode te voorzien. 
+
+>[!important]
+>In UML wordt een abstracte methode of klasse in _italic_ geschreven.
+
+## `static` keyword
+
+### `static` attribuut
+
+Als een attribuut `static` wordt gedeclareerd bestaat er slecht één instantie van dat attribuut, ongeacht het aantal instanties dat van die klasse gemaakt worden.
+
+>[!note]
+>Een `static` attribuut, ook benoemt als **klassevariabele**, wordt aangemaakt als de klasse zelf voor het eerst geïnitialiseerd wordt. (= op het moment dat de klasse ingeladen wordt in de JVM, wat overeen komt bij de declaratie van het attribuut)
+
+>[!note]
+>Een attribuut gedeclareerd zonder het keyword `static`, ook wel non-static attribuut, noemt men **een instantievariabele**. Non-static attributen worden opnieuw aangemaakt en geassocieerd bij elke klasse-instantie.
+
+### `static` methode
+
+>[!note]
+>Een `static` methode, ook benoemd als **klassemethode**, kan aangeroepen worden zonder een referentie naar een instantie van die klasse. Binnen een `static` methode resulteert het gebruik van de keywords `this` of `super` in een compile time error.
+
+>[!note]
+>Een methode niet gedeclareerd als `static` noemt men **een instantiemethode** of een non-static methode. 
+
+## `final` keyword
+
+### `final` klasse
+
+Een klasse kan gedeclareerd worden als `final` om te voorkomen dat ze gebruikt wordt als een superklasse. Een `final` klasse kan dus geen subklassen hebben.
+
+### `final` attribuut
+
+Een attribuut kan als `final` gedeclareerd worden. Zowel klasse- als instantie variabelen (static en non-static) kunnen als `final` gedeclareerd worden.
+
+Een `final` klasse variabele moet een waarde toegekend krijgen binnen een static initializer in die klasse, bij de declaratie van het attribuut of binnen de constructor.
+
+>[!note]
+>De afspraak in Java is om static final variabelen (de echte constanten) in hoofdletters te schrijven.
+
+>[!important]
+>Een `final` instantie variabele die niet wordt geïnitialiseerd bij declaratie of binnen een static initializer moet binnen een constructor een waarde toegekend krijgen.
+
+### `final` variabele
+
+Een variabele kan als `final` gedeclareerd worden. Zo kan een variabele slechts eenmaal een waarde toegekend krijgen.
+
