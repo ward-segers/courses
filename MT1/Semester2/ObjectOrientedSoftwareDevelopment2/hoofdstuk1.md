@@ -139,5 +139,5 @@ De methode `getClass` waarover elk object beschikt, retourneert een referentie n
 
 Wanneer `getClass()` wordt aangeroepen zal dit altijd de rechthoek-klasse teruggeven) 
 Methode bevat verschillende info over de klasse, die via hulpmethodes kan aangeroepen worden
-- getClass().getSimpleName(): geeft String ipv java.lang.String
-- getClass().getSuperClass(): geeft de superklasse van de klasse
+- `getClass().getSimpleName()`: geeft String ipv java.lang.String
+- `getClass().getSuperClass()`: geeft de superklasse van de klasse
