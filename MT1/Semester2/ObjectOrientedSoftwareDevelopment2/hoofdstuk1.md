@@ -244,3 +244,76 @@ Een `final` klasse variabele moet een waarde toegekend krijgen binnen een static
 
 Een variabele kan als `final` gedeclareerd worden. Zo kan een variabele slechts eenmaal een waarde toegekend krijgen.
 
+>[!important]
+>Als een variabele of final attribuut een referentie bevat naar een object of array, dan kan de toestand van dat object nog steeds wijzigen. Enkel de referentie naar het object of de array is final.
+
+### `final` methode
+
+Een methode kan als `final` gedeclareerd worden om te voorkomen dat een subklasse deze overschrijft.
+
+Een `private` methode en alle methodes binnen een `final` klasse gedragen zich alsof ze als `final` gedeclareerd zouden zijn, sinds het onmogelijk is hen te overschrijven.
+
+>[!caution]
+>Roep vanuit een constructor enkel methodes aan die niet overschreven kunnen worden; `private` methodes of `final` methodes. Indien dit niet het geval is kunnen niet geïnitialiseerde instantie variabelen gebruikt worden, wat gevaarlijk is!
+
+>[!tip]
+>Zoveel mogelijk `final` gebruiken
+
+## Toegangscontrole
+
+<table align="center" style="text-align: center">
+<thead>
+<th>Modifier</th>
+<th>Class</th>
+<th>Package</th>
+<th>Subclass</th>
+<th>World</th>
+</thead>
+<tbody>
+<tr>
+<td>
+
+`public`
+
+</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>
+
+`protected`
+
+</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+
+`no modifier`
+
+</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>
+
+`private`
+
+</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+

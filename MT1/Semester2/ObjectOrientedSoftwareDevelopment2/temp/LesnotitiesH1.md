@@ -79,3 +79,4 @@ Wanneer krijgt een final attribuut zijn waarde?
 Indien een klasse final is zijn ook alle methodes binnen die klasse final
 
 Abstracted-methodes zijn handig indien we op een referentie object (superklasse) de methode willen aanroepen. Vaak weten we op de moment van het aanroepen nog niet wat de implementatie van de methode zal zijn.
+
