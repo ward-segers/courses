@@ -95,3 +95,4 @@ Zo onderscheiden we verschillende maturiteitsniveaus bij commerciële sectoren.
 
 >[!CAUTION]
 >**Misbruik**: _Greenwashing_ is het zich groener of maatschappelijk verantwoorder voordoen dan een bedrijf of organisatie daadwerkelijk is. 
+
