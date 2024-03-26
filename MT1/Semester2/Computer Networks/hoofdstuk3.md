@@ -307,9 +307,11 @@ Standaardiseringsorganisaties betrokken bij het ontwikkelen en ondersteunen van 
 
 Complexe concepten zoals hoe een netwerk werkt, zijn moeilijk te begrijpen en uit te leggen.
 
-Two layered models beschrijven netwerk operaties:
+Two layered models (lagenmodel) beschrijven netwerk operaties:
 - Open System Interconnection (OSI) Reference Model
 - TCP/IP Reference Model
 
 <p align='center'><img src='src/layered_models.png' alt='Layered Models' width='50%'></p>
 
+Voordelen bij het gebruiken van het lagenmodel:
+- Ondersteunen bij het protocol design omdat protocollen die opereren op een specifieke laag
