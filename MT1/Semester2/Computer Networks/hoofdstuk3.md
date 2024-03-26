@@ -248,3 +248,68 @@ Protocollen worden aanzien vanuit verschillende lagen:
 
 <p align='center'><img src='src/tcp_ip_protocol_suite.png' alt='TCP/IP Protocol Suite' width='75%'></p>
 
+### TCP/IP Communication Process
+
+<table>
+<tr>
+<td>Een webserver enkapselt en stuurt de webpagina naar een client</td>
+<td>Een client die de webpagina decapsuleert voor de webbrowser</td>
+</tr>
+<tr>
+<td>
+
+<p align='center'><img src='src/encapsulating.png' alt='Webserver to client' width='75%'></p>
+
+</td>
+<td>
+
+<p align='center'><img src='src/de-encapsulating.png' alt='Client to web browser' width='75%'></p>
+
+
+</td>
+</tr>
+</table>
+
+## Standards Organizations
+
+- Open standards encourage:
+    - interoperability
+    - competition
+    - innovation
+- Standards Organizations:
+    - vendor-neutral
+    - non-profit organizations
+    - established to develop and promote the concept of open standards.
+
+### Internet Standards
+
+<p align='center'><img src='src/internet_standards.png' alt='Internet Standards' width='50%'></p>
+
+- **Internet Society (ISOC)**: Bevordert de development and evolution of internet.
+- **Internet Architecture Board (IAB)**: Verantwoordelijk voor het beheer en ontwikkeling van internet standaarden.
+- **Internet Engineering Task Force (IETF)**: Ontwikkeld, update en onderhoud internet en TCP/IP technologieën.
+- **Internet Research Task Force (IRTF)**: Focus ligt op het langetermijn onderzoek omtrent internet en TCP/IP protocollen.
+
+Standaardiseringsorganisaties betrokken bij het ontwikkelen en ondersteunen van TCP/IP:
+- **Internet Corporation for Assigned Names and Numbers (ICANN)**: Coordineert de toewijzing van IP-adressen, het beheer van domeinnamen, en toewijzen van andere informatie.
+- **Internet Assigned Numbers Authority (IANA)**: Overziet en beheert IP-adres toewijzing, domeinnaam management, en protocol-indentificatie voor ICANN.
+
+### Electronic and Communications Standards
+
+- **Institute of Electrical and Electronics Engineers (IEEE)**: Toegewijdt voor het maken van standaarden in kracht en energie, gezondheid, telecommunicatie en netwerken.
+- **Electronic Industries Alliance (EIA)**: Ontwikkeld standaarden gerelateerd aan elektrische kabels, connectoren, en 19-inch racks gebruikt om netwerk apparatuur aan te sluiten.
+- **Telecommunications Industry Association (TIA)**: Ontwikkeld communicatie standaarden in radio toestellen, telefoonmasten, Voice over IP (VOIP) toestellen, satelliet communicatie, en meerdere
+- **International Telecommunications Union-Telecommunication Standardization Sector (ITU-T)**: Definieert standaarden voor video compressie, Internet Protocol Television (IPTV), en bandbreedte communicaties, zoals digital subscriber line (DSL)
+
+## Reference Models
+
+### The Benefits of Using a Layered Models
+
+Complexe concepten zoals hoe een netwerk werkt, zijn moeilijk te begrijpen en uit te leggen.
+
+Two layered models beschrijven netwerk operaties:
+- Open System Interconnection (OSI) Reference Model
+- TCP/IP Reference Model
+
+<p align='center'><img src='src/layered_models.png' alt='Layered Models' width='50%'></p>
+
