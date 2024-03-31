@@ -96,3 +96,66 @@ Zo onderscheiden we verschillende maturiteitsniveaus bij commerciële sectoren.
 >[!CAUTION]
 >**Misbruik**: _Greenwashing_ is het zich groener of maatschappelijk verantwoorder voordoen dan een bedrijf of organisatie daadwerkelijk is. 
 
+
+#### Maturiteitsniveau MVO CSR 1.0
+
+<p align='center'><img src='src/csr1.0.png' alt='Maturiteitsniveau MVO CSR 1.0' width='50%'></p>
+
+De normale aanpak bestaat eruit om zoveel mogelijk producten te produceren die, na verloop van tijd, door nieuwe producten worden vervangen. Hierbij wordt er steeds nieuwe grondstof gebruikt en verdwijnt het oude product op de afvalberg.
+
+_Naarmate de bewustwording groeit, volgde er een nieuwe aanpak:_
+
+:arrow_right: hergebruik van materialen
+
+Resulteert in minder verspilling, echter zijn de gerecycleerde materialen van mindere kwaliteit en eindigen ze na enkele malen hergebruik toch op de afvalberg. (=**Downcycling**)
+
+#### Maturiteitsniveau MVO CSR 2.0
+
+<p align='center'><img src='src/csr2.0.png' alt='Maturiteitsniveau MVO CSR 2.0' width='50%'></p>
+
+Steeds meer organisaties zoeken vanuit hun expertise en invloedsfeer maatschappelijke oplossingen.
+
+Door het creëren van:
+- economische waarde
+- positieve impact
+
+Het vijfde en laatste maturiteitsniveau brengt een duidelijk aanpak met zich mee:
+- Hier ligt een maatschappelijk probleem aan de oorsprong van de opstart van de onderneming.
+- De missie of bestaansreden van de organisatie worde door de MVO geïnspireerd.
+
+= **Sociaal ondernemerschap**   
+
+#### Sociaal ondernemerschap
+
+*(Systemic CSR in the age of responsibility)*
+
+Een sociaal ondernemer moet dus:
+- zicht hebben op de maatschappelijke uitdaging én oplossing
+- beseffen dat samenwerking noodzakelijk is om vooruit te geraken
+- er in slagen om een verdienmodel op te zetten waar iedereen (en dus ook de ondernemer) wel bij vaart.
+
+Bij een circulaire economie worden grondstoffen niet telkens opnieuw uit de aarde gehaald, maar blijven maximaal in de economie. Dit gebreurt via een efficiënt en slim materiaalgebruik, met de voorkeur van herbruikbare grondstoffen.
+
+## Duurzame ontwikkelingsdoelen VN
+
+In 2015 is een beleidsplan vastgelegd om 17 Sustainable Development Goals (STG's) te indentificeren.
+
+Deze ontwikkelingsdoelen bevatten een resem aan thema's zoals, klimaatverandering, biodiversiteit, volksgezondheid, onderwijs en armoedebestrijding en zullen to 203O de wereldwijde duurzaamheidsagenda bepalen.
+
+De VN ambieert een inclusieve samenleving, waar voorspoed en geluk voor een groter deel van de mensheid mogelijk is.
+
+<p align='center'><img src='src/ontwikkelingsdoelenVN.png' alt='Ontwikkelingsdoelen VN' width='75%'></p>
+
+De 17 ontwikkelingsdoelen zijn onderverdeeld in volgende vijf domeinen:
+
+<p align='center'><img src='src/17ontwikkelingsdoelenVN.png' alt='17 ontwikkelingsdoelen VN' width='50%'></p>
+
+- *People*: stop armoede en honger
+- *Prosperity*: zorgen voor een welvarend en bevredigend leven
+- *Peace*
+- *Partnership*
+- *Planet*
+
+Elk van deze doelen is onderverdeeld in subdoelen waar je middelen vind om te implementatie mogelijk te maken.
+
+Steeds meer en meer organisatie integreren deze ontwikkelingsdoelen in hun dagelijks beleid.
