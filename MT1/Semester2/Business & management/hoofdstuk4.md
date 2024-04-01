@@ -96,8 +96,14 @@ De matrix wordt gebruikt om na te gaan welke (strategische) acties de ondernemin
 <p align='center'><img src='src/bcg-matrix.png' alt='BCG-matrix' width='75%'></p>
 
 
-## Twee dimensies
+### Twee dimensies
 
 1<sup>e</sup> dimensie of x-as: Relatief marktaandeel
 
-$\frac{Eigen marktaandeel}{Marktaandeel van de grootste concurrent}$
+$$\frac{Eigen \text{ } marktaandeel}{Marktaandeel \text{ }van\text{ } de\text{ } grootste\text{ } concurrent}$$
+
+2<sup>e</sup> dimensie of Y-as: groeitempo van de markt
+
+### Strategische interpretatie
+
+> Een strategisch gezonde organisatie zal streven naar **evenwichtige portefeuille** van producten.
