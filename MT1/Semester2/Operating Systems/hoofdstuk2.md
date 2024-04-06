@@ -350,3 +350,75 @@ Minder prestatie-isolatie, grote tenants kunnen de prestaties van kleinere tenan
 > Algemeen zijn publieke Cloud omgevingen veel groter dan private cloud omgevingen. 
 
 *Om een private cloud op te starten heb je niet veel nodig. Een krachtige computer met enkele virtuele machines kan voldoende zijn. Samen met een gratis software zoals **OpenStack***.
+
+### Service modellen
+
+Binnen de Cloud worden diensten vaak aangeboden volgens één van volgende service modellen:
+
+- **Infrastructure as a Service (IaaS)** - infrastructuur wordt aangeboden via virtualisatie of hardware-integratie. 
+
+    - Gebruiker heeft controle over besturingssysteem, software en (virtuele) hardware.
+    - Infrastructuur wordt virtueel aangeboden aan de eindgebruiker waarop men extern kan inloggen (via bv. ssh)
+    - voorbeeld: Amazon EC2
+
+- **Platform as a Service (PaaS)** - aanbieder biedt enkel diensten bovenop de infrastructuur.
+
+    - Platform en diensten (bv. toegangsbeheer) aangeboden
+    - Gebruiker heeft controle over software, maar niet over onderliggende hardware
+    - Bevat vaak één of meerdere frameworks (Python, .NET, Java)
+    - voobeeld: Microsoft Azure App Service, Google AppEngine,...
+
+- **Software as a Service (SaaS)** - aanbieder biedt eindapplicaties aan "via de cloud"
+
+    - Aanbieden van applicaties
+    - De dienstaanbieder heeft volledige controle over de applicaties, klant kan vaak wel de applicatie configureren.
+    - In vele gevallen zijn "SaaS"-applicaties te gebruiken via de webbrowser
+    - voorbeeld: Gmail, Office 365, Salesforce,...
+
+
+<p align='center'><img src='src/cloud_computing_service_modellen.png' alt='Service modellen' width='100%'></p>
+
+> [!warning]
+> **Belangrijk** verschil in de modellen is welke delen (lagen) beheerd worden door de Cloud provider en welke door de gebruiker. 
+
+### Virtualisatie
+
+Virtualisatie speelt een belangrijke rol binnen Cloud Computing. Bij Cloud computing worden dan ook vaak virtuele bronnen beschikbaar gesteld aan de eindgebruiker, bijvoorbeeld in de vorm van virtuele machines. 
+
+Soort virtualisaties:
+
+- server virtualisatie
+- virtualisatie van opslag
+- netwerk virtualisatie
+- virtualisatie van applicaties
+- virtualisatie van volledige desktopomgevingen
+
+### Elasticiteit van de Cloud
+
+> **Elasticiteit** is de mate waarin het aanbod zich afstemt op eens stijgende of  dalende vraag. 
+
+***Concreet:*** meer virtuele bronnen worden ingezet wanneer er meer gebruikers de cloud applicatie gebruiken (= **piekbelasting**). Tevens kunnen er bronnen vrijgegeven worden wanneer de belasting daalt.
+
+- Automatische provisie van benodigd aantal instanties
+
+    - sommige cloud omgevingen kunnen dit voorzien
+    - Hoe correct de benodigde instanties inschatten?
+        - Proactief: proberen te voorspellen op voorhand
+        - Reactief: reageren op op de wijziging in vraag
+    - Vaak maken cloud omgevingen gebruik van zelflerende modellen op basis van historische data
+
+
+- Publieke Cloud: "oneindige" hoeveelheid bronnen
+
+Idealiter voorzien we net voldoende bronnen voor de verschillende applicaties, afhankelijk van de huidige belasting van de eind gebruikers. Dit is vaak verkeerd ingeschat, hierbij spreken we van **over- of under-provisioning**
+
+**over-provisioning**: meer middelen toegewezen dan nodig. (onnodige kosten). Bij vele providers worden de provisioned aantal bronnen aangerekend en niet de effectief gebruikte.
+
+**under-provisioning**: minder middelen beschikbaar dan nodig om de applicaties correct te kunnen laten draaien. 
+
+### Cloud Computing = Multi-tenancy
+
+<p align='center'><img src='src/cloud_computing_multi_tenancy.png' alt='Cloud Computing = Multi-tenancy' width='100%'></p>
+
+Cloud Computing is een mooi voorbeeld van multi-tenancy. Vaak maken verschillende gebruikers gebruik van dezelfde set fysieke hardware.
+
