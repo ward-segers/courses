@@ -170,3 +170,114 @@ Een PCB bevat volgende informatie:
 
 ## Soorten processen
 
+Er bestaan 3 soorten processen:
+- **Interactief proces**: 
+
+    - Opstarten en controleren vanuit een terminal sessie
+    - Kunnen zowel in voorgrond (foreground) als achtergrond (background) draaien
+    - Foreground proces: blokkeert terminal zolang het loop
+    - Background proces: blokkeert terminal enkel bij opstart van het proces, nadien kan de terminal andere taken uitvoeren
+
+- **Automatische processen**:
+
+    - Ook wel "batch" processen genaamd
+    - Verzameling van processen die in een wachtrij worden geplaatst wachten op uitvoering
+    - Bij uitvoering worden alle processen één voor één uit de wachtrij uitgevoerd. (volgens het **FIFO** principe: First In, First Out)
+    - voorbeeld: automatisch een back-up maken elke dag om middernacht
+
+- **Daemons**: 
+
+    - Processen die continu draaien
+    - Veelal gestart bij opstarten van systeem
+    - Wachten in de achtergrond tot ze nodig zijn
+    - Ook gekend als services
+    - Voorbeeld: onedrive synchronisatie client, e-mail server
+
+## Beheer van processen
+
+### Ontstaan van processen
+
+Het ontstaan van processen verschilt van besturingssysteem tot besturingssysteem. We bekijken hier *Linux*.
+
+> Op een Linux systeem heeft elke proces een **Process Identifier (PID)**, een uniek ID-nummer.
+
+Bij het opstarten van een Linux-systeem start als eerst het proces met `PID = 1`, in de recentere systemen is dit het proces `systemd`, op oudere systemen is dit nog het proces `init`.
+
+`systemd` is dus bij recentere linux distro's de moeder van alle processen. Alle andere processen worden als kinderen van een ouderproces aangemaakt. Er onstaat een *proces-boom*
+
+<p align='center'><img src='src/process_tree.png' alt='Proces-treed' width='100%'></p>
+
+- `systemd` - moederproces
+- `logind` - proces dat ervoor zorgt dat gebruikers kunnen inloggen
+- `python` - proces dat ervoor zorgt dat python programma's kunnen uitgevoerd worden
+- `sshd` - proces dat ervoor zorgt dat gebruikers kunnen inloggen via SSH
+- `bash` - Een gebruiker is ingelogd en kan via dit proces een bash-shell weergeven
+- `ps` en `vim` - processen uitgevoerd in de bash-shell
+- `tcsh` - een gebruiker is ingelogd via SSH en gebruikt dit kindproces
+
+Het aanmaken van een proces in Linux bestaat uit het aanroepen van 2 functies:
+
+- `fork()`: Deze functie maakt een exacte kopie van het proces in het RAM geheugen (een kopie van diens address space) en vult de PID van het proces in met een nieuw ongebruikt procesnummer. Daarnaast vult de functie het PPID (Parent Process Identifier) in met het PID van het ouderproces
+
+- `exec()`: Het nieuw aangemaakt kindproces wordt overschreven met de nodige waarden voor het gewenst proces. Zo worden bv. de juiste instructies, waarden,... ingelezen naar het procesbeeld van het kindproces.
+
+### Afbraak van processen
+
+- `exit()`: Commando dat er voor zorgt wanneer een proces zijn taak heeft volbracht of er een fout optreedt, het wordt afgeloten.
+
+    - parameter 0: proces is correct afgewerkt
+    - parameter verschillend van 0: fout opgetreden. (getal is **foutcode** die vertelt welke fout is opgetreden)
+
+- Indien het proces is afgesloten, wordt het procesbeeld (proces image) verwijderd en alle resources (bestanden, geheugen) dat het proces in gebruik had worden vrijgegeven.
+
+- PCB in de proces table mag nog niet meteen vrijgegeven worden. Het bevat de foutcode die aangeeft waarom het proces is afgesloten. (bij direct afsluiten kan ouderproces niet achterhalen waarom kindproces is afgesloten)
+
+> **Zombieproces** is een proces waarvan enkel de PCB nog bestaat.
+
+Deze bestaan normaal slechts kort, de PCB wordt snel na het afsluiten van het kindproces gelezen door het ouderproces waardoor het PCB verwijderd mag worden.
+
+> **Orphan proces** is een zombieproces waarvan nooit de foutcode gelezen wordt. 
+
+Het Besturingssysteem kan hier niet meer aan de PCB's en deze vervuilen dus de process table van het besturingssysteem. 
+
+### States
+
+De processen kunnen zich in verschillende toestanden, ookwel *states* bevinden. 
+
+#### 2-state schedulling model
+
+- *running*: dit proces wordt uitgevoerd op de CPU
+- *not running*: dit proces wordt niet uitgevoerd op de CPU
+
+Processen die staan te wachten op de CPU worden in een queue geplaatst. Nieuwe processen krijgen een PCB in de process table, en worden aan de queue toegevoegd. 
+
+> Nieuwe processen hebben dus steeds de *not running state* tenzij ze rechtstreeks door de CPU mogeen gebruikt worden.
+
+<p align='center'><img src='src/two_state_schedulling_model.png' alt='Two State Schedulling model' width='75%'></p>
+
+#### 5-state schedulling model
+
+Meeste besturingssystemen zijn complexer dan het 2-state-schedulling model. Zo kan het zijn dat processen wachten op een antwoord van I/O. In dat geval draait het proces nog niet op de CPU en staat het ook nog niet in de queue. We hebben dus extra toestanden nodig:
+
+- *New*: nieuw aangemaakt proces door het besturingssysteem. Meestal met reeds een aagemaakt PCB toegevoegd aan de process table maar nog niet ingeladen in het geheugen. Soms wordt er een limiet gezet op de processen in de queue. Als deze vol is mogen processen van de "new" state niet overgaan naar de "ready" state.
+
+- *Ready*: Een proces dat wacht tot het op de CPU mag
+
+- *Running*: Het proces wordt uitgevoerd op de CPU
+
+- *Blocked*: Een proces dat staat te wachten op iets (zoals lezen/schrijven uit of naar het RAM, geheugen, harde schijf, SSD, netwerk, ...)
+
+- *Exit*: Een afgewerkt proces.
+
+>[!caution]
+>De exit-toestand zegt niets over het feit dat het proces correct is afgewerkt of er een fout is opgelopen.
+
+**Enkele belangrijke overgangen:**
+
+- Ready :arrow_right: Running : Het proces dat als eerste staat in de wachtrij mag op de CPU
+
+- Running :arrow_right: Ready : Processen mogen vaak slechts een bepaalde maximum tijd op de CPU. (maximum tijd wordt **quantum of time slice** genoemd) Wanneer de tijd is verlopen, wordt het proces van de CPU gehaald en achteraan de wachtrij geplaatst. (**pre-emption** = het onderbreken van een proces)
+
+- Running :arrow_right: Blocked : Het proces moet wachten op iets (bv I/O) en wordt van de CPU gehaald zodata deze gebruikt kan worden door een ander process dat de CPU tijd kan gebruiken
+
+- Blocked :arrow_right: Ready : Het proces heeft gedaan met wachten (bv. I/O). Dit is vaak het resultaat van een gebeurtenis (event) (bv. data is gelezen van hdd) Het proces heeft opnieuw CPU tijd nodig en wordt dus achteraan de wachtrij geplaatst.
