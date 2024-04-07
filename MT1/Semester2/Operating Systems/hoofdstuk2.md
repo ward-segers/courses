@@ -421,4 +421,3 @@ Idealiter voorzien we net voldoende bronnen voor de verschillende applicaties, a
 <p align='center'><img src='src/cloud_computing_multi_tenancy.png' alt='Cloud Computing = Multi-tenancy' width='100%'></p>
 
 Cloud Computing is een mooi voorbeeld van multi-tenancy. Vaak maken verschillende gebruikers gebruik van dezelfde set fysieke hardware.
-
