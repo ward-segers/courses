@@ -281,3 +281,45 @@ Meeste besturingssystemen zijn complexer dan het 2-state-schedulling model. Zo k
 - Running :arrow_right: Blocked : Het proces moet wachten op iets (bv I/O) en wordt van de CPU gehaald zodata deze gebruikt kan worden door een ander process dat de CPU tijd kan gebruiken
 
 - Blocked :arrow_right: Ready : Het proces heeft gedaan met wachten (bv. I/O). Dit is vaak het resultaat van een gebeurtenis (event) (bv. data is gelezen van hdd) Het proces heeft opnieuw CPU tijd nodig en wordt dus achteraan de wachtrij geplaatst.
+
+#### 6-state schedulling model
+
+Processen in het 5-state schedulling model bevinden zich allemaal in het RAM geheugen van het systeem. 
+
+Soms kan het RAM geheugen echter vol geraken. Om dit op te lossen kan het systeem bepaalde processen die in wacht staan uit het RAM geheugen halen en naar de harde schijf of SSD verplaatsen. 
+
+> Dit concept wordt ook wel **swapping** genoemd.
+
+Zulke processen bevinden zicht dan in de *Suspend* toestand. Wanneer het systeem terug genoeg vrij geheugen in het RAM heeft, kan het systeem terug processen vanop de harde schijf of SSD verplaatsen naar het RAM. De processen krijgen dan terug de *Ready* toestand.
+
+#### Swapping (suspend)
+
+Het wegschrijven naar de harde schijf en de SSD gebeurd op Windows naar de `swapfile.sys` en de `pagefile.sys` bestanden. Op Linux is er echter een volledige partitie voorzien waarnaar deze processen geschreven worden. 
+
+**Swappen is echter een intensief en traag proces. De HDD of SSD is veel trager als het RAM-geheugen.** 
+
+## Schedulling
+
+### Multiprogramming
+
+- CPU zo optimaal mogelijk gebruiken
+    - I/O is trager dan CPU
+    - Sommige processen moeten wachten op iets 
+- Wanneer een proces moet wachten, kan een ander proces gebruik maken van de CPU. 
+
+> Percentage dat de CPU in gebruik is noemt men ook wel **CPU utilization**
+
+$$CPU \text{ } Utilization = \frac{CPU \text{ } Usage \text{ }Time} {Total \text{ }Time}$$
+
+Wanneer een geen activiteit op de CPU is, is de CPU idle. 
+
+> Het besturingssysteem probeert de CPU Utilization zo hoog mogelijk te houden en de CPU idle time zo laag mogelijk. 
+
+$$CPU \text{ } Idle = \frac{CPU \text{ } Idle \text{ }Time} {Total \text{ }Time}$$
+
+Hierbij zijn wel enkele valkuilen.
+
+- Snelheid van de CPU ligt hoger dan de rest van de hardware. 
+- Elke keer een programma dus iets van opslag of netwerk nodig heeft moet het dus wachten en verliezen we tijd op de CPU.
+- Om dat op te lossen wordt er reeds een ander proces op de CPU geplaatst. 
+- Wanneer het eerste proces gedaan heeft met wachten op de I/O vraagt het terug CPU tijd aan. 
