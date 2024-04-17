@@ -322,4 +322,4 @@ Hierbij zijn wel enkele valkuilen.
 - Snelheid van de CPU ligt hoger dan de rest van de hardware. 
 - Elke keer een programma dus iets van opslag of netwerk nodig heeft moet het dus wachten en verliezen we tijd op de CPU.
 - Om dat op te lossen wordt er reeds een ander proces op de CPU geplaatst. 
-- Wanneer het eerste proces gedaan heeft met wachten op de I/O vraagt het terug CPU tijd aan. 
+- Wanneer het eerste proces gedaan heeft met wachten op de I/O vraagt het terug CPU tijd aan.
