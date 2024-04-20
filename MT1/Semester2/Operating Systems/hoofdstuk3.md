@@ -323,3 +323,5 @@ Hierbij zijn wel enkele valkuilen.
 - Elke keer een programma dus iets van opslag of netwerk nodig heeft moet het dus wachten en verliezen we tijd op de CPU.
 - Om dat op te lossen wordt er reeds een ander proces op de CPU geplaatst. 
 - Wanneer het eerste proces gedaan heeft met wachten op de I/O vraagt het terug CPU tijd aan.
+
+> Dit volledige proces noemen we **Multiprogramming**. Het zorgt ervoor dat de CPU continu bezig blijft en dat er dus geen CPU tijd verloren gaat. 
