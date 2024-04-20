@@ -325,3 +325,20 @@ Hierbij zijn wel enkele valkuilen.
 - Wanneer het eerste proces gedaan heeft met wachten op de I/O vraagt het terug CPU tijd aan.
 
 > Dit volledige proces noemen we **Multiprogramming**. Het zorgt ervoor dat de CPU continu bezig blijft en dat er dus geen CPU tijd verloren gaat. 
+
+*De CPU kan best net geen 100% draaien. Wanneer de CPU aan 100% draait zal de volgende interrupt die binnenkomt niet kunnen afgehandeld worden.*
+
+### Time-Sharing
+
+> **Time-Sharing** is het concept waarbij de CPU de uitvoering van de processen afwisselt om zo de gebruiker de ilusie te geven dat de processen simultaan worden uitgevoerd.
+
+- processen op de CPU wisselen elkaar (snel) af
+- OS moet bepalen hoelang processen op de CPU mogen
+    - te kort: niet efficiënt, CPU steekt te veel tijd in het afwisselen.
+    - te lang: gebruiker kan dit opmerken
+
+>[!important]
+>**Multiprogramming** en **Time-Sharing** hebben dus een verschillend doel:
+> - **Multiprogramming**: de CPU te volle benutten
+> - **Time-Sharing**: de illusie van parallele processen creeëren
+
