@@ -342,3 +342,59 @@ Hierbij zijn wel enkele valkuilen.
 > - **Multiprogramming**: de CPU te volle benutten
 > - **Time-Sharing**: de illusie van parallele processen creeëren
 
+### Context switch
+
+> **Een context switch** is het nemen van een snapshot van een volledig proces en het opslaan in het geheugen. 
+
+Telkens wanneer we overschakelen van het ene proces op de CPU naar het andere, wordt de snapshot van het nieuwe proces ingeladen en slaat men van het oude proces de snapshot opnieuw op.
+
+Het proces doet verder daar waar de snapshot is opgenomen.
+
+*Een klein nadeel, het nemen en inladen van een snapshot neemt wat geheugen in, volgende zaken moeten ondere andere ingeladen worden:*
+
+- de stack
+- de heap
+- data
+- registers
+
+### Scheduler
+
+> **De scheduler** is het onderdeel in het besturingssysteem dat beslist wanneer een bepaald proces CPU tijd krijgt. 
+
+Meestal het First Come First Serve principe: Het eerste proces op de queue zal al eerste uitgevoerd worden. 
+
+We beschouwen de volgende type processen:
+
+- **Batch programma's**: bestaan uit processen die een na een moeten uitgevoerd worden en vaak geen interactie met de gebruiker hebben. (vaak een reeks opdrachten die uitgevoerd worden) Hier volstaat een wachtrij systeem.
+
+- **Interactieve programma's**: bestaan uit processen op command line of GUI waarmee we het meest vertrouwd zijn. We kunnen ze uitvoeren door zaken te typen of op knoppen te drukken. Deze programma's kunnen blijven hangen wanneer *de scheduler* zijn werk niet goed doet.
+
+- **Real-time systemen** zijn systemen die een hoge snelheidsrespons nodig hebben. Streamen bv. heeft een grote inpakt op de gebruiker wanneer er kleine vertragingen optreden en er zo lag voordoet. *Schedulers doen er goed aan om zulke processen voorrang te geven*.
+
+### Preemption
+
+> **Preemption** is wanneer het systeem het huidig proces onderbreekt. 
+
+- Nodig wanneer een proces het systeem wil monopoliseren
+- Wisselen van proces zorgt voor extra overhead (extra resources die al dan niet overbodig door het systeem gebruikt worden)
+- Huidig proces wordt terug in de wachtrij gezet indien niet voltooid
+
+**Theoretisch probleem**: Een nieuw proces komt toe net op het moment dat een running proces wordt onderbroken. Welk proces wordt het eerste aan de wachtrij toegevoegd?
+- In praktijk komt dit zelden of nooit voor (steeds een klein verschil)
+- In voorbeelden in de cursus komt dit wel voor (werken met discrete tijdswaarden.)
+
+### Starvation
+
+In sommige gevallen kan het zijn dat bepaalde processen nooit geen CPU tijd krijgen:
+
+- De scheduler geeft voorrang aan kort processen
+- Er komen steeds nieuwe korte processen in het systeem
+
+:arrow_right: zorgt ervoor dat de langere processen steeds uitgesteld worden.
+
+### Scheduler-types
+
+- **Non-preemptive**: processen die geen gebruik maken van context switches en dus pas wisselen van proces wanneer een proces volledig afgewerkt is. 
+- **Preemptive**: processen die gebruik maken van context switches om processen op de CPU te onderbreken en te wisselen van proces. 
+
+1. **First Come First Serve**
