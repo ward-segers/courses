@@ -385,6 +385,8 @@ We beschouwen de volgende type processen:
 
 ### Starvation
 
+> **Starvation** is een probleem dat optreedt wanneer sommige processen voor een onbepaalde tijd geen toegang te hebben to bronnen, terwijl andere processen een voorkeursbehandeling krijgen van de scheduler.
+
 In sommige gevallen kan het zijn dat bepaalde processen nooit geen CPU tijd krijgen:
 
 - De scheduler geeft voorrang aan kort processen
@@ -397,4 +399,83 @@ In sommige gevallen kan het zijn dat bepaalde processen nooit geen CPU tijd krij
 - **Non-preemptive**: processen die geen gebruik maken van context switches en dus pas wisselen van proces wanneer een proces volledig afgewerkt is. 
 - **Preemptive**: processen die gebruik maken van context switches om processen op de CPU te onderbreken en te wisselen van proces. 
 
-1. **First Come First Serve**
+1. **First Come First Serve**: een non-preemptive algoritme waarbij er gebruik wordt gemaakt van een eenvoudige wachtrij queue. Elk proces op de CPU wordt volledig afgewerkt. Daarna is het de beurt aan het volgende proces uit de wachtrij, dan dat dan op zijn beurt ook volledig wordt afgewerkt. Er worden geen processen van de CPU gehaald als ze nog niet volledig zijn afgewerkt.
+
+2. **Shortest Process Next**: een non-preemptive algoritme waarbij er gebruik wordt gemaakt van een eenvoudige wachtrij queue. Elk proces op de CPU wordt volledig afgewerkt. Daarna is het de beurt aan het volgende proces dat de kortste uitvoeringstijd nog heeft uit de wachtrij, dan dat dan op zijn beurt ook volledig wordt afgewerkt. Er worden geen processen van de CPU gehaald als ze
+nog niet volledig zijn afgewerkt.
+
+3. **Shortest Remaining Time**: een preemptive algoritme waarbij er telkens een nieuw proces ontstaat een afweging wordt gemaakt welk proces het minst tijd op de CPU zal nemen. Als het nieuw proces minder CPU tijd nodig heeft dan het huidige proces op de CPU, wordt er van proces gewisseld. Er wordt dus gebruik gemaakt van context switches.
+
+4. **Round Robin**: een preemptive algoritme waarbij de CPU om de Q eenheden wisselt naar het volgende proces uit de wachtrij. Het huidige proces wordt dan achteraan in de wachtrij opnieuw toegevoegd indien het nog niet klaar was.
+
+### Overzicht type planners/schedulers
+
+
+<table>
+<thead>
+<th></th>
+<th>FCFS</th>
+<th>SPN</th>
+<th>SRT</th>
+<th>RR</th>
+</thead>
+<tbody>
+<tr>
+<th>Preemptive</th>
+<td>Nee</td>
+<td>Nee</td>
+<td>Ja</td>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Voordelen</th>
+<td>
+
+- Geen starvation
+- Gemakkelijk
+
+</td>
+<td>
+
+Korte processen snel uitgevoerd
+
+</td>
+<td>Korte processen snel uitgevoerd</td>
+<td>
+
+- Geen starvation
+- Eerlijk
+
+</td>
+</tr>
+<tr>
+<th>Nadelen</th>
+<td>Korte processen moeten soms lang wachten</td>
+<td>
+
+- Starvation lange processen
+- Monopolisatie systeem mogelijk
+
+</td>
+<td>
+
+- Starvation lange processen
+- Overhead bij vele wisselen
+
+</td>
+<td>
+
+- Q waarde belangrijk
+- Korte processen moeten soms lang wachten
+
+</td>
+</tr>
+<tr>
+<th>Beste bij</th>
+<td>Lange processen</td>
+<td>Korte processen</td>
+<td>Korte processen</td>
+<td>Lange processen</td>
+</tr>
+</tbody>
+</table>
