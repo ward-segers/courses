@@ -13,3 +13,6 @@ if(r2 instanceof Vierkant v){
 }
 ```
 
+Probeer zoveel mogelijk `nullpointers` te vermijden door de attributen `final` te declareren.
+
+DTO -> Verschillende type objecten kunnen via eenzelfde DTO doorgegeven worden via verschillende constructoren.

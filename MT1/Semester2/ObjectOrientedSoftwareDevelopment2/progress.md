@@ -1,11 +1,11 @@
 # Object Oriented Software Development: Progress
 
 
-- [ ] Hoofdstuk 1 - Overerving
-    - [ ] H1 - les 1 - 100:41
-    - [ ] H1 - les 2 - 110:31
+- [x] Hoofdstuk 1 - Overerving
+    - [x] H1 - les 1 - 100:41
+    - [x] H1 - les 2 - 110:31
 - [ ] Hoofdstuk 2 - Polymorfisme en interfaces
-    - [ ] H2 - les 1 - 113:28
+    - [x] H2 - les 1 - 113:28
     - [ ] H2 - les 2 - 104:08
     - [ ] H2 - les 3 - 55:10
 - [ ] Hoofdstuk 3 - Lambda expressies
