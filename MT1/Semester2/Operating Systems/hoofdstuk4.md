@@ -62,3 +62,9 @@ Om echte parallellisme te bereiken moet een toepassing meer dan 1 subtaak hebben
 <p align='center'><img src='src/parallellisme.png' alt='Parallellisme' width='75%'></p>
 
 ## Wederzijdse uitsluiting (mutual exclusion)
+
+> **Wederzijdse uitsluiting** is een term uit de informatica waarmee de eis bedoeld wordt dat wanneer een proces zich in een kritieke sectie bevindt en er gebruikgemaakt wordt van gedeelde bronnen, er geen andere processen zijn die zich ook in een kritieke sectie bevinden waarbij dezelfde bronnen worden gebruikt. 
+
+Het regelen van toegang tot gedeelde bronnen is een belangrijk probleem in de computerwetenschappen. 
+
+> **Een kritieke sectie** zijn de instructies (code) voor het aanspreken van die gedeelde bronnen (bijvoorbeeld lezen of schrijven naar gemeenschappelijke data).
