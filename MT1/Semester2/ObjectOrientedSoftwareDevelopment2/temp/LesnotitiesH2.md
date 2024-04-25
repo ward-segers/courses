@@ -36,3 +36,9 @@ public interface Comparable<T>{
 
 - Comparator interface => Vergelijken tussen 2 verschillende objecten
 ==> Hiervoor moeten we een aparte klasse maken die de Comparator implements
+
+==> Wanneer we binnen de scope/Klasse zitten, is het best om rechtstreeks de attributen aan te roepen en niet hun getters
+
+>[!tip]
+>Binnen een Klasse in java kunnen we ook een klasse aanmaken <br>
+>Een zogenaamde geneste klasse.

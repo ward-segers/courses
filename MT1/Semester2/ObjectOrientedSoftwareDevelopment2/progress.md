@@ -4,10 +4,10 @@
 - [x] Hoofdstuk 1 - Overerving
     - [x] H1 - les 1 - 100:41
     - [x] H1 - les 2 - 110:31
-- [ ] Hoofdstuk 2 - Polymorfisme en interfaces
+- [x] Hoofdstuk 2 - Polymorfisme en interfaces
     - [x] H2 - les 1 - 113:28
-    - [ ] H2 - les 2 - 104:08
-    - [ ] H2 - les 3 - 55:10
+    - [x] H2 - les 2 - 104:08
+    - [x] H2 - les 3 - 55:10
 - [ ] Hoofdstuk 3 - Lambda expressies
     - [ ] H3 - les 1 - 44:51
     - [ ] H3 - les 2 - 97:13
@@ -23,3 +23,4 @@
     - [ ] H6 - les 1 - 109:01
     - [ ] H6 - les 2 - 97:46
     - [ ] H6 - les 3 - 89:05
+    - [ ] H6 - les 4 - 52:55
