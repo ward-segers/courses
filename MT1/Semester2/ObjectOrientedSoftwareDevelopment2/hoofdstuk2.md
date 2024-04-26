@@ -124,9 +124,6 @@ Als het type van de variabele een interface is, kan in een toekenning de rechter
 
 <p align='center'><img src='src/superklasse_interface.png' alt='Superklasse vs interface UML' width='75%'></p>
 
-<table>
-<td>
-
 ```java
 //superklasse
 public class ElektrischeMotor extends Motor{
@@ -136,9 +133,6 @@ public class ElektrischeMotor extends Motor{
     }
 }
 ```
-
-</td>
-<td>
 
 ```java
 //interface
@@ -151,6 +145,82 @@ public class ElketrischeMotor implements Motor{
 
 ```
 
-</td>
-</table>
+>Een klasse toont met het keyword `implements` aan dat het een interface implementeert.
 
+### Toepassingen van interfaces
+
+#### **Objecten samenbrengen in een context**
+
+Instanties van klassen die niets met elkaar te maken hebben, kunnen in een bepaalde context samen komen door de implementatie van een gemeenschappelijke interface. (=implementatie van de abstracte methodes van die interface.)
+
+>Ook op een interface kunnen we polymorfisme toepassen. 
+
+>Vele namen van interfaces in het Engels eidigen op -able. (Serializable, Comparable, AutoCloseable, Runnable). In het Nederlands hanteren we de benaming eindigend op -baar voor zulke interfaces. (Verkoopbaar, Tekenbaar,...)
+
+>[!tip]
+>**Code best practise:** <br>
+>Code moet gemakkelijk uit te breiden zijn met nieuwe klasses en methodes, maar moet beschermd zijn tegen wijzigingen in onze bestaande methodes.
+
+>[!important]
+>Een Java klasse kan slechts één super klasse hebben. Meervoudige overerving is niet toegelaten. Een interface is echter geen klasse. Een klasse kan meerdere interfaces implementeren en een interface kan meerdere interfaces uitbreiden.
+
+```java
+public interface Hokey extends Sports, Event {}
+
+public class Sleutel extends Voorwerp implements Draagbaar, Kosten {}
+
+```
+
+#### Objecten Sorteren
+
+##### Comparable interface
+
+Deze veelgebruikte interface legt een 'orde' vast tussen objecten van klassen die de interface implementeren.
+
+>**De Comparable interface** laat je toe om objecten te sorteren. Deze manier van sorteren op basis van de comparable interface noemt men de **natuurlijke sortering**. (*cijfers: van groot naar klein, letters: alfabetisch*)
+
+```java
+public interface Comparable<T>{
+    public int compareTo(T o);
+} 
+```
+
+De `compareTo`-methode vergelijkt het argument van de methode met het object waarop de methode wordt aangeroepen. 
+
+>Het resultaat is een negatief, 0, of een positief geheel getal `int` afhankelijk of het argument kleiner dan, gelijk aan `equals`, of groter dan het eigenlijke object zelf is. Kan het argument niet vergeleken worden dan gooit de methode een  `ClassCastException`
+
+
+##### Comparator interface
+
+>**De Comparator interface** laat toe om objecten te sorteren op een andere manier dan op natuurlijke wijze.
+
+```java
+public interface Comparator<T>{
+    int compare(T o1, T o2);
+}
+```
+
+De `compare`-methode vergelijkt twee argumenten met elkaar.
+
+>Het resultaat is een negatief, 0, of een positief geheel getal `int` afhankelijk of het eerste argument kleiner dan, gelijk aan `equals`, of groter dan het tweede argument.
+
+### Wanneer een interface en wanneer een abstracte klasse gebruiken?
+
+Wanneer we praten over abstracte klasses definiëren we eigenschappen van een type object: we specifiëren wat een bepaald object is.
+
+Als we het over een interface hebben, definiëren we mogelijkheden waarvan we beloven dat we ze zullen voorzien: we leggen een contract vast met informatie over wat een object kan doen.
+
+- `abstracte klasse`: als we iets implementeren van de vorm "A is een B"
+- `interface`: als we iets implementeren van de vorm "A kan hetgene uit B doen"
+
+Volgens Oracle:
+
+1. `Abstracte klassen`:
+    - als je code wilt delen tussen sterk gerelateerde klasses
+    - als je verwacht dat je klasse van je abstracte klasse veel gemeenschappelijke methodes of attributen zullen hebben of andere toegangsrechten dan `public` zullen nodig hebben
+    - als je attributen wil declareren dien niet `static` of `final` zijn
+
+2. `Interfaces`:
+    - je verwacht verschillende klasses die op het eerste zicht weinig met elkaar te maken hebben. 
+    - je wil een bepaald gedrag speciefiëren voor een bepaald datatype, maar je maakt je zorgen over wie het gedrag zal implementeren.
+    - je wil meervoudige overerving kunnen gebruiken.
