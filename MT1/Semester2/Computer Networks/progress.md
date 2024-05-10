@@ -1,6 +1,8 @@
 # Computer Networks: Progress
 
 
+## Lesopnames
+
 - [ ] LES 1 - Bevat H1 - H2 - H3 (tot 3.6 Data Encapsulation)
     - [ ] Lesopname - 03:17:00
 - [ ] LES 2 - Bevat H3 - H4 (tot 4.6 Wireless Media)
@@ -9,8 +11,8 @@
     - [ ] Lesopname - 02:13:37
 - [x] LES 4 - Bevat H7 - H9 (tot 9.3 IPv6 Neighbor Discovery)
     - [x] Lesopname - 02:15:22    
-- [ ] LES 5 - Bevat H9 - H11 (tot 11.3 Types of IPv4 Addresses)
-    - [ ] Lesopname - 01:59:32
+- [x] LES 5 - Bevat H9 - H11 (tot 11.3 Types of IPv4 Addresses)
+    - [x] Lesopname - 01:59:32
 - [ ] LES 6 - Bevat H11 - H11 (tot 11.7 Subnet to meet requirements)
     - [ ] Lesopname - 01:50:15
 - [ ] LES 7 - 
@@ -20,3 +22,16 @@
 
 - [ ] Total - 18:56:00
 - [ ] Remaining - 18:56:00
+
+## Samenvatten
+
+- [x] - Module 1
+- [x] - Module 2
+- [x] - Module 3
+- [ ] - Module 4
+- [ ] - Module 5
+- [ ] - Module 6
+- [ ] - Module 7
+- [ ] - Module 8
+- [ ] - Module 9
+- [ ] - Module 10

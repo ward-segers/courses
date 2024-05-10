@@ -314,4 +314,188 @@ Two layered models (lagenmodel) beschrijven netwerk operaties:
 <p align='center'><img src='src/layered_models.png' alt='Layered Models' width='50%'></p>
 
 Voordelen bij het gebruiken van het lagenmodel:
-- Ondersteunen bij het protocol design omdat protocollen die opereren op een specifieke laag
+- Helpen bij het ontwerpen van protocollen omdat protocollen die op een specifieke laag werken gedefinieerde informatie hebben waarop ze reageren en een gedefinieerde interface naar de lagen erboven en eronder.
+- Bevorder de concurrentie omdat producten van verschillende leveranciers kunnen samenwerken
+- Voorkomen dat veranderingen in technologie of mogelijkheden in één laag invloed hebben op andere lagen erboven en eronder
+- Een gemeenschappelijke taal voorzien die netwerkfuncties en mogelijkheden beschrijft.
+
+### The OSI Reference Model
+
+<table>
+    <thead>
+        <th>OSI Model Layer</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>7 - Application</td>
+            <td>Contains protocols used for process-to-process communications.</td>
+        </tr>
+        <tr>
+            <td>6 - Presentation</td>
+            <td>Provides for common representation of the data transferren between application layer services.</td>
+        </tr>
+        <tr>
+            <td>5 - Session</td>
+            <td>Provides services to the presentation layer and to manage data exchange.</td>
+        </tr>
+        <tr>
+            <td>4 - Transport</td>
+            <td>Defines services to segment, transfer, and reassemble the data for individual communications.</td>
+        </tr>
+        <tr>
+            <td>3 - Network</td>
+            <td>Provides services to exchange the individual pieces of data over the network.</td>
+        </tr>
+        <tr>
+            <td>2 - Data Link</td>
+            <td>Describes methods for exchanging data frames over a common media</td>
+        </tr>
+        <tr>
+            <td>1 - Physical</td>
+            <td>Describes the means to activate, maintain, and de-activate physical connections.</td>
+        </tr>
+    </tbody>
+</table>
+
+### The TCP/IP Reference Model
+
+<table>
+    <thead>
+        <th>TCP/IP Model Layer</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Application</td>
+            <td>Represents data to the user, plus encoding and dialog control.</td>
+        </tr>
+        <tr>
+            <td>Transport</td>
+            <td>Supports communication between various devices across divers networks.</td>
+        </tr>
+        <tr>
+            <td>Internet</td>
+            <td>Determines the best path through the network</td>
+        </tr>
+        <tr>
+            <td>Network Access</td>
+            <td>Controls the hardware devices and media that make up the network.</td>
+        </tr>
+    </tbody>
+</table>
+
+### OSI and TCP/IP Model Comparison
+
+<p align='center'><img src='src/OSI_vs_TCPIP.png' alt='OSI vs TCP/IP models' width='65%'></p>
+
+- Het OSI model verdeel de netwerk access laag en de applicatie laag van het TCP/IP model in verschillende lagen.
+- De TCP/IP protocol suite specifieert niet welke protocollen moeten gebruikt worden wanneer we uitzenden over een fysiek medium.
+- OSI-lagen 1 en 2 bespreken de noodzakelijke procedures om toegang te krijgen tot de media en de fysieke middelen om gegevens over een netwerk te verzenden.
+
+## Data Encapsulation
+
+### Segmenting Messages
+
+> **Segmenting** (= segmentering) is het proces dat berichten in verschillende kleiner deeltjes opsplits. 
+
+> **Multiplexing** zijn de processen die verschillende streams van gesegmenteerde data nemen en ze terug "samenweven".
+
+*Segmentering heeft twee voordelen*:
+- Toenemende snelheid: Groot aantal gegevens kunnen over een netwerk verzonden worden zonder een communicatieverbinding te verstoren.
+- Toenemende efficiëntie: Enkel segmenten van de data die niet op hun bestemming toekomen moeten opnieuw verzonden worden.
+
+### Sequencing
+
+> **Sequencing** van berichten is het proces dat de segmenten van een bericht benummert zodat deze op de bestemming terug kunnen samengesteld worden.
+
+:arrow_right: TCP is verantwoordelijk voor de sequencing van individuele segmenten.
+
+### Protocol Data Units (PDU)
+
+> **Encapsulation of inkapseling** is het process waar protocollen hun informatie aan de data toevoegen.
+
+<p align='center'><img src='src/pdu.png' alt='Protocol Data Units (PDU)' width='50%'></p>
+
+- Op elk stadium van het proces, heeft een PDU een verschillende naam om zijn verschillende functies te reflecteren.
+- Er is geen universele conventie voor de benaming van de PDU's. (wij gebruiken de benamingen volgens de TCP/IP protocol suite)
+- PDU's volgens orde op de stack zien er als volgend uit:
+     1. Data (Data stream)
+     2. Segment
+     3. Packet
+     4. Frame
+     5. Bits (Bit stream)
+
+**Voorbeeld inkapseling**:
+
+:arrow_right: Inkapseling is een "top down" proces. De vorige laag/level voert zijn processen uit en geeft het dan door aan het volgende level. Dit proces blijft herhaalt worden todat alle lagen verstuurd worden als een bit stream.
+
+<p align='center'><img src='src/inkapseling_voorbeeld.png' alt='Voorbeeld Inkapseling' width='50%'></p>
+
+**Voorbeeld ontkapseling**:
+
+De data wordt "ontkapselt" naarmate het naar boven op de stack verplaatst.
+
+Wanneer een laag zijn processen vervolledigd, verwijderd het zijn header en geeft het door aan de volgende laag om geprocessed te worden. Dit proces blijft herhaald worden tot het een data stream is dat de applicatie kan processen.
+
+1. Ontvangen als bits (bit stream)
+2. Frame
+3. Packet
+4. Segment
+5. Data (data stream)
+
+<p align='center'><img src='src/ontkapseling_voorbeeld.png' alt='Voorbeeld Inkapseling' width='50%'></p>
+
+## Data Access
+
+### Addresses
+
+Beide de data link en netwerk lagen gebruiken adressen om data van bron naar bestemming te verzenden.
+
+- *Netwerklaag bron- en bestemming adressen* zijn verantwoordelijk voor het leveren van een IP pakket van de originele bron naar de bestemming
+- *Data-link laag bron- en bestemming adressen* zijn verantwoordelijk voor het leveren van het data-link frame van de ene netwerk interface card (NIC) naar de andere NIC **op hetzelfde netwerk**.
+
+<p align='center'><img src='src/data_access_addresses.png' alt='Adressen' width='50%'></p>
+
+### Layer 3 Logical Address
+
+Het IP pakket bevat 2 IP adressen:
+- **Bron IP adres** (afkomstig van de verzender)
+- **Bestemming IP adres** (finale bestemming)
+
+>Deze kunnen op hetzelfde of verschillende netwerken zijn
+
+<p align='center'><img src='src/layer_3_logical_address.png' alt='Layer 3 Logical Address' width='50%'></p>
+
+Een IP-adres bevat 2 delen:
+- *Netwerkgedeelte (IPv4) of Prefix (IPv6)*:
+    - Het meest linkse gedeelte van het adres
+    - Elke LAN of WAN zal hetzelfde netwerkgedeelte hebben
+- *Hostgedeelte (IPv4) of Interface (IPv6)*:
+    - De rest (rechtergedeelte) bepaald aan welk uniek toestel dit adres behoord.
+
+>Wanneer toestellen op hetzelfde netwerk verbonden zijn zullen de bron en het bestemmings hetzelfde netwerkgedeelte hebben in hun IP-adres
+
+Wanneer toestellen op hetzelfde Ethernet verbonden zijn, zal het datalink frame het effectieve MAC-adres van de bestemming NIC gebruiken. 
+
+>**Mac-adressen** zijn fysiek ingebed in de Ethernet NIC en zijn een lokale adressering.
+
+<p align='center'><img src='src/mac_vs_ip.png' alt='' width='50%'></p>
+
+### Different IP Networks
+
+Wanneer de bestemming remote is, zal het een verschillend netwerkgedeelte hebben tov. het ip-adres van de bron.
+
+De 3<sup>e</sup> laag zal aan de 2<sup>e</sup> de lokale default gateway doorgeven. 
+
+- **De default gateway (DGW)** is het ip-adres van de router. (het handeld als een deur voor alle verkeer naar en van buiten (remote traffic)) 
+
+### Data Link Addresses
+
+Aangezien data link adressen lokale adressen zijn, zal het steeds een bron en bestemming hebben voor elk segment of hop op de weg naar de bestemming.
+
+- De MAC-adressering is het eerste segment:
+
+<p align='center'><img src='src/mac_addressing.png' alt='MAC-adressering' width='50%'></p>
+
+Over alle hops wordt het pakket niet veranderd. Echter veranderd het frame wel (andere mac-adressen)
