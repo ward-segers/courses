@@ -83,7 +83,7 @@ Dit kan beïnvloed worden door de eigenschappen van het medium, technologiëen e
 
 ## Copper Cabling
 
-## Characteristics of Copper Cabling
+### Characteristics of Copper Cabling
 
 Koperen bekabeling is vandaag de dag de meest voorkomende vorm van kabels gebruikt in netwerken. 
 
@@ -154,3 +154,291 @@ Koperen bekabeling is vandaag de dag de meest voorkomende vorm van kabels gebrui
 Er zijn verschillende soorten connectoren die gebruikt worden met coax kabels:
 
 <p align='center'><img src='src/coax_connectors.png' alt='Coaxial cable connectors' width='50%'></p>
+
+## UTP Cabling
+
+### Properties of UTP Cabling
+
+UTP heeft vier paar kleurgecodeerde koperdraden in elkaar gedraaid en omhuld met een flexibele plastic mantel. Er wordt geen afscherming gebruikt. UTP vertrouwt op de volgende eigenschappen om overspraak (crosstalk) te beperken:
+
+- *Annulering* - Elke draad in een dradenpaar heeft een tegenovergestelde polariteit. De ene draad is negatief, de andere positief. Ze worden in elkaar gedraaid en de magnetische velden heffen elkaar effectief op en buiten EMI/RFI.
+- *Variatie in twists per voet* in elke draad - Elke draad is anders getwist, wat overspraak tussen de draden in de kabel helpt voorkomen.
+
+### UTP Cabling Standards and Connectors
+
+Standards for UTP are established by the TIA/EIA. TIA/EIA-568 standardizes elements like:
+- Kabel type
+- Kabellengte
+- Verbindingen
+- Kabelbevestiging
+- Testing Methodes
+
+Electrical standards for copper cabling are established by the IEEE, which rates cable according to its performance. 
+
+Examples include:
+- Category 3
+- Category 5 and 5e
+- Category 6
+
+<p align='center'><img src='src/utp_categories.png' alt='UTP Categoriëen' width='25%'></p>
+
+<p align='center'><img src='src/utp_categories_list.png' alt='UTP Categoriëen' width='75%'></p>
+
+### Straight-through and Crossover UTP Cables
+
+<p align='center'><img src='src/utp_straigth_through.png' alt='Straight-through' width='75%'></p>
+
+<table>
+    <thead>
+        <th>Kabel-type</th>
+        <th>Standaard</th>
+        <th>Applicatie</th>
+    </thead>
+    <thbody>
+        <tr>
+            <td>Ethernet Straight-through</td>
+            <td>Beide uiteinden T568A of T568B</td>
+            <td>Host naar Netwerk Device</td>
+        </tr>
+        <tr>
+            <td>Ethernet Crossover (outdated)</td>
+            <td>Een einde T568A en het andere T568B</td>
+            <td>Host-to-Host, Switch-to-Switch, Router-to-Router</td>
+        </tr>
+        <tr>
+            <td>Rollover</td>
+            <td>Cisco Proprietary</td>
+            <td>Host serial port to Router or Switch Console Port, using an adapter</td>
+        </tr>
+    </thbody>
+</table>
+
+## Fiber-Optic Cabling
+
+### Properties of Fiber-Optic Cabling
+
+- Mindervoorkomend als UTP (door kost)
+- Ideaal voor specifieke netwerk scenarios
+- Verstuurd data over langere afstanden tegen een grotere bandbreedte
+- Minder gevoelig voor verzwakking en volledig immuun voor EMI/RFI
+- Gemaakt uit flexibel, extreem dune vezels van zeer zuiver glas
+- Maakt gebruik van een laser of LED om bits te coderen als lichtpulsen
+- De glasvezel kabel fungeert als een golfgeleider die licht verstuurd tussen beide uiteinden. (minimale signaal verlies)
+
+### Types of Fiber media
+
+<table>
+<thead>
+<th>Single-Mode Fiber</th>
+<th>Multimode Fiber</th>
+</thead>
+<tbody>
+
+<tr>
+<td>
+<br>
+<p align='center'><img src='src/single_mode_fiber.png' alt='Single mode Fiber' width='100%'></p>
+
+</td>
+<td>
+<br>
+<p align='center'><img src='src/multi_mode_fiber.png' alt='Single mode Fiber' width='100%'></p>
+
+
+</td
+></tr>
+
+<tr>
+<td>
+
+- Zeer kleine kern
+- Gebruikt dure lasers
+- Lange afstand applicaties
+
+</td>
+<td>
+
+- Grotere kern
+- Gebruikt goedkopere LED's
+- LED's versturen via verschillende hoeken
+- Tot 10  Gbps over 550m
+
+</td>
+</tr>
+</tbody>
+</table>
+
+### Fiber-Optic Cable Usage
+
+Glasvezel kabels worden voornamelijk in deze vier industrieën gebruikt:
+- **Enterprise Networks**: Gebruikt voor backbone bekabelingstoepassingen en het onderling verbinden van infrastructuurapparaten
+- **Fiber-to-the-Home (FTTH)**: Gebruikt voor het voorzien van "altijd-aan" breedband diensten voor thuis en kleine bedrijven
+- **Long-Haul Networks (lange afstand)**: Gebruikt door service providers om landen en steden te verbinden
+- **Submarine Cable Networks**: Gebruikt om een betrouwbare, hoge snelheid, hoge capaciteit netwerk oplossing te voorzien, die tevens bestend zijn tegen de moeilijkheden onder water en over transoceanische afstanden.
+
+### Fiber-Optic Connectors
+
+<table>
+<tr>
+<td>
+<br>
+<p align='center'><img src='src/ST_connector.png' alt='Straight-Tip (ST) aansluiting' width='75%'></p>
+
+
+</td>
+<td>
+
+<br>
+<p align='center'><img src='src/LC_simplex_connector.png' alt='Lucent Connector (LC) Simplex' width='75%'></p>
+
+</td>
+</tr>
+<tr>
+<td>Straight-Tip (ST) aansluiting</td>
+<td>Lucent Connector (LC) Simplex aansluitingen</td>
+</tr>
+<tr>
+<td>
+
+<br>
+<p align='center'><img src='src/SC_connector.png' alt='Subscriber Connector (SC' width='75%'></p>
+
+</td>
+<td>
+
+<br>
+<p align='center'><img src='src/LC_duplex_connector.png' alt='Duplex Multimode LC' width='75%'></p>
+
+</td>
+</tr>
+<tr>
+<td>Subscriber Connector (SC) aansluitingen</td>
+<td>Duplex Multimode LC aansluitingen</td>
+</tr>
+</table>
+
+### Fiber Patch Cords
+
+<table>
+<tr>
+<td>
+
+<br>
+<p align='center'><img src='src/sc_sc.png' alt='SC-SC MM Patch Cord' width='75%'></p>
+
+</td>
+<td>
+
+<br>
+<p align='center'><img src='src/lc_lc.png' alt='LC-LC SM Patch Cord' width='75%'></p>
+
+</td>
+<td>
+
+<br>
+<p align='center'><img src='src/st_lc.png' alt='ST-LC MM Patch Cord' width='75%'></p>
+
+</td>
+<td>
+
+<br>
+<p align='center'><img src='src/st_sc.png' alt='ST-SC SM Patch Cord' width='75%'></p>
+
+</td>
+
+</tr>
+<tr>
+<td>SC-SC MM Patch Cord</td>
+<td>LC-LC SM Patch Cord</td>
+<td>ST-LC MM Patch Cord</td>
+<td>ST-SC SM Patch Cord</td>
+</tr>
+</table>
+
+Een geel omhulsel is voor single-mode vezelkabels en oranje (of aqua) voor multimode vezelkabels.
+
+### Fiber versus Copper
+
+Optische glasvezel wordt hoofdzakelijk gebruikt als de backbone voor hoog verkeer, point-to-point verbindingen tussen datadistributiefaciliteiten en voor de onderlinge verbinding van gebouwen in campussen met meerdere gebouwen.
+
+<table>
+    <thead>
+        <th>Implementation issues</th>
+        <th>UTP Cabling</th>
+        <th>Fiber-Optic Cabling</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bandwidth supported</td>
+            <td>10Mb/s - 10Gb/s</td>
+            <td>10Mb/s - 100Gb/s</td>
+        </tr>
+        <tr>
+            <td>Distance</td>
+            <td>Relatively short (1 - 100m)</td>
+            <td>Relatively long (1 - 100 000m)</td>
+        </tr>
+        <tr>
+            <td>Immunity to EMI and RFI</td>
+            <td>Low</td>
+            <td>High (completely immune)</td>
+        </tr>
+        <tr>
+            <td>Immunity to electrical hazards</td>
+            <td>Low</td>
+            <td>High (completely immune)</td>
+        </tr>
+        <tr>
+            <td>Media and connector costs</td>
+            <td>Lowest</td>
+            <td>Highest</td>
+        </tr>
+        <tr>
+            <td>Installation skills required</td>
+            <td>Lowest</td>
+            <td>Highest</td>
+        </tr>
+        <tr>
+            <td>Safety precautions</td>
+            <td>Lowest</td>
+            <td>Highest</td>
+        </tr>
+    </tbody>
+</table>
+
+## Wireless Media
+
+### Properties of Wireless Media
+
+Het transporteert elektromagnetische signalen die binaire cijfers voorstellen met behulp van radio- of microgolffrequenties. Dit biedt de grootste mobiliteitsoptie. Het aantal draadloze verbindingen blijft stijgen.
+
+*Beperkingen*:
+- **Dekkingsgebied**: Effectieve dekking kan aanzienlijk worden beïnvloed door de fysieke kenmerken van de uitrollocatie.
+- **Storing**: Draadloos is gevoelig voor interferentie en kan worden verstoord door veel gangbare apparaten.
+- **Security**: Draadloze communicatie vereist geen toegang tot een fysieke onderdeel van het medium, dus iedereen kan toegang krijgen tot de transmissie.
+- **Gedeeld medium**: WLAN's werken in half-duplex, wat betekent dat slechts één apparaat tegelijk kan zenden of ontvangen. Veel gebruikers die tegelijkertijd toegang hebben tot het WLAN resulteren in een verminderde bandbreedte voor elke gebruiker.
+
+### Types of Wireless Media
+
+De standaarden van IEEE en de telecommunicatie-industrie voor draadloze datacommunicatie hebben betrekking op zowel de datalink- als de fysieke laag. 
+
+- Coderingsmethoden voor gegevens naar radiosignaal
+- Frequentie en vermogen van transmissie
+- Vereisten voor signaalontvangst en decodering
+- Antenneontwerp en -bouw
+
+Draadloze standaarden;
+- **Wi-Fi (IEEE 802.11)** - Wireless LAN (WLAN) technologie
+- **Bluetooth (IEEE 802.15)**: Wireless Personal Area Network (WPAN) standaard
+- **WiMAX (IEEE 802.16)**: Gebruikt een point-to-multipoint topologie om draadloze breedbandtoegang te voorzien
+- **Zigbee (IEEE 802.15.4)**: Communicatie met lage datasnelheid en laag energieverbruik, voornamelijk voor Internet of Things (IoT)-toepassingen
+
+### Wireless LAN
+
+Over het algemeen heeft een Wireless LAN (WLAN) de volgende apparaten nodig:
+- **Wireless Access Point (AP)** - Concentreert draadloze signalen van gebruikers en maakt verbinding met de bestaande koperen netwerkinfrastructuur.
+- **Draadloze NIC-adapters** - bieden draadloze communicatiemogelijkheden aan netwerkhosts.
+
+Er zijn een aantal WLAN-standaarden. Let bij de aanschaf van WLAN-apparatuur op compatibiliteit en interoperabiliteit.
+
+Netwerkbeheerders moeten een streng beveiligingsbeleid en strenge beveiligingsprocessen ontwikkelen en toepassen om WLAN's te beschermen tegen ongeautoriseerde toegang en schade.
