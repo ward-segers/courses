@@ -29,7 +29,7 @@
 - [x] - Module 2
 - [x] - Module 3
 - [x] - Module 4
-- [ ] - Module 5
+- [ ] - Module 5 => Wordt niet behandeld
 - [ ] - Module 6
 - [ ] - Module 7
 - [ ] - Module 8
