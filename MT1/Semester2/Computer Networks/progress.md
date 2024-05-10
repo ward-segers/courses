@@ -30,7 +30,7 @@
 - [x] - Module 3
 - [x] - Module 4
 - [ ] - Module 5 => Wordt niet behandeld
-- [ ] - Module 6
+- [x] - Module 6
 - [ ] - Module 7
 - [ ] - Module 8
 - [ ] - Module 9
