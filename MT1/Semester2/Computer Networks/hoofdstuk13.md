@@ -134,3 +134,36 @@ ping 127.0.0.1
 ping ::1
 ```
 
+### Ping the Default Gateway
+
+Het `ping` commando kan ook gebruikt worden om te testen of een host kan communiceren met op het lokaal netwerk.
+
+Hiervoor gebruiken we het default gateway adres, omdat de router meestal operationeel is.
+
+- een succesvolle `ping` naar de default gateway geeft weer dat de host en de router interface die dient als de default gateway beide operationeel zijn binnen het netwerk
+- indien de default gateway niet antwoord, kunnen we een `ping` sturen naar een andere host waarvan we weten dat die operationeel is binnen het lokaal netwerk
+
+### Ping a Remote Host 
+
+`ping` kunnen we ook gebruiken om te testen of een lokale host can verbinden over een internetwerk.
+
+Een lokale host kan een host pingen op een extern netwerk. Een succesvolle `ping` over een internetwerk bevestigd de communicatie op het lokale netwerk.
+
+>[!note]
+> Vele netwerkadminstrators limiteren of verbieden het aantal ICMP berichten. Deze kunnen ook negatieve `ping` resultaten veroorzaken.
+
+### Traceroute - Test the Path
+
+- Traceroute (`tracert`) is een programma dat kan gebruikt worden om het pad te testen tussen twee host. Het geeft een lijst van een aantal hops weer die sucessvol bereikt werden over het pad.
+- Traceroute voorziet een roundtrip tijd voor elke hop over het pad and geeft weer indien de hop faalt. **Een ster "*" geeft aan indien een hop verloren gaat of een pakket niet antwoord.**
+- Deze informatie kan gebruikt worden om een problematische router te localiseren op het pad. Het kan ook aangeven of de router al dan niet geconfigureerd is om te antwoorden.
+
+>[!note]
+>Traceroute maakt gebruik van een functie van het TTL veld in IPv4 en van de Hop Limit voor IPv6 in de Laag 3 headers, samen met het ICMP Time Exceeded bericht.
+
+<p align='center'><img src='src/tracert.png' alt='' width='50%'></p>
+
+- Het eerste bericht dat verstuurd wordt van traceroute zal een TTL veld hebben van 1. Dit zorgt ervoor dat de TTL time out op de eerste router. Deze router zal dan antwoorden met een ICMPv4 Time Exceeded bericht
+- Traceroute zal dan progressief het TTL verhogen (2, 3, 4, ...) voor elke reeks berichten. Dit geeft de trace met de adressen van elke hop wanneer deze time outen over het hele pad.
+- Het TTL veld wordt verder verhoogt tot wanneer de bestemming bereikt is. (of tot wanneer de maximum waarde bereikt is)
+
