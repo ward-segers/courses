@@ -434,3 +434,43 @@ De **Maximum Segment Size (MSS)** is de maximale hoeveelheid gegevens dat een be
 
 <p align='center'><img src='src/tcp_flow_control_segment_size.png' alt='' width='50%'></p>
 
+### TCP Flow Control - Congestion Avoidance
+
+Wanneer een opstopping in het netwerk zich voordoet, resulteert dit in het discarden van pakketten door de overbelastte router.
+
+Om opstoppingen te vermijden en te controleren zal TCP verschillende technieken gebruiken, zoals timers en algoritmen.
+
+<p align='center'><img src='src/tcp_flow_control_congestion_avoidance.png' alt='' width='50%'></p>
+
+## UDP Communication
+
+### UDP Low Overhead versus Reliability
+
+UDP brengt geen verbinding tot stand. UDP zorgt voor een lage overhead aan gegevens transport omdat het een kleine datagram header en geen netwerkbeheer verkeer heeft.
+
+<p align='center'><img src='src/udp_low_overhead.png' alt='' width='50%'></p>
+
+### UDP Datagram Reassembly
+
+- UDP houdt de sequentienummers niet bij zoals TCP dat doet
+- UDP kan niet de volgorde van de datagrammen terug wijzigingen naar de transmissie volgorde
+- UDP zet de gegevens gewoon weer in elkaar in de volgorde waarop ze ontvangen zijn en stuurt ze door naar de applicatie
+
+<p align='center'><img src='src/udp_reassembly.png' alt='' width='50%'></p>
+
+### UDP Server Processes and Requests
+
+UDP-based server applicaties worden well-known of geregistreerde poortnummers toegewezen.
+
+UDP ontvangt een datagram bedoeld voor een van deze poorten, het stuurt de applicatie data door naar de bedoelde applicatie, gebaseerd op het poortnummer.
+
+<p align='center'><img src='src/udp_server_processes_and_requests.png' alt='' width='50%'></p>
+
+### UDP Client Processes
+
+- Het UDP client process selecteert op een dynamische manier een poortnummer uit de range en gebruikt dit als bron poort voor de conversatie
+- De bestemmingspoort is meestal een well-known of een geregistreerd poortnummer geassigneerd aan het server proces.
+- Nadat een client het bron en bestemmingspoortnummer geselecteerd heeft, wordt hetzelfde paar poorten gebruikt in de header cvan alle datagrammen (gegevensbestanden) in de transactie.
+
+<p align='center'><img src='src/udp_client_processes.png' alt='' width='50%'></p>
+
