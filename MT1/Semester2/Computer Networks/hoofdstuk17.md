@@ -56,3 +56,48 @@ Er zijn twee soorten programma's of processen die toegang to het netwerk geven:
 
 - **Network Applications**: Applicaties die de applicatielaagprotocollen implementeren en direct kunnen communiceren met de lagere lagen of de protocol stack.
 - **Application Layer Services**: Applicaties die niet op de hoogte van het netwerk zijn. De applicaties die een interface hebben met het netwerk en de gegevens klaarmaken voor een transfer.
+
+### Common Protocols
+
+Netwerkprotocollen ondersteunen de applicaties en diensten die door de werknemers gebruikt worden in een klein netwerk.
+- Netwerk administatoren hebben vaak toegang nodig tot de netwerktoestellen en servers. De twee meest voorkomende remote access oplossingen zijn *Telnet* en *Secure Shell (SSH)*
+- Hypertext Transfer Protocol (HTTP) en Hypertext Transfer Protocol Secure (HTTPS) worden gebruikt tussen webclients en web servers.
+- Simple Mail Transfer Protocol (SMTP) wordt gebruikt om mails te sturen, Post Office Protocol (POP3) of Internet Mail Access Protocol (IMAP) worden gebruikt door de clients om mails te ontvangen.
+- File Transfer Protocol (FTP) en Security File Transfer Protocol (SFTP) worden gebruikt om bestanden te downloaden en uploaden tussen client en FTP server.
+- Dynamic Host Configuration Protocol (DHCP) wordt door clients gebruikt om een IP adres te bemachtigen van de DHCP server.
+- De Domain Name Service (DNS) lost domeinnamen op naar IP adressen.
+
+>[!note]
+>Een server kan verschillende netwerk diensten voorzien. Bv. Een server kan email, FTP en SSH server zijn.
+
+Bovenstaande protocollen bevatten de belangrijkste toolset voor een netwerkprofessional. Ze beschrijven:
+- processen aan beide kanten van de communicatie
+- Type berichten
+- Syntax van de berichten
+- Betekenis van de informatieve velden
+- Hoe berichten verzonden worden en wat het verwacht antwoord is
+- Interactie met de volgende lagere laag.
+
+Verschillende bedrijven hebben policies opgesteld over het gebruik van de beveiligde versies (SHH, SFTP, HTTPS) van deze protocollen waar mogelijk.
+
+### Voice and Video Applications
+
+- Bedrijven vandaag de dag gebruiken meer en meer IP telefonie en media-streaming om te communiceren met klanten, business partners en de collega's die remote werken.
+- De netwerk administrator moet garanderen dat het juiste materiaal geïnstalleerd is op het netwerk en dat de netwerktoestellen geconfigureerd zijn om priority delivery te garanderen.
+- Netwerk administatoren moeten rekening houden met de het volgende wanneer ze real-time applicaties willen ondersteunen:
+    - **Infrastructure**: Heeft het de nodige capaciteit en kwaliteit?
+    - **VoIP**: Voice over IP is vaak goedkoper dan IP telefonie maar beperkt ook de kwaliteit
+    - **IP telephony**: Maakt gebruik van dedicated servers voor gesprekscontrole en signalering.
+    - **Real-time Applications**: Het netwerk moet QoS technieken ondersteunen om latentie te limiteren. *Real-Time Transport Protocol (RTP)* en *Real-Time Transport Control Protocol (RTCP)* zijn twee protocollen die real-time applicaties ondersteunen.
+
+## Scale to Larger Networks
+
+### Small Network Growth
+
+> Idealiter heeft de netwerkadministrator genoeg tijd om intelligente beslissingen te maken over de groei van het netwerk in overeenstemming met de groei van het bedrijf.
+
+Om een netwerk te kunnen uitbreiden zijn volgende zaken nodig:
+- **Network Documentation**: Physical en logical topology
+- **Device inventory**: Lijst van toestellen die het netwerk gebruiken of omvatten
+- **Budget**: Gedetailleerd IT budget, inclusief budget voor aankoop van IT materiaal voor het fiscale jaar.
+- **Traffic analysis**: Protocols, applications en diensten waarvan hun specifiek verkeer vereisten gedocumenteerd moeten zijn.
