@@ -326,4 +326,4 @@ SMB berichten hebben drie functies:
 - Control file and printer access
 - Een applcatie toestaan berichten te sturen of ontvangen naar of van een ander toestel.
 
-In tegenstelling tot bestandsoverdracht, ondersteund door FTP, stellen clients bij SMB langdurige verbindingen op met de servers. Nadat de verbinding tot stand is gebracht kan de client de bronnen van de server raadplegen net zoals het lijkt dat deze zicht lokaal op de client bevinden.
+In tegenstelling tot bestandsoverdracht, ondersteund door FTP, stellen clients bij SMB langdurige verbindingen op met de servers. Nadat de verbinding tot stand is gebracht kan de client de bronnen van de server raadplegen net zoals het lijkt dat deze zich lokaal op de client bevinden.
