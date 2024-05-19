@@ -679,3 +679,152 @@
         <td>The cost required to maintain and support a hardware or software product or service</td>
     </tr>
 </table>
+
+## Unit 5 - Sustainability in tech industry
+
+<table>
+    <tr>
+        <td styel="font-weight:bold">Bottleneck</td>
+        <td>A problem that delays a process</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Responsive</td>
+        <td>Saying or doing something as a reaction to something or someone, especially in a quick or positive way</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Human rights</td>
+        <td>The basic rights that it is generally considered every person should have, such as justice and the freedom to say what you think</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Child labor</td>
+        <td>The use of children to do work that should be done by adults</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Stakeholder</td>
+        <td>A person such as an employee, customer, or citizen who is involved with an organization, society, etc. and therefore has responsibilities towards it and an interest in its success</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Shareholder</td>
+        <td>A person who owns shares in a company and therefore gets part of the company's profits and the rights to vote on how the company is controlled</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Reputation</td>
+        <td>The opinion that people in general have about someone or something, or how much respect or admiration someone or something receives, based on past behavior or character</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Governance</td>
+        <td>The way that organizations or countries are managed at the highest level, and the systems for doing thsi. A controlling influence on something</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">External</td>
+        <td>Coming from the outside</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Internal</td>
+        <td>Coming from the inside</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Holistic</td>
+        <td>Dealing with or treating the whole of something or someone and not just a part</td>
+    </tr>
+    <tr>
+        <td styel="font-weight:bold">Community</td>
+        <td>The people living in one particular area or people who are considered as a unit because of their common interest, social group, or nationality</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Labor standards</td>
+        <td>Level of quality for the work you need to do/working conditions</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Consulting</td>
+        <td>The activity or business of giving expert advice about a particular subject</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Personality rights</td>
+        <td>The right of publicity, sometimes reffered to as personality rights, is the right of an individual to control the commercial use of one's identity, such as name, image, likeness, or other unequivocal identifiers</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Cook the books</td>
+        <td>To change the numbers dishonestly in the accounts (= financial records) or an organization, especially in order to steal money from it</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Tax evasion</td>
+        <td>Ways of illegally paying less tax than you should</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Code of conduct</td>
+        <td>A set of rules that members of an organization or people with a particular job or position must follow</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Compliance management</td>
+        <td>Constantely checking and assessing systems to ensure they comply with industry and security standards, as well as corporate and regulatory policies and requirements</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Compliant</td>
+        <td>When a product of service fully meets the specifications or standards set by a company or organization</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Mission statement</td>
+        <td>A short written description of the aims of a business or public organizations</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Procurement</td>
+        <td>The process by which an organization buys the products or services it needs for other organizations</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Acquisition</td>
+        <td>Something that is bought by a company, such as another company, a building, or a piece of land</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Emerging countries</td>
+        <td>Countries that are becoming globally significant, mostly because they have moved from agricultural porduction to manufacturing. It all depends on social, economic and political indicators. E.g. China</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Pent-up</td>
+        <td>Strong demand for a product/service that has not had the opportunity of being expressed as sales</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Carrier</td>
+        <td>A company that provides mobile phone services to people so they can make calls, send messages, etc.</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">A rollout</td>
+        <td>An occasion when a product or service is gradually made available to more people after it has first been tested in a particular area</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To make inroads</td>
+        <td>To start to have a direct and noticeable effect on something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Conglomerate</td>
+        <td>A very large business organisation consisting of several companies</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Broadband</td>
+        <td>A telecommunications technology that provides high-speed internet access using multiple channels of simultaneous digital signals</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Nonprofit</td>
+        <td>An organization whose most important goal is something that does not involve making a profit</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Planetary</td>
+        <td>Relating to planets</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Inclusiveness</td>
+        <td>The quality of including many different types of people and treating them all fairly and equally</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Forced labor</td>
+        <td>Work that is performed involuntarily and under threat of some kind of penalty</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Landfill</td>
+        <td>The process of getting rid of large amounts of rubbish by burying it, or a place where rubbish is buried</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To refurbish</td>
+        <td>To restore a device or piece of hardware to an 'as new' condition for resale</td>
+    </tr>
+</table>
