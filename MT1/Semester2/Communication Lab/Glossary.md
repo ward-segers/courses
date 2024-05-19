@@ -684,51 +684,51 @@
 
 <table>
     <tr>
-        <td styel="font-weight:bold">Bottleneck</td>
+        <td style="font-weight:bold">Bottleneck</td>
         <td>A problem that delays a process</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Responsive</td>
+        <td style="font-weight:bold">Responsive</td>
         <td>Saying or doing something as a reaction to something or someone, especially in a quick or positive way</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Human rights</td>
+        <td style="font-weight:bold">Human rights</td>
         <td>The basic rights that it is generally considered every person should have, such as justice and the freedom to say what you think</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Child labor</td>
+        <td style="font-weight:bold">Child labor</td>
         <td>The use of children to do work that should be done by adults</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Stakeholder</td>
+        <td style="font-weight:bold">Stakeholder</td>
         <td>A person such as an employee, customer, or citizen who is involved with an organization, society, etc. and therefore has responsibilities towards it and an interest in its success</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Shareholder</td>
+        <td style="font-weight:bold">Shareholder</td>
         <td>A person who owns shares in a company and therefore gets part of the company's profits and the rights to vote on how the company is controlled</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Reputation</td>
+        <td style="font-weight:bold">Reputation</td>
         <td>The opinion that people in general have about someone or something, or how much respect or admiration someone or something receives, based on past behavior or character</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Governance</td>
+        <td style="font-weight:bold">Governance</td>
         <td>The way that organizations or countries are managed at the highest level, and the systems for doing thsi. A controlling influence on something</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">External</td>
+        <td style="font-weight:bold">External</td>
         <td>Coming from the outside</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Internal</td>
+        <td style="font-weight:bold">Internal</td>
         <td>Coming from the inside</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Holistic</td>
+        <td style="font-weight:bold">Holistic</td>
         <td>Dealing with or treating the whole of something or someone and not just a part</td>
     </tr>
     <tr>
-        <td styel="font-weight:bold">Community</td>
+        <td style="font-weight:bold">Community</td>
         <td>The people living in one particular area or people who are considered as a unit because of their common interest, social group, or nationality</td>
     </tr>
     <tr>
@@ -826,5 +826,135 @@
     <tr>
         <td style="font-weight:bold">To refurbish</td>
         <td>To restore a device or piece of hardware to an 'as new' condition for resale</td>
+    </tr>
+</table>
+
+## Unit 6 - Innovation
+
+<table>
+    <tr>
+        <td style="font-weight:bold">A breath of fresh air</td>
+        <td>Someone or something that is new and different and makes everything seem more exciting</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Be ahead of the curve</td>
+        <td>To be one of the first to change to a new idea or way of doing something that later becomes generally popular</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Up-to-the-minute</td>
+        <td>Containing all the most recent information (e.g., up-to-the-minute news)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Unprecedented</td>
+        <td>Never having happened or existed in the parts</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Emerging</td>
+        <td>Starting to exist</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Be in its infancy</td>
+        <td>To be very new and still developing</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Malware</td>
+        <td>Software that is designed to damage the information on other people's computers, and prevent the computers from working normally</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Era</td>
+        <td>A period of time of which particular events or stages of development are typical</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Lurk</td>
+        <td>(said of an unpleasant feeling/quality) To exist and maybe be waiting to happen, although it is not always noticeable</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Backdrop</td>
+        <td>The general situation in which particular events happen</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Trade negotiations</td>
+        <td>Fromal discussions about buying , selling or exchanging goods</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Lag</td>
+        <td>A delay in reacting</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Instantatneous</td>
+        <td>Happening immediately, without any delay</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To edge out</td>
+        <td>To do better than others</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Reconfigure</td>
+        <td>To totally change the structure of the arrangement of something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Adversary</td>
+        <td>Enemy, opponent</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Disruption</td>
+        <td>The action of completely changing the structure or the arrangement of something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Operating System</td>
+        <td>A set of programs that control the way a computer system works, especially how its memory is used and how different programs work together</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To haggle over</td>
+        <td>To attempt to decide on a price of conditions that are acceptable to the person selling the goods and the person buying them, usually by arguing</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Bottom line</td>
+        <td>The final line in the accounts of a company stating the total profit or loss. <br><br>
+        The main idea</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Concession</td>
+        <td>Something that is allowed of given up, often in order to end a disagreement, or the act of allowing or givin this</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To pivot</td>
+        <td>To change your opinion, statements, ... (i.e. change direction)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To leverage</td>
+        <td>To use something that you already have in order to achieve something new or better</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Feat</td>
+        <td>Something difficult needing a lot of skill/strenght to achieve it</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Agility</td>
+        <td>Ways of planning and doing work in which it is understood that making changes as they are needed is an important part of the job</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To nurture</td>
+        <td>To take care of, protect</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To permeate</td>
+        <td>To spread through</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To advocate</td>
+        <td>To publicly support</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Open source</td>
+        <td>A program or file that can be freely modified by anyone</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Proprietary software</td>
+        <td>Closed-software, copyrighted software that prohibits the redistribution or modification of its program</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">License agreement</td>
+        <td>A contract between the buyer and seller of proprietary software that describes the purchaser's rights</td>
     </tr>
 </table>
