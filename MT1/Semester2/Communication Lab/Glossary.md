@@ -505,3 +505,177 @@
 
 ## Unit 4 - Outsourcing
 
+<table>
+    <tr>
+        <td style="font-weight:bold">Custom</td>
+        <td>A way of behaving or a belief that has been established for a long time</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Outsourcing</td>
+        <td>The process of paying to have part of a company's work done by another company</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Offshoring</td>
+        <td>The practice of basing a business or part of a business in a different country, usually because this involves paying less tax or other costs</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Nearshoring</td>
+        <td>The practice of transferring a business operation to a nearby country, especially in preference to a more distant one</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Intangible</td>
+        <td>Impossible to touch, to describe exactly, or to give an exact value</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Conducive</td>
+        <td>Providing the right conditions for something good to happen or exist</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To imply</td>
+        <td>To communicate an idea or feeling without saying it directly</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Organic</td>
+        <td>Happening or developing naturally over time, without being force or planned by anyone</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Perks</td>
+        <td>Something that you get for working, in addition to your pay, that is not in the form of money</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Fringe benefits</td>
+        <td>Something that you get for working, in addition to your pay that is not in the form of money</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To employ</td>
+        <td>To have someone work or do a job for you and pay them for it</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Gross</td>
+        <td>An employee's earnings before taxes, benefits and other payroll deductions are withheld from their wages</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Net</td>
+        <td>An employee's earnings after all deductions are taken out</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Headquarters</td>
+        <td>The main offices of an organization such as the army, the police or a business company</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Payroll</td>
+        <td>A list of the people employed by a company showing how much each one earns</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Applicant</td>
+        <td>A person who formally requests something, especially a job, or to study at a college or university</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Flextime</td>
+        <td>A system of working in which people work a set of number of hours within a fixed period of time, but can change the time they start or finish work (BrE: flexitime)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Temp</td>
+        <td>(abbreviation of temporary) A person employed to work for a short period, especially in an office while another person is absent or when there is extra work</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Supplier</td>
+        <td>A company, person, etc. that provides things, parts, goods that a person or a company wants or needs, especially over a long period of time</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Salary</td>
+        <td>A fixed amount of money agreed every year as pay for an employee, usually paid directly into his or het bank account every month</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Wage</td>
+        <td>A partricular amount of money that is paid, usually every week or every month, to an employee, especially one who does work that need physical skills or strenght, rather that a job needing a college education</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Turnover</td>
+        <td>The amount of business that a company does in a specific period of time</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Lucrative</td>
+        <td>(especially of a business, job, or activity) producing a lot of money</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Invoice</td>
+        <td>A list of things provided or work done together with their cost (plus VAT if applicable), for payement at a later time</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Quotation</td>
+        <td>The price that a person or company says they will charge to do a pieve of work</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Subsidiary</td>
+        <td>A company that is owned by a larger company. Also known as daughter company</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Parent company</td>
+        <td>A company that controls other smaller companies</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Merger</td>
+        <td>An occasion when two or more companies or organizations join together to make one lager company</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Takeover</td>
+        <td>A situation in which a company takes control over another company by buying enough of its shares</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">PLC</td>
+        <td>Public Limited Company (listed on the stock exchange), Incorporated (Inc.) is de American equivalent</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Ltd.</td>
+        <td>Limited liability company: used in the name of a company whose owners have limited responsibility for the money that it owes</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">SME</td>
+        <td>Small and Medium Enterprise: a company, or companies considered as a group, that are neither very small nor very large</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">NGO</td>
+        <td>Non-governmental organization: an organization that tries to achieve social or political aims but is not controlled by a government</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Domestic</td>
+        <td>Relating to a person's own country</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Competitor</td>
+        <td>Another company that offers the same service/product as you do</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Offshoring</td>
+        <td>The practice of basing a business or part of a business in a different country, usually because it involves paying less tax or other costs</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Subcontractor</td>
+        <td>An oustide person or organization that does work for an organization that might normally be done within it</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Sweatshop</td>
+        <td>A small factory where workers are paid very little and work many hours in a very bad conditions</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Exploit</td>
+        <td>To use someone unfairly for your own advantage</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Working conditions</td>
+        <td>The working environment and aspects of an employee's terms and conditions of employment</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Emerging markets</td>
+        <td>The markets of developing countries that are rapidly growing and industrializing</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Flagship</td>
+        <td>In the technology industry, it is a term often used to describe the highest-end hardware model offered in a product line</td>
+    </tr>
+      <tr>
+        <td style="font-weight:bold">Total cost of ownership</td>
+        <td>The cost required to maintain and support a hardware or software product or service</td>
+    </tr>
+</table>
