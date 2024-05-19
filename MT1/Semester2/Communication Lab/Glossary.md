@@ -351,3 +351,157 @@
 </table>
 
 ## Unit 3 - Network engineers
+
+<table>
+    <tr>
+        <td style="font-weight:bold">Router</td>
+        <td>A hardware device assigned to receive, analyse and move incoming packets to another network</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Switch</td>
+        <td>A hardware device that filters and forwards network packets, but is often not capable of much more</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To map something out</td>
+        <td>To plan something in detail</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To configure</td>
+        <td>To arrange something or change the controls on a computer or other device so that it can be used in a particular way</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Ring topology</td>
+        <td>Network configuration where device connections create a circular data path</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Mesh topology</td>
+        <td>Network setup where each computer and network device is interconnected with one another (often useed for wireless networks)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Hub</td>
+        <td>Most basic networking device that connects multiple computers or other network devices together</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Backbone</td>
+        <td>Portion of a computer network that is capable of carrying the majority of traffic on the network at high speeds. It often connects large networks or companies together</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Bandwidth</td>
+        <td>When referring to a data connection, this is the total maximum transfer rate of a network cable or device. The more a computer has, the faster it can send and recieve information</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Bottleneck</td>
+        <td>The situation that occurs when too much data enters one source and causes a computer or network to slow down or become unresponsive</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Convergence</td>
+        <td>When two or more things come together</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To pledge</td>
+        <td>Make a serious or formal promise to give or do something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Exemption (from)</td>
+        <td>Special permission not to do or pay something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Colocation facilities</td>
+        <td>A type of data center where equipment, space, and bandwitdth are available for rental to retail customers. The provide space, power, cooling, storage, and physical security for the storage and server equipment of other firms</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Mainframe</td>
+        <td>Used by large organizations for bulk data processing</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Single point of failure</td>
+        <td>Part of a system that, if it fails, will stop the entire system from working</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Redundancy</td>
+        <td>The state of being no longer needed or useful. (BrE: the state of being no lonfer in employment because there is no work available)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Resilience</td>
+        <td>The quality of being able to return quickly to a previous good condition after problems</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Spike</td>
+        <td>A very High amount usually before a fall</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Downtime</td>
+        <td>The time during which a machine, especially a computer, is not working or is not able to be used</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Provider</td>
+        <td>A company or organization that sells a particular type of product or service</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To render</td>
+        <td>To cause someone or something to be in a particular state</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Heavily trafficked</td>
+        <td>To have a lot of visitors, which may cause lag</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Outage</td>
+        <td>A period when a service, such as electricity, is not available</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To route</td>
+        <td>To send information from one computer network to another</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Vendor</td>
+        <td>Someone who is selling something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Liability</td>
+        <td>The fact that someone is legally responsible for something</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Revenues</td>
+        <td>The income that a company receives regularly</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Hashing</td>
+        <td>A method of sorting and indexing data for databases</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Rollback</td>
+        <td>The process of returning a computer back to a state when it was working properly</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">To unpack</td>
+        <td>To restore compressed data to its original state. The way in which database programs mark entries for deletion</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Delimiter</td>
+        <td>One or more characters that separate text strings; such as commas, semicolon, quotes, braces, pipes or slashes</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Data center</td>
+        <td>Facility used to store computers, servers, routers, switches, and other networking equipment in a single location. (often stored in racks)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Port</td>
+        <td>A hole or connection found on the front or back of a computer. This allows computers to access external devices (hardware port/peripheral hole)</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Concurrency</td>
+        <td>Concurrency controls help make sure each transaction on the database takes place in a particular order rather than at the same time. This keeps the transactions from working at the same time, which could cause data to become incorrect or corrupt the database</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Overload</td>
+        <td>A term used to describe when a device or service exceeds its recommended limits. For example, a popular network may become overloaded with users or the power supply may become overloaded when a surge occurs</td>
+    </tr>
+    <tr>
+        <td style="font-weight:bold">Disaster recovery</td>
+        <td>A company's set of rules and tools to ensure the recovery of data and continuation of business after a human-caused or natural disaster</td>
+    </tr>
+</table>
+
+## Unit 4 - Outsourcing
+
