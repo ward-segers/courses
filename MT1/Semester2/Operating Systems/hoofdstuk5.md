@@ -307,4 +307,76 @@ Deze techniek combineert dus een **goede leessnelheid** met een **beperkt RAM-ve
 
 Een directory kan opgeslagen worden in een bestand. Dit bestand bevat dan een **directory entry** voor elke file of subdirectory.
 
-Elk file system kiest zelf welke informatie er wordt opgeslagen in een directory
+Elk file system kiest zelf welke informatie er wordt opgeslagen in een directory entry, maar deze informatie omvat zeker een verwijzing naar het eerste datablok (bij gebruik van contiguous storage, linked list, of FAT) of naar de inode (bij gebruik van inodes).
+
+<p align='center'><img src='src/implementation_directories.png' alt='' width='50%'></p>
+
+
+Een belangrijke keuze die moet worden gemaakt is hoe/waar de naam van elke file of
+subdirectory wordt opgeslagen. In Figuur (a) wordt de naam opgeslagen als deel van
+de entry. In Figuur (b) worden de namen apart opgeslagen in een heap.
+Versie (a) heeft als nadeel dat directory entries een variabele grootte hebben, en er
+dus fragmentatie kan ontstaan binnen het directory-bestand. Versie (b) heeft dan
+weer als nadeel dat er een heap moet beheerd worden.
+
+### Implementatie van links
+
+Een **link** is een bestand dat verwijst naar - of gekoppeld is aan - een ander bestand.
+
+Links bestaan in twee vormen:
+
+- Een **hard link** is een koppeling die wordt gecreëerd door dezelfde datablokken of inodes in meerdere directory entries in te schrijven. Deze entries blijven onafhankelijk maar delen wel dezelfde data.
+- Een **soft link** (ook gekend als symbolic link of snelkoppeling) heeft een eigen datablok of inode. Dit soort link is een bestand waarvan de inhoud bestaat ui een verwijzing naar een ander bestand.
+
+Soft links zijn flexibeler dan hard links omdat ze ook werken tussen verschillende bestandssystemen, terwijl hard links enkel mogelijk zijn binnen hetzelfde bestandssysteem. Een nadeel van soft links is dan weer da ze kunnen leiden tot **dangling pointers**.
+
+>**Een dangling pointer** is een soft link die verwijst naar een bestand dat niet meer bestaat.
+
+<p align='center'><img src='src/implementation_links.png' alt='' width='50%'></p>
+
+In dit voorbeeld delen 'my-hard-link' en 'myfile.txt' dezelfde inode. 'my-soft-link' verwijst rechtstreeks naar het bestand 'myfile.txt'
+
+### Journaling
+
+Wanneer het bestandssysteem of besturingssysteem crasht tijdens een schrijfbewerking, dan kan er data corrupt worden of verloren gaan. Een schrijfbewerking kan namelijk uit verschillende stappen bestaan, die allemaal moeten uitgevoerd worden. Zo komt het verwijderen van een file neer op:
+
+1. Verwijder de directory entry voor deze file.
+2. Verwijder de inode voor deze file.
+3. Markeer de datablokken van deze file als vrije ruimte.
+
+Het onderbreken van deze stappen kan het bestandssyteem in een ongeduldige toestand brengen.
+
+Door het bijhouden van een **journal** (logboek van bewerkingen) kan het bestandssysteem zichzelf herstellen na een crash.
+
+<p align='center'><img src='src/journalling.png' alt='' width='50%'></p>
+
+Een bestandssysteem met journaling werkt als volgt:
+
+1. Elke uit te voeren bewerking wordt eerst neergeschreven in het logboek.
+2. Vervolgens wordt de bewerking zelf uitgevoerd
+3. Tenslotte wordt in het logboek de bewerking gemarkeerd als voltooid.
+
+Wanneer het bestandssysteem of besturingssysteem crasht tijdens de uitvoering van de bewerking, dan kan het bestandssysteem deze crash detecteren omdat er een nog-niet-voltooide bewerking in het logboek staat. Vervolgens kan het bestandssysteem de onvoltooide bewerking alsnog voltooien op basis van de informatie in het logboek.
+
+### Virtual file systems
+
+Op Windows krijgt elk bestandssysteem een drive letter toegewezen.
+
+Op Linux en Mac daarentegen is er een **virtual file system**. Deze systemen brengen alle actieve bestandssystemen samen onder één hiërarchische structuur. Voor de gebruiker lijkt het alsof er slechts één bestandssyteem is.
+
+<p align='center'><img src='src/virtual_file_system.png' alt='' width='50%'></p>
+
+Bovenstaande afbeelding toont aan hoe een virtual file system werkt:
+
+- Processen gebruiken de algemene functies van het besturingssysteem om het virtual file system aan te spreken. Deze functies (op de figuur aangeduid als POSIX) zijn dus niet gebonden aan een specifiek file system.
+- Het virtual file systeem vertaalt deze algemene functieoproepen naar oproepen voor de drivers van elk file system.
+
+Een virtual file system verbergt dus de verschillen tussen de file systems. Processen zien slechts één bestandsstructuur, die op een uniforme manier kan worden bewerkt.
+
+<p align='center'><img src='src/virtual_file_system_bis.png' alt='' width='50%'></p>
+
+Bovenstaande afbeelding toont nogmaals aan hoe een vfs (virtual file system) werkt.
+
+Twee belangrijke bewerkingen bij een virtual file system  zijn:
+- **mount**: het inladen van de root directory van een bestandssysteem in een directory van de virtuele hiërarchie. Zo kan je bv. kiezen om de root directory van een USB-stick in te laden in de map `/media/usb`. Vanaf dan verwijst deze map naar het bestandssysteem van de USB-stick.
+- **unmount**: de omgekeerde beweging. Een reeds ingeladen bestandssysteem terug loskoppelen van het virtuele bestandssysteem.
