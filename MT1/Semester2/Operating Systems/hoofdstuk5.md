@@ -480,3 +480,147 @@ Wil je Windows en Linux samen op een toestel installeren, dan is het best eerst 
 
 ## Voorbeelden FS (File System)
 
+- Windows:
+    - NTFS
+    - FAT32
+    - exFAT
+- Mac:
+    - HFS+
+    - APFS
+- Linux
+    - ext4
+    - ZFS
+    - Btrfs
+- Andere
+    - ISO 9660 / UDF
+
+
+### NTFS
+
+**NTFS** (New Technology File System - 1993) is het standaard file system op Windows. Dit file system gebruikt journaling en vervangt het oudere FAT32 file system.
+
+NTFS is een *proprietary* file system van Microsoft, met beperkte ondersteuning op macOS en Linux. Op deze platformen gezbruik je best de open source **NTFS-3G** driver, die het mogelijk maakt om NTFS partities te lezen en te schrijven.
+
+### FAT32
+
+**FAT32** (1977) is een bestandssysteem dat gebruikmaakt van een 32 bits File Allocation Table. FAT32 is ontwikkeld door Microsoft als opvolger van FAT12 en FAT16. (nummer verwijst naar bits gebruikt bij addressering)
+
+Beperkingen FAT32:
+- Maximum grootte van het bestandssysteem is 2TB
+- Maximum grootte van een bestand is 4GB
+
+:arrow_right: FAT32 is nog weining gebruikt
+
+### exFAT
+
+Ook **exFAT** (Extensible File Allocation Table - 2006) is een *proprietary* file system van Microsoft. Dit file system gebruikt een Allocation Table. In tegenstelling tot NTFS gebruikt exFAT geen journaling, dit om schijfruimte te besparen. exFAT is vooral gericht op verwijderbare media zoals USB-sticks en SD-kaarten.
+
+exFAT wordt goed ondersteund op Mac en Linux, wat het uitermate geschikt maakt voor bestandsuitwisselen.
+
+### HFS+
+
+**HFS+** (Hierarchical File System Plus, of MacOS Extended - 1998) was het standaard file system op macOS tot enkele jaren terug. Dit file system heeft erg lang dienst gedaan, maar is ondertussen volledig vervangen door het nieuwere APFS.
+
+### APFS
+
+**APFS** (Apple File System - 2017) is het nieuwst file system voor macOS, IOS, en aanverwanten. Dit file system heeft een grotere focus op SSD's en encryptie, en gebruikt GPT containters en volumes i.p.v. klassieke volumes.
+
+APFS is hoofdzakelijk een Appl-product en heeft slechts een beperkte ondersteuning op Windows en Linux, via third-party (commerciële) drivers.
+
+### ext4
+
+**ext4** (fourth extended file systemv - 2008) is het standaard file system op  vele Linux-distributies. Dit file system gebruikt journaling en is achterwaards compatibel met zijn voorgangers **ext2** en **ext3**.
+
+ext4 wordt bijna uitsluitend gebruikt op Linux maar is sinds Windows 10  (64-bit) ook ondersteund op Windows met het Windows Subsystem for Linux (WSL). Op macOS heb je third-party (commerciële) drivers nodig.
+
+### ZFS
+
+**ZFS** (Zettabyte File System) is een file system oorspronkelijk ontwikkeld door Sun Microsystems voor hun Solaris besturingssysteem.
+
+ZFS is uitermate krachtig en complex, en voornamelijk gericht op intensieve servertoepassingen. Het is daarom erg populair op Linux en FreeBSD.
+
+- Heel geavanceerd: volume management, snapshots maken, klonen, integriteitscontrole, caching, 128-bit adressering.
+- Niet zo flexibele als andere file systems
+- Heel sterk tegen bitrot en data corruptie
+
+### Btrfs
+
+**Btrfs** (B-tree File System of Butter FS of Better File System - 2009) is een file system ontwikkeld door Oracle, als antwoord op ZFS. Net als ZFS is Btrfs een geavanceerd file system, met een pak meer features dan ext4.
+
+- Standaard file system op Fedora (sinds kort)
+- Sterk tegen bitrot en datacorruptie
+
+### ISO 9660 / UDF
+
+**ISO 9660** en **UDF** (Universal Disk Format) zijn file systems voor optische schijven. (respectievelijk CD en DVD). Deze file systems verschillen heel erg van de vorige omdat ze gericht zijn op read-only of write-once media voor distributie of backup.
+
+Beide file systems zijn ondersteund op alle gangbare platformen.
+
+## Opslag in Docker
+
+### VM vs containter
+
+Een virtuele machine bevat één of meerdere virtuele disks. Dit zijn bestanden die opgeslagen worden op de fysieke harde schijf van de host.
+
+- VirtualBox -> .vdi bestanden
+    - default opgeslagen in `C:\Users\<username>\VirtualBox VMs` (wanneer je VirtualBox op Windows gebruikt)
+- Hyper-V -> .vhdx bestanden
+- VMWare -> .vmdk bestanden
+
+Docker werkt echter anders: een docker container heeft geen virtuele disks, maar bestanden in een Docker container worden opgeslagen in een writable container layer. Het beheer van deze layer gebeurt aan de hand van een storage driver.
+
+### Storage driver en layers
+
+Containers in Docker maken dus gebruik van verschillende lagen, en enkel de bovenste layer is schrijfbaar.
+
+Concreet bestaat een container uit:
+- meerdere image layers, deze zijn readonly en worden aangemaakt tijdens het builden van een image
+- één schrijfbare container layer
+
+De onderste image layer is de basis-image van de container (bv. een ubuntu:15-04 image), en elke layer daarboven houdt de wijzigingen bij ten opzichte van de onderliggende layer. 
+
+Bij het aanmaken van een container (op basis van een image) maak je een nieuwe layer aan bovenop de image layers, deze container wordt vaak de **container layer** genoemd. Dit is de enige layer waarin de container (ijdens de uitvoering) wijzigingen kan wegschrijven, alle andere image layers zijn readonly.
+
+De storage driver is binnen docker verantwoordelijk voor het beheer van de verschillende layers.
+
+<p align='center'><img src='src/docker_example_ubuntu1504.png' alt='' width='50%'></p>
+
+### Voorbeeld image layers
+
+Als voorbeeld nemen we de volgende Dockerfile:
+
+```console
+FROM ubuntu:18.04
+COPY ./app
+RUN make /app
+RUN rm -r $HOME/.cache
+CMD python /app/app.py
+```
+
+Als we deze Dockerfile builden maken we een image aan, die uiteindelijk zal bestaan uit 4 image layers:
+- het eerste FROM statement maakt een nieuwe image layer aan op basis van de `ubuntu:18.04` image
+- het COPY commando kopieert enkele bestanden naar de container, en slaat dit op in een nieuwe image layer.
+- het eerste RUN commando compileert de applicatie (via een `make` commando) en schrijft het resultaat naar een nieuwe image layer.
+- het tweede RUN commando verwijdert enkele tijdelijke bestanden, en schrijft het resultaat naar een nieuwe image layer.
+
+De CMD instructie op de laatste regel zegt wat de container moet doen bij het opstarten. Dit maakt geen nieuwe image layer aan, maar wijzigt enkel de metadata van de image.
+
+<p align='center'><img src='src/docker_build_example_ubuntu1804.png' alt='' width='25%'></p>
+
+### Container layer
+
+Bij het aanmaken van een container op basis van een gecompileerde image, maak je een writable layer aan bovenop de image layers. Deze layer noemen we de **container layer** of **Thin R/W layer**. Als tijdens de uitvoering van de container data gewijzigd wordt (= aanmaken, wijzigen of verwijderen van mappen en bestanden) wordt dit bijgehouden in deze container layer. De container layer is de enige layer die de container kan aanpassen, de image layers zijn read-only.
+
+Wanneer we een container verwijderen, dan wordt de container layer verwijderd. De onderliggende image layers worden **niet verwijderd**, het kan immers zijn dat andere containers dezelfde image gebruiken. Enkel bij verwijderen van de image zullen de image layers verwijderd worden.
+
+Meerdere containers kunnen dus dezelfde onderliggende image layers gebruiken, en elke container houdt wijzigingen ten opzichte van de image bij in hun eigen container layer
+
+### Persistente opslag in Docker
+
+Aangezien de container layer dus verwijderd wordt bij het verwijderen van een container, is dit geen optimale oplossing voor persistente opslag. Als je bijvoorbeeld een container gebruikt voor het hosten van een databank, kan het handig zijn om nog aan de records (data) van de databank te kunnen wanneer de container niet meer bestaat.
+
+De verschillende layers worden welliswaar "ergens" opgeslagen op het fysieke filesystem van de Linux host (hoe en waar is afhankelijk van de gebruikte storage driver), maar het is eigenlijk niet de bedoeling om manueel bestanden en mappen in deze layers te wijzigen vanaf de host. Dit zou immers de correcte werking van de storage driver in gevaar kunnen brengen, en containers (of images) corrupt maken.
+
+Voor persistente opslag is het dus beter om gebruik te maken van **volumes** en **bind mounts**.
+- volumes zijn vooral nuttig als je data wil delen tussen verschillende containers
+- Bind mounts zijn nuttig als je vanaf de host ook toegang wil tot de data. Bind mounts zijn eigenlijk een soort volumes die gemount worden op het virtual file system van de Linux host waarop Docker geïnstalleerd is.
