@@ -380,3 +380,103 @@ Bovenstaande afbeelding toont nogmaals aan hoe een vfs (virtual file system) wer
 Twee belangrijke bewerkingen bij een virtual file system  zijn:
 - **mount**: het inladen van de root directory van een bestandssysteem in een directory van de virtuele hiërarchie. Zo kan je bv. kiezen om de root directory van een USB-stick in te laden in de map `/media/usb`. Vanaf dan verwijst deze map naar het bestandssysteem van de USB-stick.
 - **unmount**: de omgekeerde beweging. Een reeds ingeladen bestandssysteem terug loskoppelen van het virtuele bestandssysteem.
+
+## Partities
+
+Een fysiek opslagmedium (zoals een harde schijf) kan zijn capaciteit onderverdelen in **partities**. Elke partitie heeft dan zijn eigen bestandssysteem.
+
+Een opslagmedium met partities moet ook een **partitietabel** voorzien. Deze tabel beschrijft de partities en hun bestandssystemen. Twee systemen die hiervoor worden gebruikt zijn een **Master Boot Record (MBR)** of een **GUID Partition Table (GPT)**.
+
+### MBR vs GPT
+
+#### MBR
+
+- Oude manier van werken, bestaat sinds 1983.
+- Geïntroduceert als onderdeel van PC DOS 2.0
+- Speciale boot sector wordt gebruikt aan het begin van de schijf om de partitietabel op te slaan.
+- Maximum grootte van de schijf 2TB
+- Maximum 4 (primaire) partities op 1 schijf
+    - Kan omzeild worden door gebruik van extended partities (= virtuele partitie met meerdere logische partities)
+
+<p align='center'><img src='src/mbr_example.png' alt='' width='50%'></p>
+
+In dit voorbeeld zien we in het begin van de schijf de Master Boot Record met de partietabel. Daarna volgen de verschillende partities.
+
+Een Master Boot Record bevat naast de partitietabel ook een zogenaamde **boot loader**, die verantwoordelijk is voor het opstarten van het systeem. Deze boot loader gaat opzoek naar een partitie met een besturingssysteem en schakelt dan door naar de code in de **boot block** van deze partitie.
+
+#### GPT
+
+- Opvolger van MBR
+- Onderdeel van UEFI
+- Ondersteuning voor schijven groter dan 2TB 
+- In theorie onbeperkt aantal partities (Windows beperkt wel tot 129 partities)
+- Iedere partitie krijge een unieke ID, GUID (= Globally Unique Identifier), die opgeslagen wordt in de GUID partition table (GPT)
+
+Windows is enkel bootable vanop een schijf met GPT voor 64-bit systemen die gebruik maken van UEFI (opvolger BIOS) als interface tussen de hardware en het besturingssysteem. Het is wel mogelijk om Linux te starten vanop een schijf met GPT in combinatie met BIOS firmware.
+
+<p align='center'><img src='src/gpt_example.png' alt='' width='25%'></p>
+
+GPT is achterwaards compatibel met MBR en kan ook gebruikt worden in combinatie met een BIOS (behalve bij Windows en macOS). GPT plaats de boot loader op een speciale **EFI System Partition**. Uiteraard kan er via de achterwaartse compatibiliteit met MBR nog steeds gebruik worden gemaakt van boot blocks.
+
+## Booten
+
+> **Booten** is het proces van een computer om op te starten en een besturingssysteem te laden.
+
+Om een besturingssysteem in te laden hebben we een apart programma nodig, **de boot loader**. Deze bevindt zich in een opstartbare (of bootable) partitie van het secudaire geheugen, zoals een HDD of een SSD.
+
+Als er meerder bootable partities aanwezig zijn, kunnen we in de BIOS/EFI instellen in welke volgorde de partities worden overlopen. Bij het booten wordt de eerst gevonden bootloader op een bootable partitie uitgevoerd.
+
+Een bootloader is meestal afhankelijk van het besturingssysteem en specifiek ontworpen om alleen dat type besturingssysteem te laden. Enkele bekende bootloaders zijn:
+
+- Linux: grub, lilo, rEFInd,...
+- macOS: BootX
+- Windows: Windows Boot manager
+
+### Bootloader
+
+#### Werking bootloader
+
+1. Uitpakken gecomprimeerde bestanden op bootpartitie. 
+    - Opstartbare bestanden bevinden zich niet om de partitie van het besturingssysteem zelf (maar afgeschermde partitie)
+    - Kernel en root file system worden gecomprimeerd om plaats te besparen
+    - Standaar is bootpartitie zeer klein (Windows = 128MB)
+2. Inladen kernel in het geheugen
+3. Inladen root file system in het geheugen
+4. Control doorgeven aan kernel om OS verder in te laden en te starten
+
+Telkens wanneer het besturingssysteem de kernel bijwerkt naar een nieuwe versie, worden er nieuwe bootbestande gegenereerd. 
+
+>[!important]
+>Zet nooit de computer uit tijdens het uitvoeren van een systeemupdate. Hierdoor kunnen de bootbestanden beschadigd raken, waardoor het besturingssysteem niet meer opstart.
+
+### Multi-Boot
+
+>**Multi-Boot** is wanneer er meerder OS'en geïnstalleerd zijn op een computersysteem.
+
+Om te zorgen dat je elk OS afzonderlijk kan opstarten heb je dus een bootloader voor elke OS nodig. Aangezien bij de installatie van een ander OS meestal de huidige bootloader zal overschreven worden, is het van groot belang om elk OS in de juiste volgorde te installeren.
+
+Wil je Windows en Linux samen op een toestel installeren, dan is het best eerst Windows te installeren en daarna Linux. Na de installatie van Linux kan je de Linux bootloader laten doorverwijzen naar de bootloader van Windows. Dit principe heet **chain loaden** van bootloaders. Windows heeft nl. geen boot menu en zal dus steeds meteen Windows opstarten i.p.v. de keuze te geven. (Grub bv kan dit wel)
+
+>**Fallback starten** is een back-up optie om toch je systeem te kunnen opstarten.
+
+<table>
+<td>
+
+- Arch Linux Boot files
+    - Root file system (Back-up)
+    - Root file system
+    - Intel CPU patch (optioneel)
+    - Kernel
+- Windows Boot Files
+- Bootloader (rEFInd)
+
+</td>
+<td>
+<br>
+<p align='center'><img src='src/multi_ boot_example.png' alt='' width='75%'></p>
+
+</td>
+</table>
+
+## Voorbeelden FS (File System)
+
