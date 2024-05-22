@@ -69,7 +69,7 @@ Message time bestaat uit:
 
 >[!important]
 >**Collisions** is het fenomeen wanneer meer dan één apparaat op hetzelfde moment berichten stuurt en deze berichten corrupt worden
-
+- 
     - Sommige protocollen zijn proactief en properen dus "collisions" te vermijden, terwijl andere protocollen corrigeren werken en een recovery methode bevatten nadat de collision voorkomt.
 
 ### Message Delivery Options
