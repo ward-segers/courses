@@ -66,8 +66,10 @@ Message time bestaat uit:
 - **Response Timeout**: beheerd hoelang een apparaat wacht wanneer het geen antwoord ontvangt van de bestemming.
 - **Access method**: beheerd wanneer iemand een bericht kan sturen.
     - Er kunnen zijn verschillende regels die problemen beheren zoals "collisions". <br> <br>
-    >[!important]
-    >**Collisions** is het fenomeen wanneer meer dan één apparaat op hetzelfde moment berichten stuurt en deze berichten corrupt worden
+
+>[!important]
+>**Collisions** is het fenomeen wanneer meer dan één apparaat op hetzelfde moment berichten stuurt en deze berichten corrupt worden
+
     - Sommige protocollen zijn proactief en properen dus "collisions" te vermijden, terwijl andere protocollen corrigeren werken en een recovery methode bevatten nadat de collision voorkomt.
 
 ### Message Delivery Options
