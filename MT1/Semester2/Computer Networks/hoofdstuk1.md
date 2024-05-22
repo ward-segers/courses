@@ -80,7 +80,7 @@ Netwerk diagrammen geven een visuele weergave over hoe het netwerk verbonden is.
 <p align='center'><img src='src/image2.png' alt='Fysieke netwerkt diagrammen' width='50%'></p>
 
 
-**Logische netwerk diagrammen ** illustreren toestellen, poorten en het addressenschema van een netwerk
+**Logische netwerk diagrammen** illustreren toestellen, poorten en het addressenschema van een netwerk
 
 
 <p align='center'><img src='src/image3.png' alt='Logische netwerk diagrammen' width='50%'></p>
