@@ -3,7 +3,7 @@
 
 ## Lesopnames
 
-- [ ] LES 1 - Bevat H1 - H2 - H3 (tot 3.6 Data Encapsulation)
+- [x] LES 1 - Bevat Module 1 & Module 3 tot 3.6 (Data Encapsulation)
     - [ ] Lesopname - 03:17:00
 - [ ] LES 2 - Bevat H3 - H4 (tot 4.6 Wireless Media)
     - [ ] Lesopname - 02:33:26
