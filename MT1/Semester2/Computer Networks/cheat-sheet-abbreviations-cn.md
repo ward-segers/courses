@@ -147,7 +147,7 @@
 </td><td>Internet Architecture Board</td></tr>
 <tr><td>
 
-`ISO`
+``
 
 </td><td>International Organization for Standardization</td></tr>
 <tr><td>
@@ -205,6 +205,36 @@
 `PDU`
 
 </td><td>Protocol Data Units</td></tr>
+<tr><td>
+
+`HTTP`
+
+</td><td>Hypertext Transfer Protocol</td></tr>
+<tr><td>
+
+`TCP`
+
+</td><td>Transmission Control Protocol</td></tr>
+<tr><td>
+
+`IP`
+
+</td><td>Internet Protocol</td></tr>
+<tr><td>
+
+`EMI`
+
+</td><td>Electromagnetic Interference</td></tr>
+<tr><td>
+
+`RFI`
+
+</td><td>Radio Frequency Interference</td></tr>
+<tr><td>
+
+`FTTH`
+
+</td><td>Fiber-to-the-Home</td></tr>
 </tbody>
 </table>
 
