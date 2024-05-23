@@ -15,3 +15,5 @@ Volgorde studeren:
 
 - [ ] 1. Module (hoofdstuk) 1
 - [ ] 2. Module (hoofdstuk) 3
+- [ ] 3. Module (hoofdstuk) 4
+- [ ] 4. Module (hoofdstuk) 5

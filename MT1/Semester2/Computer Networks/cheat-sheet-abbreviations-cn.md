@@ -202,6 +202,11 @@
 </td><td>International Telecommunications Union - Telecommunication Standardization Sector</td></tr>
 <tr><td>
 
+`ANSI`
+
+</td><td>American National Standards Institute</td></tr>
+<tr><td>
+
 `VOIP`
 
 </td><td>Voice over IP</td></tr>
@@ -245,6 +250,61 @@
 `FTTH`
 
 </td><td>Fiber-to-the-Home</td></tr>
+<tr><td>
+
+`LLC`
+
+</td><td>Logical Link Control</td></tr>
+<tr><td>
+
+`MAC`
+
+</td><td>Media Access Control</td></tr>
+<tr><td>
+
+`CSMA/CD`
+
+</td><td>Carrier sense multiple access with collision detection</td></tr>
+<tr><td>
+
+`CSMA/CA`
+
+</td><td>Carrier sense multiple access with collision avoidance</td></tr>
+<tr><td>
+
+`SFD`
+
+</td><td>Start Frame Delimiter</td></tr>
+<tr><td>
+
+`FCS`
+
+</td><td>Frame Sequence Check</td></tr>
+<tr><td>
+
+`OUI`
+
+</td><td>Organizationally Unique Identifier</td></tr>
+<tr><td>
+
+`ARP`
+
+</td><td>Adress Resolution Protocol</td></tr>
+<tr><td>
+
+`ND`
+
+</td><td>Neighbor Discovery</td></tr>
+<tr><td>
+
+`STP`
+
+</td><td>Spanning Tree Protocol</td></tr>
+<tr><td>
+
+`CAM`
+
+</td><td>Content Addressable Memory</td></tr>
 </tbody>
 </table>
 

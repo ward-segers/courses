@@ -135,9 +135,13 @@ Indien het bron MAC adres wel reeds bestaat, update de switch de **refresh timer
 Indien het MAC adres van de bestemming een unicast adres is, dan zal de switch zoeken naar een match in MAC adres tabel tussen het bestemmings MAC adres in het frame en een reeds ingevoerd MAC adres in de tabel.
 
 1. Bestemmings MAC adres **kan** gevonden worden in de tabel
+
     :arrow_right: Het frame wordt doorgestuurd naar de specifieke poort
+
 2. Bestemmings MAC adres **kan niet** gevonden worden in de tabel
+
     :arrow_right: Het frame wordt doorgestuurd naar alle poorten, buiten de inkomende poort. (= *unkown unicast of flooding*)
+    
 
 >[!important]
 > Indien het bestemmings MAC adres een broadcast, of een multicast adres is, zal het frame ook naar alle poorten buiten de inkomende poort "overspoeld" worden.
