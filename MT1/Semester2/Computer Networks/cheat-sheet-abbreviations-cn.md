@@ -130,6 +130,16 @@
 </td><td>Wireless LAN</td></tr>
 <tr><td>
 
+`WPAN`
+
+</td><td>Wireless Personal Area Network</td></tr>
+<tr><td>
+
+`AP`
+
+</td><td>Access Point</td></tr>
+<tr><td>
+
 `IETF`
 
 </td>
