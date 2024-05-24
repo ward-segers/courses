@@ -254,8 +254,8 @@ Het grote nadeel van klassevol te adresseren is dat verschillende IPv4 adressen 
 - Verschillende protocollen gebruiken broadcast of multicast (bv. ARP gebruikt boradcast om andere toestellen te localiseren, hosts versturen DHCP discover broadcast om een DHCP server terug te vinden.)
 - Switches propageren uitzendingen naar alle interfaces behalve de interface waarop ze ontvangen werden
 
-- >[!important]
-  >Het enige toestel dat een broadcast kan stopzetten is een router
+>[!important]
+>Het enige toestel dat een broadcast kan stopzetten is een router
 
 - Routers verspreiden geen broadcasts
 - Elke router interface verbind met een broadcast domein. (broadcasts worden enkel verspreid binnen dat domein)
