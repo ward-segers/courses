@@ -7,3 +7,4 @@
 | `configure terminal` </br> _kort_ `config t`| Omschakelen naar global configuration mode |
 | `exit` | terugkeren naar global configuration mode |
 | `end` | terugkeren naar privilege exec mode |
+| `mdix auto` | inschakkelen van auto-mdix (in inferace configuratie)|

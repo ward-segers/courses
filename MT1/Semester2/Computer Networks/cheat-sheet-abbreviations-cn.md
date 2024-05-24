@@ -305,6 +305,11 @@
 `CAM`
 
 </td><td>Content Addressable Memory</td></tr>
+<tr><td>
+
+`CRC`
+
+</td><td>Cyclic Redundancy Check</td></tr>
 </tbody>
 </table>
 
