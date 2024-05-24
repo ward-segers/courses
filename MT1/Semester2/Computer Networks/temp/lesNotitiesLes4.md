@@ -18,3 +18,6 @@ Source en Destination staan omgekeerd in de IP tabel tov. de Ethernet tabel
 SEL ==> Instellen Default Gateway
 
 ARP: Address Resolution Protocol (Neighbor Discovery is ARP voor IPv6)
+==> ARP tussen laag 2 en Laag 3 => GEEN Laag 3 protocol
+==> ARP gebroadcast naar ff:ff:ff:ff:ff:ff
+==> Antwoord is een unicast terug naar zender

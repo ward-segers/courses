@@ -194,7 +194,7 @@ Zoals beschreven in RFC 1918, zijn publieke IPv4 adressen globaal geroute tussen
         </tr>
         <tr>
             <td>172.16.0.0/12</td>
-            <td>172.16.0.0 - 172.32.255.255</td>
+            <td>172.16.0.0 - 172.31.255.255</td>
         </tr>
         <tr>
             <td>192.168.0.0/16</td>

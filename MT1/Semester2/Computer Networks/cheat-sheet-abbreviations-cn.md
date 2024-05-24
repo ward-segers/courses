@@ -310,6 +310,51 @@
 `CRC`
 
 </td><td>Cyclic Redundancy Check</td></tr>
+<tr><td>
+
+`NAT`
+
+</td><td>Network Address Translation</td></tr>
+<tr><td>
+
+`MTU`
+
+</td><td>Maximum Transmission Unit</td></tr>
+<tr><td>
+
+`TTL`
+
+</td><td>Time to Live</td></tr>
+<tr><td>
+
+`DS`
+
+</td><td>Differentiated Services</td></tr>
+<tr><td>
+
+`EH`
+
+</td><td>Extension Headers</td></tr>
+<tr><td>
+
+`DGW`
+
+</td><td>Default Gateway</td></tr>
+<tr><td>
+
+`RS`
+
+</td><td>Router Sollicitation</td></tr>
+<tr><td>
+
+`OSPF`
+
+</td><td>Open Shorted Path First</td></tr>
+<tr><td>
+
+`EIGRP`
+
+</td><td>Enhanced Interior Gateway Routing Protocol</td></tr>
 </tbody>
 </table>
 
