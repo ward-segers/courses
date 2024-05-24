@@ -355,6 +355,11 @@
 `EIGRP`
 
 </td><td>Enhanced Interior Gateway Routing Protocol</td></tr>
+<tr><td>
+
+`APIPA`
+
+</td><td>Automatic Private IP Addressing</td></tr>
 </tbody>
 </table>
 

@@ -125,3 +125,6 @@ Waarom NAT => Network Adress Translation? <br>
 IPv6 => Vergroten aantal beschikbare addressen => 2^64
 
 NAT valt weg bij IPv6
+
+=> Private adressen range van buiten kennen
+
