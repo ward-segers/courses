@@ -1,0 +1,88 @@
+Afkorting,Beschrijving voluit
+`LAN`,Local Area Network
+`NIC`,Network Interface Card
+`SOHO`,Small Office / Home Office
+`WAN`,Wide Area Network
+`ISP`,Internet Service Provider
+`WISP`,Wireless Internet Service Provider
+`DSL`,Digital Subscriber Line
+`SP`,Service Provider
+`SDSL`,Symmetric Digital Subscriber Lines
+`QoS`,Quality of Service
+`BYOD`,Bring your own device
+`ACL`,Access control lists
+`IPS`,Intrusion prevention systems
+`VPN`,Virtual private networks
+`HTTP`,Hypertext Transfer Protocol
+`TCP`,Transmission Control Protocol
+`IP`,Internet Protocol
+`OSI`,Open Systems Interconnection
+`WLAN`,Wireless LAN
+`WPAN`,Wireless Personal Area Network
+`AP`,Access Point
+`IETF`,Internet Engeneering Task Force
+`ICANN`,Internet Corporation for Assigned Names and Numbers
+`IAB`,Internet Architecture Board
+ISO,International Organization for Standardization
+`ITU`,International Telecommunication Union
+`ISOC`,Internet Society
+`IRTF`,Internet Research Task Force
+`IANA`,Internet Assigned Numbers Authority
+`IEEE`,Institute of Electrical and Electronics Engineers
+`EIA`,Electronic Industries Alliance
+`TIA`,Telecommunications Industry Association
+`ITU-T`,International Telecommunications Union - Telecommunication Standardization Sector
+`ANSI`,American National Standards Institute
+`VOIP`,Voice over IP
+`IPTV`,Internet Protocol Television
+`PDU`,Protocol Data Units
+`HTTP`,Hypertext Transfer Protocol
+`TCP`,Transmission Control Protocol
+`IP`,Internet Protocol
+`EMI`,Electromagnetic Interference
+`RFI`,Radio Frequency Interference
+`FTTH`,Fiber-to-the-Home
+`LLC`,Logical Link Control
+`MAC`,Media Access Control
+`CSMA/CD`,Carrier sense multiple access with collision detection
+`CSMA/CA`,Carrier sense multiple access with collision avoidance
+`SFD`,Start Frame Delimiter
+`FCS`,Frame Sequence Check
+`OUI`,Organizationally Unique Identifier
+`ARP`,Adress Resolution Protocol
+`ND`,Neighbor Discovery
+`STP`,Spanning Tree Protocol
+`CAM`,Content Addressable Memory
+`CRC`,Cyclic Redundancy Check
+`NAT`,Network Address Translation
+`MTU`,Maximum Transmission Unit
+`TTL`,Time to Live
+`DS`,Differentiated Services
+`EH`,Extension Headers
+`DGW`,Default Gateway
+`RS`,Router Sollicitation
+`OSPF`,Open Shorted Path First
+`EIGRP`,Enhanced Interior Gateway Routing Protocol
+`APIPA`,Automatic Private IP Addressing
+`RIR`,Regional Internet Registries
+`DMZ`,Demilitarized Zone
+`IMAP`,Internet message access protocol
+`SLAAC`,Stateless address autoconfiguration
+`GUA`,Global Unicast Address
+`LLA`,Local-Link Address
+`ULA`,Unique Local Address
+`ICMPv6`,Internet Control Message Protocol v 6
+`RS`,Router Solicitation
+`RA`,Router Advertisement
+`EUI`,Extended Unique Identifier
+`DAD`,Duplicate Address Detection
+`UDP`,User Datagram Protocol
+`SMTP`,Simple mail transfer protocol
+`SNMP`,Simple network management protocol
+`SACK`,Selective Acknowledgment
+`MSS`,Maximum Segment Size
+`URL`,Uniform Resource Locator
+`FQDN`,Full Qualified Domain Names
+`SMB`,Server Message Block
+`RTP`,Real-Time Transport Protocol
+`RTCP`,Real-Time Transport Control Protocol

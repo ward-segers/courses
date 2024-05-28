@@ -1,0 +1,47 @@
+ Switch> ,Standaard prompt bij het openen van een switch
+ Switch> ? ,Toont alle mogelijke commando's
+ Switch> enable ,Schakelen naar een privileged user
+ Switch# show running-config ,Toont de huidige configuratie waarmee het toestel draait.(opgeslagen in RAM)
+ Switch# copy running-config startup-config ,Kopieert de running config naar de startup config
+ Switch# show startup-config ,Toont de opgeslagen configuratie waarmee het toestel draait.
+ Switch# disable ,Terugschakelen van privilege exec mode naar gebruiker exec mode
+ Switch# configure terminal ,Omschakelen naar global configuration mode
+ Switch(config)# exit ,terugkeren naar 1 niveau lager
+ Switch(config)# end ,terugkeren naar privilege exec mode (ook via CTRL + Z)
+ Switch(config)# hostname ,Wijzigt de naam van een switch
+ S(config)# interface FastEthernet 0/1 ,Gaat in interface configuratie mode op interface FastEthernet 0/1
+ S(config)# line console 0 ,Gaat in line configuratie mode op console kabel 0
+ S(config)# line vty 0-15 ,Gaat in line configuratie mode voor de vty lijnen 0 tot en met 15
+ S(config)# enable secret ditIsMijnPassw ,Stelt een geencrypteerd passwoord in (= ditIsMijnPassw) op enable (privileged user)
+ S(config)# line console 0 S(config-line)# password ditIsMijnPassw S(config-line)# login ,Stelt een zichtbaar passwoord in (= ditIsMijnPassw) op een communicatielijn (console)
+ S(config)# service password-encryption ,"Encrypteerd alle ingestelde passwords. (nieuwe passwoorden niet, moeten opnieuw gebeuren)"
+ S# show ip ,Toont ip informatie van de interfaces
+ S# show interfaces ,Toont details van de interfaces
+ S# show ip interface brief ,Toont beknopte samenvatting van de interfaces
+ S# reload ,Leest startup config opnieuw in
+ S# erase startup-config ,Startup config verwijderen
+ S(config)# interface vlan 1 S(config-if)# ip address 10.0.0.1 255.255.0.0 S(config-if)# no shutdown ,Instellen van een ip adres voor de switch. No shutdown zorgt ervoor dat de switch aan zal staan
+ S(config)# ip default-gateway 10.0.0.9 ,Instellen van de default gateway
+ S(config)# banner motd #mijn banner# ,Instellen message of the day
+ S(config-interface)# description ip address for conf ,Geeft een beschrijving aan de interface
+ S(config)# username root password root ,instellen van gebruiker root met passwoord root
+ S(config-line)# transport OPTIONS OPTIONS: ,instellen uitgaand/inkomend verkeer voor verschillende protocollen
+ S(config)# interface gigabitethernet 0/0/0 S(config-if)# ipv6 address 2001:db8:acad:1::1/64 S(config-if)#no shutdown ,instellen van een GUA ipv6 adres en de interface inschakelen
+ S(config)# interface gigabitethernet 0/0/0 S(config-if)# ipv6 address fe80::1:1 link-local S(config-if)#no shutdown ,instellen van een LLA ipv6 adres en de interface inschakelen
+ S(config)# ipv6 unicast-routing ,Schakel ipv6 op de router in
+ S# show cdp neighbors detail ,"Toont het ip adres van elk 'buurtoestel"""
+ S# debug ,Commando gebruikt om te debuggen (log berichten lokaal weergeven)
+ S# undebug all ,Stoppen met debuggen
+ S# terminal monitor ,Commando gebruikt om te weergeven van log berichten (remote)
+ S# terminal no monitor ,Stoppen met het weergeven van logs
+`mdix auto`,inschakkelen van auto-mdix (in interface configuratie)
+`route print`,Printen pc routering tabellen
+`netstat -r`,Printen pc routering tabellen
+`netstat`,"Geeft open verbinding weer, en welk protocol gebruikt wordt"
+`show ip route`,Toont de router zijn IPv4 routerings tabel
+`show ip arp`,Toont de arp tabel op cisco switches
+`arp -a`,Toont de arp tabel op windows pc
+`nslookup`,opent prompt om een dns lookup te doen
+`ipconfig /release`,ip adress geconfigureerd door dhcp vrijgeven
+`ipconfig /renew`,Host nieuw ip adres doen verkregen via dhcp
+`ipconfig /displaydns`,DNS entries op windows pc weergeven
