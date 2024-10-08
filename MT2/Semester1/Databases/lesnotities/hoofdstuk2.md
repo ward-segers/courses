@@ -3,3 +3,7 @@
 ## Conceptueel model
 
 -> Draw.io wordt gebruikt om de schema's te visualiseren
+
+!Cardinaliteiten
+
+
