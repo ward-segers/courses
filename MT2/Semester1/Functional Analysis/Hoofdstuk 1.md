@@ -84,4 +84,3 @@ Een use case heeft de volgende onderdelen:
     - Bevat alle zaken die nog onduidelijk waren bij het opstellen van de use case
     - Vooral bedoeld om te communiceren met de klant
     - Deze sectie zou leeg moeten zijn op het einde van het software-ontwikkelingsproces.
-
