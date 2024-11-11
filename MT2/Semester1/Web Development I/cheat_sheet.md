@@ -348,28 +348,58 @@ Standaard structuur van een pagina.
 <td>geeft aan dat informatie verwijderd is</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<article></article>
+```
+</td>
+<td>voor een zelfstandig stuk inhoud, dat onafhankelijk te hergebruiken is</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<section></section>
+```
+</td>
+<td>voor een onderdeel van een pagina waarvoor geen meer specifiek element is</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<nav></nav>
+```
+</td>
+<td>voor de hoofdnavigatie</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<aside></aside>
+```
+</td>
+<td>voor 'zijdelingse informatie'</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<header></header>
+```
+</td>
+<td>voor het kopgedeelte</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<footer></footer>
+```
+</td>
+<td>Voor het footer gedeelte</td>
 </tr>
 <tr>
 <td></td>
