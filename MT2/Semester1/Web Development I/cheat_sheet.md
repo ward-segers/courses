@@ -402,12 +402,34 @@ Standaard structuur van een pagina.
 <td>Voor het footer gedeelte</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```html
+<table>
+<tr>
+<th>Eerste heading</th>
+<th>Tweede heading</th>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>Eerste datacel</td>
+<td>Tweede datacel</td>
+</tr>
+</table>
+```
+</td>
+<td>Een eenvoudige manier om een tabel toe te voegen in HTML. Elke table heeft verschillende tags. (table - container van de volledige tabel) (tr - container voor een rij
+) (th & td - verschillende containers voor een cel)</td>
+</tr>
+<tr>
+<td>
+
+```css
+table{
+    border-collapse: collapse;
+}
+```
+</td>
+<td>Zorgt ervoor dat een tabel geen dubbele randen krijgt</td>
 </tr>
 <tr>
 <td></td>
