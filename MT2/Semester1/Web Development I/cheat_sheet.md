@@ -432,12 +432,27 @@ table{
 <td>Zorgt ervoor dat een tabel geen dubbele randen krijgt</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+```css
+caption{
+    caption-side: block-end;
+}
+```
+</td>
+<td>Wijzigt de standaard layout van de caption van de tabel</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>
+
+ ```html
+    <colgroup>
+        <col span="3">
+        <col class="last">
+    </colgroup>
+```
+</td>
+<td>Binnenin een tabel kan colgroup gebruikt worden om kolommen samen te bundelen en te groeperen om te stijlen.</td>
 </tr>
 <tr>
 <td></td>

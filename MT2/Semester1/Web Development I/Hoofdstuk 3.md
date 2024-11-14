@@ -88,3 +88,77 @@ Ook bij tabellen kunnen we de opmaak wijzigen door middel van css.
         padding: 10px 15px; /* 10px boven witruimte, 15px links en rechts  */
     }
     ```
+
+We kunnen via HTML verschillende kolommen groeperen en op deze manier de kolommen samen eenzelfde opmaak geven.
+
+Hiervoor gebruiken we de `<colgroup>`-tag.
+
+- We specifiëren steeds de breedte waarover de groep zich spreid (via een span attribuut)
+- We kunnen verschillende klasses toewijzen aan de groep doormiddel van een class attribuut
+- We kunnen enkel border, background, visibilty en width properties toekennen via een "colgroup"
+- voorbeeld: (groupeert de eerste 3 kolommen en wijst aan de volgende kolom de klasse last toe)
+    ```html
+    <colgroup>
+        <col span="3">
+        <col class="last">
+    </colgroup>
+    ```
+
+### Structuur
+
+Cellen kunnen ook samenengevoegd worden. We kunnen dit zowel over de kollommen als over de rijen.
+
+- Samenvoegen cellen over 3 kolommen
+
+    ```html
+    <tr>
+        <td colspan="3">Celinhoud</td>
+        <td>Celinhoud</td>
+    </tr>
+    ```
+- Samenvoegen cellen over 2 rijen
+
+  ```html
+    <tr>
+        <td rowspan="2">Celinhoud</td>
+        <td>Celinhoud</td>
+    </tr>
+    ```
+
+Vaak kunnen we tabellen onderscheiden in de volgende items:
+
+- header
+- body
+- footer
+
+In HTML kunnen we deze beschrijven met volgende tags:
+
+- `<thead>`
+- `<tbody>`
+- `<tfoot>`
+
+> Deze informatie is interessant voor de screen readers en voor de opmaak in CSS.
+
+In HTML tabellen kunnen we bijschriften schrijven doormiddel van de `<caption>`-tag. 
+
+Deze wordt standaard boven de tabel weergegeven. Echter kunnen we dit doormiddel van CSS wel wijzigen:
+
+```css
+caption{
+    caption-side: block-end;
+}
+```
+
+## Formulieren
+
+Doormiddel van formulieren (forms) kan men gegevens van de gebruiker verzamelen. We kunnen deze gebruiken oim:
+
+- je aan te melden op een website
+- een online bestelling te maken
+- te zoeken
+- te chatten
+- te bloggen
+- te twitteren
+- ...
+
+Binnen deze formulieren zijn er verschillende mogelijkheden
