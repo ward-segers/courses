@@ -151,7 +151,7 @@ caption{
 
 ## Formulieren
 
-Doormiddel van formulieren (forms) kan men gegevens van de gebruiker verzamelen. We kunnen deze gebruiken oim:
+Doormiddel van formulieren (forms) kan men gegevens van de gebruiker verzamelen. We kunnen deze gebruiken om:
 
 - je aan te melden op een website
 - een online bestelling te maken
@@ -161,4 +161,133 @@ Doormiddel van formulieren (forms) kan men gegevens van de gebruiker verzamelen.
 - te twitteren
 - ...
 
-Binnen deze formulieren zijn er verschillende mogelijkheden
+Binnen deze formulieren zijn er verschillende mogelijkheden (form controls):
+
+- Tekst ingeven:
+    - namen, adres, e-mail: single-line
+    - password: karakters worden niet getoond, maar vervangen door een sterretje
+    - textarea: meerdere lijnen tekst kunnen ingegeven worden
+- Keuzes:
+    - radiobuttons: één enkele keuze maken
+    - checkboxes: geen of meerdere keuzes mogelijk
+    - keuzelijsten(dropdown list): één of meerdere keuzes maken uit een lijst
+- Inhoud van formulieren verzenden met:
+    - submit button
+    - image button
+- Bestanden uploaden
+
+Door op een submit button te klikken worden de gegevens als *name/value* naar de server verstuurd. Hierna worden de gegevens mogelijks door een applicatie op de server verwerkt en teruggestuurd naar de webpagina.
+
+- *name*: beschrijving van het onderdeel
+- *value*: invoer van de gebruiker
+
+Alle form-controls bevinden zich tussen de open en closing form-tag
+
+```html
+<form action="/order" method="post">
+
+</form>
+```
+
+**belangrijke attributen**:
+- *action*: geeft de site of de actie aan naarwaar de data verstuurd worden na het klikken van de submit-knop
+    - action-item kan ook een e-mail adres bevatten
+
+    ```html
+    <form action="mailto:naam@hogent.be?subject=formulierresultaat" method="post">
+
+    </form>
+    ```
+
+- *method*: bepaald de HTTP-methode die gebruikt wordt bij het verzenden van de data
+    - **get**: de formulier-data wordt aan de url toegevoegd via naam-waarde paren
+        - de data is zichtbaar in de browser en gelimiteerd in lengte
+        - best enkel te gebruiken voor non-secure data
+    - **post**: voegt de formulier data toe aan de header van de http-request (niet zichtbaar)
+        - wordt gebruikt voor data die gebruikt wordt voor in een databank, gevoelige data, uploaden bestanden.
+    
+<p align='center'><img src='src/form_methods.png' alt='Forms methods' width='75%'></p>
+
+**andere attributen**:
+- *id of name*: gebruikt om formulier op te maken of aan te spreken in Javascript
+- *autocomplete*: bepaald indien autocomplete aanstaat voor de velden in het formulier. Kan ook afzonderlijk voor de form controls gebruikt worden
+
+### Form controls
+
+#### input
+
+De`<input>`-tag is de belangrijkste meest gebruikt form-control in de fomulieren.
+
+Het attribuut *type* bepaald welk type form-control het is:
+- tekst
+- wachtwoord
+- checkbox
+- e-mail
+- url
+- ...
+
+Het attribuut *name* is een "verplicht" attribuut. Zonder dit attribuut worden de waarden niet doorgestuurd.
+
+Ook hier wordt het attribuut *id* gebruikt voor de opmaak en het aanspreken in Javascript.
+
+Form-controls waar de gebruiker zelf niets in typt hebben steeds een value nodig.
+
+**input type radio-button**
+
+- *name* moet overal dezelfde om de buttons aan elkaar te linken
+- *value* moet ingevuld zijn, dit is de waarde dat verstuurd zal worden
+- *checked* is een attribuut zonder waarde dat ingesteld kan worden wanneer er reeds een optie geslecteerd moet zijn
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<input type="radio" name="levering" value="1618" />16-18u
+<input type="radio" name="levering" value="1820" checked/>18-20u
+<input type="radio" name="levering" value="2022" />20-22u
+```
+</td>
+<td>
+
+<input type="radio" name="levering" value="1618" />16-18u
+<input type="radio" name="levering" value="1820" checked/>18-20u
+<input type="radio" name="levering" value="2022" />20-22u
+</td>
+</tr>
+</table>
+
+**input type checkbox**
+
+- *name* moet ingevuld zijn, maar moet niet overal dezelfde zijn
+- *value* mag ingevuld zijn, staandaard waarde is "on"
+- *checked* is een attribuut zonder waarde dat ingesteld kan worden wanneer er reeds een optie geslecteerd moet zijn
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<input type="checkbox" name="extras" value="kaas" /> kaas
+<input type="checkbox" name="extras" id="hesp" checked/> hesp
+<input type="checkbox" name="extras" id="tomaten" checked/> tomaten
+```
+</td>
+<td>
+
+<input type="checkbox" name="extras" value="kaas" /> kaas
+<input type="checkbox" name="extras" id="hesp" checked/> hesp
+<input type="checkbox" name="extras" id="tomaten" checked/> tomaten
+</td>
+</tr>
+</table>
+
+**bestanden uploaden**
