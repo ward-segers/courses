@@ -232,7 +232,11 @@ Ook hier wordt het attribuut *id* gebruikt voor de opmaak en het aanspreken in J
 
 Form-controls waar de gebruiker zelf niets in typt hebben steeds een value nodig.
 
-**input type radio-button**
+Indien we waarden willen versturen die de gebruiker niet kan zien gebruiken we het type="hidden"
+
+Een hint geven aan de gebruiker kunnen we doen door een placeholder-waarde mee te geven aan het input-element
+
+##### Radio-button
 
 - *name* moet overal dezelfde om de buttons aan elkaar te linken
 - *value* moet ingevuld zijn, dit is de waarde dat verstuurd zal worden
@@ -261,7 +265,7 @@ Form-controls waar de gebruiker zelf niets in typt hebben steeds een value nodig
 </tr>
 </table>
 
-**input type checkbox**
+##### Checkbox
 
 - *name* moet ingevuld zijn, maar moet niet overal dezelfde zijn
 - *value* mag ingevuld zijn, staandaard waarde is "on"
@@ -290,4 +294,272 @@ Form-controls waar de gebruiker zelf niets in typt hebben steeds een value nodig
 </tr>
 </table>
 
-**bestanden uploaden**
+##### Bestanden uploaden
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<form action="http://www.example.com/upload.php"
+    method="post" enctype="multipart/form-data">
+    <p>Upload your song in MP3 format:</p>
+    <input type="file" name="user-song"><br>
+    <input type="submit" value="Upload">
+</form>
+```
+</td>
+<td>
+
+<form action="http://www.example.com/upload.php"
+    method="post" enctype="multipart/form-data">
+    <p>Upload your song in MP3 format:</p>
+    <input type="file" name="user-song"><br>
+    <input type="submit" value="Upload">
+</form>
+</td>
+</tr>
+</table>
+
+##### Dropdown lijst
+
+- Attribuut *selected* om een default keuze aan te duiden
+- Standaard max 1 keuze
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+Pizza
+<select name="pizza" id="pizza">
+    <option value="napolitano">Napolitano</option>
+    <option value="4fromaggi">Quatro Fromaggi</option>
+    <option value="mozzarello" selected>Mozzarello</option>
+    <option value="speciale">Speciale</option>
+    <option value="bolognese">Bolognese</option>
+</select>
+```
+</td>
+<td>
+
+Pizza
+<select name="pizza" id="pizza">
+    <option value="napolitano">Napolitano</option>
+    <option value="4fromaggi">Quatro Fromaggi</option>
+    <option value="mozzarello" selected>Mozzarello</option>
+    <option value="speciale">Speciale</option>
+    <option value="bolognese">Bolognese</option>
+</select>
+</td>
+</tr>
+</table>
+
+- *multiple* attribuut om meerdere keuzes toe te laten
+- *size* attribuut om meerdere opties te tonen
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+Pizza
+<select name="pizza" id="pizza" size="3" multiple>
+    <option value="napolitano" selected>Napolitano</option>
+    <option value="4fromaggi">Quatro Fromaggi</option>
+    <option value="mozzarello" selected>Mozzarello</option>
+    <option value="speciale">Speciale</option>
+    <option value="bolognese">Bolognese</option>
+</select>
+```
+</td>
+<td>
+
+Pizza
+<select name="pizza" id="pizza" size="3" multiple>
+    <option value="napolitano" selected>Napolitano</option>
+    <option value="4fromaggi">Quatro Fromaggi</option>
+    <option value="mozzarello" selected>Mozzarello</option>
+    <option value="speciale">Speciale</option>
+    <option value="bolognese">Bolognese</option>
+</select>
+</td>
+</tr>
+</table>
+
+##### Datalijst
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<input list="bezorgers" id="bezorger" name="bezorger" />
+<datalist id="bezorgers">
+    <option value="Stefaan Samyn"></option>
+    <option value="Karine Samyn"></option>
+    <option value="Patrick Lauwaerts"></option>
+    <option value="Lotte Vansteenberghe"></option>
+    <option value="Stefaan De Cock"></option>
+</datalist>
+```
+</td>
+<td>
+
+<input list="bezorgers" id="bezorger" name="bezorger" />
+<datalist id="bezorgers">
+    <option value="Stefaan Samyn"></option>
+    <option value="Karine Samyn"></option>
+    <option value="Patrick Lauwaerts"></option>
+    <option value="Lotte Vansteenberghe"></option>
+    <option value="Stefaan De Cock"></option>
+</datalist>
+</td>
+</tr>
+</table>
+
+##### Multiline tekst input
+
+> Je kan gebruik maken van CSS om de grootte aan te passen
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+Extra informatie
+<textarea name="extras" >extra informatie</textarea>
+```
+</td>
+<td>
+
+Extra informatie
+<textarea name="extras" >extra informatie</textarea>
+</td>
+</tr>
+</table>
+
+##### Label
+
+We gebruiken een label om de tekst te linken aan een form-control die erbij hoort
+- Wanneer we klikken op de tekst selecteert het de form-control
+- Helpt bij accessibility (screen readers)
+- Voeg het attribuut **for** toe met als waarde **id** van de form control
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<label for="naam">Naam</label>
+<input type="text" name="naam" id="naam" maxlength="30" placeholder="naam">
+```
+</td>
+<td>
+
+<label for="naam">Naam</label>
+<input type="text" name="naam" id="naam" maxlength="30" placeholder="naam">
+</td>
+</tr>
+</table>
+
+- Plaats de form-control binnen het label
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<label>Naam
+    <input type="text" name="naam" id="naam" maxlength="30" placeholder="naam">
+</label>
+
+```
+</td>
+<td>
+
+<label>Naam
+    <input type="text" name="naam" id="naam" maxlength="30" placeholder="naam">
+</label>
+</td>
+</tr>
+</table>
+
+#### Groeperen van form-controls
+
+We kunnen structuur brengen in een formulier door verschillende delen te groeperen.
+
+We gebruiken hiervoor de tags `<fieldset>` en `<legend>`
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<form action="/order" method="post">
+    <fieldset>
+        <legend>Plaats bestelling</legend>
+
+        <label for="naam">Naam</label>
+        <input type="text" name="naam" id="naam" placeholder="Naam" />
+    </fieldset>
+</form>
+
+```
+</td>
+<td>
+
+<form action="/order" method="post">
+<fieldset>
+<legend>Plaats bestelling</legend>
+
+<label for="naam">Naam</label>
+<input type="text" name="naam" id="naam" placeholder="Naam" />
+</fieldset>
+</form>
+</td>
+</tr>
+</table>
+
+#### Validatie
+
+- Validatie van form-controls aan de client-side is zeer belangrijk
+    - We moeten vermijden om incorrecte of incomplete invoer door te sturen
+- **required**-attribuut om een form control verplicht te maken
+- Sommige input-types worden automatisch gevalideerd: (incorrecte invoer wordt niet verzonden)
+    - email
+    - number
+    - url
+    - date
