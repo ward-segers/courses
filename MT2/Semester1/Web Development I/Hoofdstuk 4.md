@@ -263,3 +263,354 @@ ul{
 
 ### Tekst en typografie
 
+De CSS properties om tekst op te maken kunnen we indelen in twee categorieën:
+
+- **font styles**:
+    - lettertype - `font-family`
+    - lettergrootte - `font-size`
+    - normal-italic-bold - `font-style` of `font-weight`
+- **text layout styles**:
+    - regelafstand - `line-height`
+    - uitlijning van de tekst - `text-align`
+
+#### font styles
+
+##### font-family
+
+Wordt gebruikt om het lettertype in te stellen.
+
+Aangezien niet alle lettertypes beschikbaar zijn op elk toestel geven we een lijst van lettertypes in.
+
+```css
+font-family: Georgia, 'Times New Roman', Times, serif;
+```
+
+- fallback systeem: het eerste lettertype dat beschikbaar is wordt door de browser geselecteerd
+- de laatste font is bij voorkeur een *generische font*. Indien geen van de andere fonts aanwezig zijn, zal de browser zelf een acceptabele font selecteren.
+
+<p align='center'><img src='src/generic_fonts.png' alt='Generic fonts' width='10%'></p>
+
+
+> Wanneer de naam van een font spatie bevat plaats je dit in "" of ''
+
+##### font-size
+
+Wordt gebruikt om de grootte van het lettertype in te stellen.
+
+Indien er geen grootte ingesteld vallen we terug op de default eigenschappen van de browser. In de meeste gevallen is **default font-size 16px**
+
+We kunnen de font-size instellen door:
+
+- *absolute size*: xx-small, x-small, small, medium (default), large, x-large, xx-large
+- *relative size*: larger or smaller (dan het parent element)
+- *length*: een getal in punten, pixels, em of rem
+    - bij *em* wordt de font-size berekend tov het parent-element
+    - voorbeeld
+    ```css
+    body{
+        font-size: 10px;
+    }
+    h1{
+        font-size: 1.5em; /* Zal overeenkomen met 15px (indien het een kind element van body is) */
+    }
+    ```
+    - bij *rem* (root em) word de tekstgrootte berekent tov het root-element `<html>` (default 16px)
+    - lost het probleem van samengestelde em's op 
+- *percentage*: een getal in %
+
+> W3C raadt het gebruik van em's en percentages aan voor een robuuste lay-out: de verhoudingen tussen de element zullen dan behouden blijven ongeacht de gebruikte default grootte.
+
+##### font-size-adjust
+
+Gebruikt om de tekstgrootte gelijk te houden wanneer er wordt teruggevallen op de 2<sup>de</sup> keuze in de font-family lijst
+
+##### line-height
+
+Gebruikt om de Regelafstand, de hoeveelheid wit tussend de tekst regels in te stellen.
+
+> Best practise voor een doorlopende tekst is line-height: 1.5 (1.5 * font-size)
+
+##### font-weight
+
+Gebruikt om de vetheid (het gewicht/dikte) van het lettertype in te stellen
+- mogelijke waarden:
+    - 100-900
+    - normal (400), bold (700)
+    - bolder (vetter dan voorgaande tekst), lighter
+
+##### font-style
+
+Bepaalt indien de tekst normaal, cursief of schuin wordt weergegeven.
+
+Waarden: normal, italic, oblique (schuin getrokken)
+
+##### font-variant
+
+Kleinkapitaal, zoals small-caps
+
+##### font-stretch
+
+Uitrekken of indrukken
+
+##### font
+
+De shorthand property: *font-style font-variant font-weight font-size/line-height font-family*
+
+De eigenschappen *font-size* en *font-family* zijn verplicht en moeten in die volgorde als laatste voorkomen
+
+```css
+font: italic 1.2em/1.5 "Fira Sans", serif;
+```
+
+
+
+#### text layout styles
+
+##### color
+
+Kleur
+
+##### text-align
+
+Uitlijnen van de tekst (left, right, center, justify)
+
+##### text-align-last
+
+Uitlijnen van de laatste regel
+
+##### text-decoration
+
+Lijneffect:
+
+- text-decoration-line: none, underline,...
+- text-decoration-style: solid,...
+- text-decoration-color
+
+##### text-indent
+
+Inspringen van de eerste regel van een tekstblok
+
+##### text-orientation
+
+Horizontale of verticale tekst
+
+##### text-overflow
+
+Overlopende tekst, bepaald welk visueel effect de gebruiker krijgt als er meer tekst is dan hij ziet (clip, ellipses)
+
+##### text-shadow
+
+Schaduw (horizontale verschuiving, verticale verschuiving, vervaging, optioneel een kleur)
+
+##### text-transform
+
+Hoofdletters, kleine letters (capitalize, uppercase, lowercase, none)
+
+##### white-space
+
+Witruimte al dan niet behouden (normal: wit wordt samengevoegd tot 1 spatie, pre: alles behouden,...)
+
+##### letter-spacing
+
+Ruimte tussen de letters
+
+##### word-spacing
+
+Ruimte tussen de woorden
+
+##### word-break
+
+Ruimte tussen de woorden
+
+##### overflow-wrap
+
+Is het afbreken van een woord toegestaan
+
+## CSS Selectors
+
+### Universal Selector
+
+Dit zijn de regels die van toepassing zijn voor elk element in de pagina.
+
+```css
+*{
+    color: red;
+}
+```
+
+### Type Selector
+
+Dit zijn de selectors die dezelfde naam hebben als het element dat ze stylen
+
+Ze zijn van toepassing voor elk 'optreden' van dat element
+
+```css
+h1{
+    color: red;
+}
+```
+
+### Class en ID selectors
+
+Dit zijn selectors van specifieke elementen, gebruiken het attribuut class of id
+
+- id - selectie van slechts één element
+- class - selectie van meerdere elementen
+    - elk element kan een of meerdere class-waarden hebben. Elke class-waarde kan voorkomen bij één of meerdere elementen.
+
+```css
+#archives{
+    color: green;
+}
+.link{
+    color: red;
+}
+.extlink{
+    background-color: rgb(255, 220, 226);
+    font-size: 1.2rem;
+}
+```
+
+#### Class selectors
+
+- de selector `.link` is een verkorte notatie voor `*.link`
+- wil je bv. enkel de a-elementen met class="link" selecteren dan gebruik je de selector `a.link`
+    - merkop: geen spatie tussen a en .link
+    >[!tip]
+    > Best practise: prefix de class selector niet met een type selector. Meenstal wil je elk element met de opgegeven class stijlen.
+
+### Selector list
+
+- gebruik een selector list als je verschillende elementen dezelfde opmaak wil geven
+- de elementen worden in de selector gescheiden van elkaar doormiddel van een komma
+
+```css
+h1, .link{
+    color: red;
+}
+```
+
+### Descendant combinator
+
+- Selecteert alle elementen die afstammen van een element (hoeft niet een rechtstreeks child-element te zijn)
+- voorbeeld: selecteert alle p die afstammen van div
+
+    ```css
+    div p{
+        background-color: lightblue;
+    }
+    ```
+
+### Child combinator
+
+- Selecteert de (directe) kinderen van een element
+- voorbeeld: selecteer alle a die (directe) kinderen zijn van p
+
+    ```css
+    p > a{
+        background-color: lightblue;
+    }
+    ```
+
+### Sibling combinator
+
+- Sibling elements zijn elementen die dezelfde parent hebben
+- er zijn twee sibling combinators:
+    - *adjacent sibling combinator* (+)
+    - *general sibling combinator* (~)
+
+```css
+h1 + p { /* Paragrafen die onmiddelijk na een h1 komen */
+    font-weight: bold;
+}
+p ~ p { /* Alle paragrafen na een paragraaf */
+    font-weight: bold;
+}
+```
+
+### Attribute selectors
+
+Zijn van toepassing op elk element met:
+- een bepaald attribuut [attr]
+- met een bepaalde waarde voor een attribuut:
+    - [attr=value] - de attribuutwaarde is exact gelijk aan de value
+    - [attr*=value] - de attribuutwaarde bevat de value
+    - [attr^=value] - de attribuutwaarde start met de value
+
+```css
+a[href]{ /* <a> elements with a href attribute */
+    color: purple;
+}
+```
+
+```css
+a[href^:"http"]{ /* <a> elements with a href attribute starting with http*/
+    background-color: purple;
+    font-size: 1.2rem;
+}
+```
+
+### Pseudo-class selectors
+
+- elementen selecteren, op basis van een speciale toestand van het element gebeurd doormiddel van pseudo-classes
+- Een hyperlink kan zich in verschillende toestanden bevatten:
+    - niet bezocht - `a:link`
+    - bezocht - `a:visited`
+    - actief - `a:active` (weinig gebruikt)
+    - met cursor over gaan - `a:hover`
+- Een pseudo-class start altijd met een ":" en dan de naam van een pseudo-class (GEEN SPATIES!)
+
+```css
+/* we verwijderen de onderstreping bij alle links */
+a{
+    text-decoration: none;
+    color: red;
+    font-size: 1.2rem;
+}
+
+/* en als er gehoverd wordt over een link dan onderstrepen we de link */
+a:hover{
+    text-decoration: underline;
+}
+```
+
+#### (tree-structural) pseudoclasses
+
+- `:first-child` - een element dat het eerste child is van zijn parent-element
+
+    - voorbeeld: een p-element dat het eerste 'child' is van zijn 'parent'-element
+
+        ```css
+        p:first-child{
+            background-color: lightblue;
+        }
+        ```
+
+- `:last-child` - een element dat het laatste child is van zijn parent-element
+- `:only-child` - een element waarvan de ouder geen andere child-elementen heeft
+- `:first-of-type` - het eerste element van dat type
+- `:last-of-type` - het laatste element van dat type
+- `:only-of-type` - het enige element van dat type
+- n-child selectors
+
+    - `:nth-child` - elk zoveelste child-element
+        - start bij het eerste child
+    - `:nth-last-child` - nu gerekend vanaf het laatste child
+    - `:nth-of-type` - elk zoveelste element van een type
+    - `:nth-last-of-type` - nu gerekend vanaf laatste element
+
+    - n = een getal of een expressie: an, an+b, n+b, -n+b, -an+b
+        - `li:nth-child(2)` - 2<sup>de</sup> item
+        - `li:nth-child(3n)` - 3\*0, 3\*1, 3\*2, ... item
+        - `li:nth-child(2n+3)` - (2\*0)+3, (2\*1)+3, (2\*2)+3, ... item
+        - `li:nth-child(6n-4)` - (6\*0)-4, (6\*1)-4, (6\*2)-4, ... item
+        - `li:nth-child(-3n+12)` - elk 3<sup>de</sup> item binnen de eerste 12 items
+    - Even of oneven children selecteren: "even" ipv 2n of "odd" ipv 2n+1
+
+- `:empty` - leeg element
+
+- om een bepaald deel van een geselecteerd element op te maken:
+    - `::first-line` - de eerste regel opgemaakte tekst van een element
+    - `::first-letter` - de eerste letter
+    - `::before` - voor de inhoud van een element
+    - `::after` - na de inhoud van een element
