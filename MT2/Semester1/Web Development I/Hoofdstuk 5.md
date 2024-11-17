@@ -106,3 +106,72 @@ Voorrangsregels voor origin - importance
 Welke properties worden overgeërfd?
  - tekst gerelateerde properties
  - list properties
+
+### Inheritance - computed value 
+
+- Via inheritance propageren de waarden van eigenschappen van parent elements naar hun children. Let echter op: de gepropageerde waarde is niet de waarde uit de declaratie maar de berekende waarde (**computed value**)
+- Zo wordt in het voorbeeld de **berekende** waarde (in pixels) van font-size overgeërfd in plaats van de de waarde **0.8em**
+
+<table>
+<tr>
+<th>Syntax</th>
+<th>Output</th>
+</tr>
+<tr>
+<td>
+
+```html
+<p>Lorem <em>ipsum</em> dolor, sit amet consectetur adipisicing elit.</p>
+```
+```css
+p{
+    font-size: 0.8em;
+}
+```
+</td>
+<td>
+
+<p>Lorem <em>ipsum</em> dolor, sit amet consectetur adipisicing elit.</p>
+</td>
+</tr>
+</table>
+
+- Stel dat de property font-size gewoon geërfd wordt, dan zou het `<em>`-element een font-size hebben die 80% is van de font-size van het `<p>`-element.
+
+### Overerving - eigenschappen
+
+- Plaats overerfbare eigenschappen die voor de volledige pagina gelden bij de body of in een wrapper div.
+- Als er voor een HTML-element geen expliciete waarde ingesteld is voor een CSS-property, dan erft het element de waarde van zijn dichtsbijzijnde "ouder" in de DOM-tree.
+- Men kan steeds een niet overerfbare eigenschap toch doen overerven doormiddel van de value: **inherit**
+
+**Wat met niet overerfbare eigenschappen?**
+
+- Indien er voor een niet overerfbare eigenschap geen expliciete stijl is ingesteld dan wordt de **initial value** gebruikt.
+- Voor elke CSS eigenschap kan je op MDN terugvinden of deze al dan niet overgeërfd wordt.
+
+## CSS values and units
+
+- Elke CSS-eigenschap heeft een **value type** dat mogelijke waarden voor een eigenschap bepaalt.
+- **Value types** worden meestal genoteerd met punthaken om ze te kunnen onderscheiden van CSS-eigenschappen.
+- Een veel voorkomend **value type** is `<length>`. Lengtes kunnen bij verschillende CSS properties gebruikt worden.
+
+## Browser reset/normalize.css
+
+- De HTML-specificatie geeft suggesties aan Browser creators in verband met de Browser stylesheet, maar legt geen verplichte regels op. Verschillende Browsers kunnen en hebben dus licht afwijkende user agent stylesheets.
+- Vroeger maakte men om dit probleem op te lossen dikwijls gebruik van de *reset.css van Eric Meyer*. Vandaag gebruikt men hiervoor eerder de *normalize.css van Nicolas Gallagher*, die minder stijlinformatie verwijdert.
+- Vroeger waren er grote verschillen, maar vandaag zijn de verschillen miniem zodat het gebruik van een reset/normalize file niet altijd nodig is. Er zijn twee manier om normalize.css toe te voegen:
+    - voeg een verwijzing toe naar deze css-file in elk van je html pagina's (eerste link)
+
+    ```html
+    <head>
+        ...
+        <title>...</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    ```
+    - gebruik een @import in je CSS-code
+
+    ```css
+    @import url("normalize.css");
+    ```
