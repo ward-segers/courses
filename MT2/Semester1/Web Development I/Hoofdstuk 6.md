@@ -1,4 +1,4 @@
-# Web Develeopment 1 : Hoofdstuk 5 - CSS Lay-out - Box Model
+# Web Development 1 : Hoofdstuk 6 - CSS Lay-out - Box Model
 
 ## Weergave elementen
 
