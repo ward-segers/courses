@@ -154,3 +154,84 @@ align-items: center;
 align-items: baseline; /* Aligneert volgens de onderkant vd tekst  */
 justify-content: space-evenly; /* Voor, na, tussen elk item evenveel witruimte */
 ```
+
+- Distributie van ruimter langs de cross-axis met **align-content**. Deze eigenschap heeft geen effect op single-line containers.
+
+```css
+align-content: flex-start;
+align-content: flex-end;
+align-content: center;
+align-content: stretch;
+```
+
+- wijzigen volgorde items: `order`
+    - standaardwaarde is 0
+    - items worden geordend van klein naar groot
+
+- hoeveel mag een item groeien/verkleinen: `flex-grow` en `flex-shrink`
+    - 0: niet groeien
+    - positief: groei in verhouding met andere items
+
+- initiële grootte bepalen alvorens `flex-grow` en `flex-shrink` worden toegepast: `flex-basis`
+    - Wanneer waarde op auto staat:
+        - Width wordt gebruikt bij horizontale tekst mode
+        - Height bij verticale tekst mode
+    - `flex-basis` heeft voorrang op ingestelde width voor het item
+
+- flex-shorthand: `flex`
+    ```css
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis 50em;
+
+    flex: 2 1 50em; /* shorthand  */
+    ```
+
+- absolute flex items
+    - `flex-basis` krijgt een expliciete waarde van 0
+    - voorbeeld:
+
+        ```css
+        flex: 1 1 0;
+        ```
+        - flex items kunnen groeien (waarde 1) & krimpen (waarde 1)
+        - startpunt: elk item neemt geen ruimte in (flex-basis: 0), dus alle ruimte in de flex-container is vrije ruimte die kan worden verdeeld
+        - als resultaat zijn je flex-items even breed
+
+- relative flex items
+    - `flex-basis` wordt ingesteld op **content**
+    - voorbeeld:
+
+        ```css
+        flex: 1 1 content;
+        ```
+        - flex items kunnen groeien (waarde 1) & krimpen (waarde 1)
+        - startpunt: ingenomen ruimte wordt eerst bepaald door de **max-content** van de flex-items
+
+    - `flex-basis` wordt ingesteld op **auto** (initial value)
+    - voorbeeld:
+
+        ```css
+        flex: 1 1 auto;
+        ```
+        - flex items kunnen groeien (waarde 1) & krimpen (waarde 1)
+        - startpunt: ingenomen ruimte wordt eerst automatisch bepaald door de **oorspronkelijke grootte** van de flex items
+            - waarde van **width** indien width werd ingesteld op flex-items
+            - **max-content** indien niet expliciet een width werd ingesteld
+
+#### flexbox en margin
+
+- margin instellen op auto zal de vrije ruimte verplaatsten
+- rechtermarge instellen zorgt dat daar de vrije ruimte geplaatst wordt.
+```css
+li:nth-child(1){
+    margin-inline-end: auto;
+}
+```
+- beide margins instellen zorgt dat de vrije ruimte langs beide kanten verspreid wordt
+```css
+li:nth-child(1){
+    margin-inline-end: auto;
+    margin-inline-start: auto;
+}
+```
