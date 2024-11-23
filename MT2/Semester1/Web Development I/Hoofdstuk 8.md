@@ -1,4 +1,4 @@
-# Web Development 1 : Hoofdstuk 8 - Lay-out - Grid, float, postition
+# Web Development 1 : Hoofdstuk 8 - Lay-out - Grid, float, position
 
 ## CSS Grid
 
@@ -273,3 +273,377 @@ voorbeeld:
 </td>
 </tr>
 </table>
+
+In het vorige voorbeeld werd elke `grid-row-end` en `grid-column-end` expliciet vermeld. Als het item echter maar één track (rij of kolom) overspant, mag je de `grid-row-end` of de `grid-column-end` waarden weglaten. Het vorige voorbeeld kan dus ook als volgt geschreven worden:
+
+<table>
+<tr>
+<td>
+
+```css
+.box1 {grid-column-start: 1; grid-row-start: 1; grid-row-end: 4;}
+.box2 {grid-column-start: 3; grid-row-start: 1; grid-row-end: 3;}
+.box3 {grid-column-start: 2; grid-row-start: 1;}
+.box4 {grid-column-start: 2; grid-column-end: 4;}
+```
+</td>
+<td>
+
+```html
+<div class="grid-container">
+    <div class="box1">One</div>
+    <div class="box2">Two</div>
+    <div class="box3">Three</div>
+    <div class="box4">Four</div>
+</div>
+```
+</td>
+</tr>
+</table>
+
+- in plaats van het 'end' lijnnummer op te geven, kan je ook het aantal tracks opgeven dat je wilt overspannen.
+
+Voorbeeld:
+
+<table align="center">
+<tr>
+<td>
+
+```css
+grid-row-start: 1;
+grid-row-end: 4;
+```
+</td>
+<td>
+
+```css
+grid-row-start: 1;
+grid-row-end: span 3;
+```
+</td>
+</tr>
+</table>
+
+- Grid items kunnen ook overlappen. We kunnen doormiddel van de `z-index` aangeven welk *grid item* er op de voorgrond weergegeven wordt.
+
+**Er bestaan ook shorthands voor het plaatsen van *grid items*:**
+
+- `grid-column`
+- `grid-row`
+- `grid-area`
+
+<table>
+<tr>
+<td>
+
+```css
+/* Zonder shorthands */
+.box1 {grid-column-start: 1; grid-column-end: 2; grid-row-start: 1; grid-row-end: 4;}
+.box2 {grid-column-start: 3; grid-column-end: 4; grid-row-start: 1; grid-row-end: 3;}
+.box3 {grid-column-start: 2; grid-column-end: 3; grid-row-start: 1; grid-row-end: 2;}
+.box4 {grid-column-start: 2; grid-column-end: 4; grid-row-start: 3; grid-row-end: 4;}
+```
+</td>
+<td>
+
+```css
+/* Met shorthands */
+/* start / end */
+.box1 {grid-column: 1; grid-row: 1/4;}
+.box2 {grid-column: 3; grid-row: 1/3;}
+.box3 {grid-column: 2; grid-row: 1;}
+.box4 {grid-column: 2/4; grid-row: 3;}
+```
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+<p align='center'><img src='src/css_grid_positioneren.png' alt='Positioneren in de grid' width='50%'></p>
+
+</td>
+</tr>
+</table>
+
+*Het kan echter nog korter geschreven word doormiddel van `grid-area`*
+
+```css
+/* Met grid-area */
+/* grid-row-start / grid-column-start/ grid-row-end / grid-column-end */
+.box1 {grid-area: 1 / 1 / 4 / 2;}
+.box2 {grid-area: 1 / 3 / 3 / 4;}
+.box3 {grid-area: 1 / 2 / 2 / 3;}
+.box4 {grid-area: 3 / 2 / 4 / 4;}
+```
+
+- Het is ook mogelijk achterwaards te tellen bij de lijnnummers. Zo zijn volgende gelijk in het voorbeeld:
+
+```css
+/* Zonder achterwaards tellen: */
+.box2 {grid-column: 1; grid-row: 1/4;}
+/* Met achterwaards tellen */
+.box2 {grid-column: 1; grid-row: 1/-1;}
+```
+
+- Witruimte tussen kolommen en rijen, genoemd 'Gutters' maken we aan door `column-gap` en `row-gap` of de shorthand `gap` te gebruiken.
+
+> Sommige browsers gebruiken nog de oude notaties met de prefix `grid-`:
+> - `grid-column-gap`
+> - `grid-row-gap`
+> - `grid-gap`
+
+#### `grid-template-area` property
+
+Een andere manier om *grid items* op de grid te plaatsen is met de `grid-template-areas` property. Hiermee creëer je namen voor grid areas die je dan kan gebruiken in bv. de `grid-area` property om grid items te plaatsen in een grid area.
+
+Vorig voorbeeld herwerken we met grid-area's. Merk op:
+- er wordt een rij gemaakt per string
+- je kan meerdere rijen of kolommen overspannen door de naam te herhalen
+- je kan voor cellen zonder een naam een "." gebruiken
+- de waarde van `grid-template-areas` de structuur van de grid visualiseert.
+
+```css
+.grid-container{
+    diplay: block grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas:
+    "one three  two"
+    "one .      two"
+    "one four   four";
+}
+.box1{grid-area: one;}
+.box1{grid-area: two;}
+.box1{grid-area: three;}
+.box1{grid-area: four;}
+```
+
+#### named grid lines
+
+We kunnen niet enkel namen geven aan grid areas. Maar ook aan grid lines. Het voorbeeld zie er dan als volgt uit:
+
+```css
+.container{
+  display: block grid;
+  grid-template-columns: [start] 1fr [start-midden] 1fr [midden-einde] 1fr [einde];
+  grid-template-rows: [start] 100px [start-midden] 100px [midden-einde] 100px [einde];
+}
+.box1 {
+  grid-column-start: start;
+  grid-row-start: start;
+  grid-row-end: einde;
+}
+
+.box2 {
+  grid-column-start: midden-einde;
+  grid-row-start: start;
+  grid-row-end: midden-einde;
+}
+
+.box3 {
+  grid-column-start: start-midden;
+  grid-row-start: start;
+}
+
+.box4 {
+  grid-column-start: start-midden;
+  grid-column-end: einde;
+  grid-row-start: midden-einde;
+}
+
+```
+
+#### box alignment in css grid
+
+- Om items uit te lijnen langs de *block axis* gebruik je de properties `align-items` en `align-self`
+
+- Om items uit te lijnen langs de *inline axis* gebruik je de properties `justify-items` en `justify-self`
+
+**Voorbeeld**:
+
+<table>
+<tr>
+<th>HTML</th>
+<th>CSS</th>
+</tr>
+<tr>
+<td>
+
+```html
+<div class="wrapper">
+    <div class="item1">Item 1</div>
+    <div class="item2">Item 2</div>
+    <div class="item3">Item 3</div>
+    <div class="item4">Item 4</div>
+</div>
+```
+</td>
+<td>
+
+```css
+.wrapper{
+    display: block grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: 100px;
+    grid-template-areas:
+    "a a a a b b b b"
+    "a a a a b b b b"
+    "c c c c d d d d"
+    "c c c c d d d d";
+}
+.item1{grid-area: a;}
+.item2{grid-area: b;}
+.item3{grid-area: c;}
+.item4{grid-area: d;}
+```
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+<p align='center'><img src='src/css_grid_box_alignement.png' alt='Box alignment examplt' width='100%'></p>
+
+</td>
+</tr>
+</table>
+
+##### block axis
+
+- de `align-self` property stelt de uitlijning van een grid item binnen de grid area/cell langs de **block axis**
+- de default voor `align-self` komt overeen met *stretch*. Bij elke andere waarde worden de afmetingen van het item automatisch berekend zodat de inhoud er net in past.
+- de `align-items` property stelt de `align-self` property in voor alle grid-items. De `align-items` propery stel je in op de grid-container.
+
+**Voorbeeld met `align-items`:**
+
+```css
+.wrapper{
+    align-items: start;
+}
+```
+<p align='center'><img src='src/css_grid_box_alignement_align_items_start.png' alt='Align-items start' width='50%'></p>
+
+**Voorbeeld met `align-self`:**
+
+```css
+.item2 {align-self: start;}
+.item3 {align-self: end;}
+.item4 {align-self: center;}
+```
+<p align='center'><img src='src/css_grid_box_alignement_align_self.png' alt='Voorbeeld align-self' width='50%'></p>
+
+##### inline axis
+
+- de `justify-self` property stelt de uitlijning in van een grid item binnen zijn grid area/cell langs de *inline axis*
+- de default voor `justify-self` komt overeen met stretch. Bij elke andere waarde worden de afmetingen van het item automatisch berekend zodat de inhoud er net in past.
+- de `justify-items` property stelt de `justify-self` property in voor alle grid items
+- de `justify-items` property stel je in op de grid container
+
+**Voorbeeld met justify-self:**
+
+```css
+.item2{justify-self: start;}
+.item3{justify-self: end;}
+.item4{justify-self: center;}
+```
+
+<p align='center'><img src='src/css_grid_box_alignement_justify_self.png' alt='Voorbeeld met justify-self' width='50%'></p>
+
+**Voorbeeld centreren op container niveau**
+
+> Dit doen we door op de container de `align-items` en `justify-items` in te stellen. Dit zal alle grid items centreren.
+
+```css
+.wrapper{
+    align-items: center;
+    justify-items: center;
+}
+```
+<p align='center'><img src='src/css_grid_box_alignement_center_wrapper.png' alt='Centering on container level' width='50%'></p>
+
+- de `align-content` en `justify-content` properties worden gebruikt als de grid tracks (rijen of kolommen) niet de volledige grid container innemen. Je kan in dit geval de tracks zelf uitlijnen binnen de container.
+
+## Float
+
+### Floating elements
+
+Elementen worden uit de normale flow gehaald. Men kan dan meegeven in welke richting (right, left) ze zullen vlotten binnen hun bevattende container (parent block). Elementen worden tegen de opgegeven rand geplaatst.
+
+De overige elementen binnen deze container (parent block) zullen dan vrijgekomen plaats proberen op te vulle en zullen zich rond het element plaatsen.
+
+Het is duidelijk dat voor het vlottende element een breedte zal moeten worden ingesteld.
+
+> Een block element neemt altijd de maximale breedte in van de bevattende container.
+
+### Floating stacking order
+
+Floating elements worden vaak gebruikt om block elementen naast elkaar te plaatsen, dit kan echter voor problemen zorgen.
+
+Floating elements vlotten eerst tegen de bovenrand van de parent en dat tegen de volgende beschikbare rand.
+
+- Een oplossing hiervoor kan zijn om het element dat vastzit, de float ervan te clearen:
+
+    ```css
+    clear; left;
+    ```
+- Om terug te keren naar de normale flow van een pagina, moeten we de **floatende elementen clearen**. Clear kan left, right, both, none, als waarden aannemen.
+
+- Probleem: de background en border van parent loopt niet to onder de floating elements
+    - oplossing 1: voeg een extra leeg element toe
+
+    ```html
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda repellendus, ut, ducimus, molestiae ullam sed minima eligendi nisi quam praesentium deserunt autem nostrum neque laboriosam quidem qui iste dolore.</p>
+    <div></div>
+    ```
+    ```css
+    p:nth-of-type(4){
+        clear: left;
+    }
+    div > div{
+        clear: both;
+    }
+    ```
+
+    - oplossing 2: display flow-root toepassen op parent-element
+
+    ```css
+    div.clearfix{
+        display: flow-root;
+    }
+    ```
+
+## Position
+
+Om de normale flow te doorbreken bekijken we nu:
+- relatieve positionering: `position: relative`
+    - verplaatst het element relatiev tov zijn positie in de normale flow. Dit heeft geen invloed op de positie van de andere elementen.
+    - offset wordt bepaald door:
+        - verticale verplaatsing: **top - bottom**
+        - horizontale verplaatsing: **left - right**
+- absolute positionering: `position: absolute`
+    - verplaatst het element relatief tov zijn eerste niet static parent element, of het boidy element indien alle parent elementen static zijn. Voor de overige element is het alsof deze nooit aanwezig is geweest in de normale flow. Ze nemen dus posities in zonder rekening te houden met het absolute gepositioneerde lement. Bij het scrollen beweegt het element mee.
+    - offset (px - % - em) wordt bepaald door:
+        - verticale verplaatsing: **top - bottom**
+        - horizontale verplaatsing: **left - right**
+- fixed positionering: `position: fixed`
+    - Vaste positionering verplaatst het element relatief tov het browser
+    venster. Voor de overige elementen is het alsof dit element nooit
+    aanwezig is geweest in de normale flow. Ze nemen dus posities in zonder
+    rekening te houden met het vast gepositioneerde element. Bij het scrollen
+    beweegt het element NIET mee. Wordt gedaan bij menubalken die niet
+    mogen meescrollen.
+    - offset (px - % - em) wordt bepaald door:
+        - verticale verplaatsing: **top - bottom**
+        - horizontale verplaatsing: **left - right**
+
+De normale flow: `position: static`
+
+### positionering: z-index
+
+- Indien de positionering van elementen gewijzigd worden, kan het zijn dat
+elementen gaan overlappen. De volgorde van de elementen in de html
+pagina bepaalt welke bovenaan staat: het bovenste element zit steeds
+onder een element daaronder (stapelen van dozen, te beginnen met het
+eerste element)
+- Deze volgorde kan gewijzigd worden door de `z-index`. de mogelijke waarde
+is een geheel getal. Hoe hoger de waarde, hoe hoger op de stapel.
