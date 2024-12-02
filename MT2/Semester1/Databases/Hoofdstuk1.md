@@ -166,6 +166,19 @@ Een databankmodel bestaat uit verschillende datamodellen, die elk de data vanuit
         - geeft een beeld van de volledige data dat relatief eenvoudig te begrijpen is
         - onafhankelijk van software en hardware (DBMS-software maakt niet uit)
 
-- **Het fysieke databankmodel** beschrijft hoe de data in de databank zal worden opgeslagen: welke data waar zullen worden opgeslagen, wat de grootte
-    - de data items zijn nog steeds begrijpelijk voor niet IT-ers
-    - leunt dichter bij hoe fysiek de data zal opgeslagen worden. (bv. door al een beslissing te maken of een relationele databank of een object-georiënteerde databank of een NoSQL databank gebruikt zal worden)
+- **Het logisch datamodel** is een vertaling van het conceptuele model naar een specifieke omgeving.
+    - data items zijn steeds begrijpelijk voor niet IT'ers
+    - leunen aan bij hoe de data fysiek wordt opgeslagen (men maak bv. reeds de keuze om een NoSQL database te gebruiken
+
+- **Het fysiek databankmodel** beschrijft hoe de data in de databank zal worden opgeslagen: welke data waar zullen worden opgeslagen, wat de grootte is van de datavelden, welke indexen er worden voorzien voorzien voor het zoeken van de data te vereenvoudigen. 
+
+##### drielagen architectuur
+
+De hedendaagse databasemanagementsystemen zijn vrijwel allemaal gebouwd volgens een drielagenarchitectuur. De belangrijkste reden voor het gebruik van een meerlagenarchitectuur is het verkrijgen van dataonafhankelijkheid.
+
+De lagen van de drielagenarchitectuur:
+- externe laag
+- logische laag
+- interne laag
+
+
