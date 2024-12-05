@@ -161,10 +161,14 @@ Een databankmodel bestaat uit verschillende datamodellen, die elk de data vanuit
     - het model is een instrument om te communiceren tussen de informatie architect en de opdrachtgever. (zeker zijn data data voldoende correct begrepen en voorgesteld wordt)
     - het model is onafhankelijk van de concrete implementatie van de databank. Het moet gebruiksvriendelijk zijn en aanleunen bij hoe de business de data ziet
     - meest gebruikte model: **het ER model** wordt meestal voorgesteld door het ERD (*Entity Relationship Diagram*)
-    - Het ERD is de blauwdruk van de databank.
+    - Het ERD is de blauwdruk van de databank.q
     - voordelen:
         - geeft een beeld van de volledige data dat relatief eenvoudig te begrijpen is
         - onafhankelijk van software en hardware (DBMS-software maakt niet uit)
+
+> Het conceptuele datamodel moet een gebruiksvriendelijk, implementatieonafhankelijk en transparant datamodel zijn. Gebouwd in nauwe samenwerking tussen de informatiearchitect en de zakelijke gebruiker(s). 
+
+> Later wordt het verfijnd tot een logisch gegevensmodel op basis van de gekozen DBMS.
 
 - **Het logisch datamodel** is een vertaling van het conceptuele model naar een specifieke omgeving.
     - data items zijn steeds begrijpelijk voor niet IT'ers
@@ -177,8 +181,155 @@ Een databankmodel bestaat uit verschillende datamodellen, die elk de data vanuit
 De hedendaagse databasemanagementsystemen zijn vrijwel allemaal gebouwd volgens een drielagenarchitectuur. De belangrijkste reden voor het gebruik van een meerlagenarchitectuur is het verkrijgen van dataonafhankelijkheid.
 
 De lagen van de drielagenarchitectuur:
-- externe laag
-- logische laag
-- interne laag
+- externe laag:
+    - bevat het externe datamodel, dat views bevat
+        - view is een venster dat toegang biedt op een zorgvuldig geselecteerd deel van het logische datamodel voor een specifieke groep gebruikers.
+        - een view beschrijft beschrijft het deel van de databank waaron een bepaalde applicatie of groep gebruikers in geïnteresseerd is en verbergt de rest van de database
+        - een view kan één of meerdere applicaties bedienen
+    - wordt gebruikt om de toegang tot gegevens te controleren en beveiliging af te dwingen
+- logische laag (middelste of conceptuele laag):
+    - bevat het conceptueel en logisch datamodel
+        - beide focussen op de karakteristieke eigenschappen van de data en de onderlinge relaties zonder te focussen op de fysieke implementatie
+    - houdt alle fysieke opslagdetails verborgen, zodat aandacht kan gaan naar de abstracte beschrijving van alle in de databank voorkomende entiteiten, verwantschappen tussen entiteiten, gebruikersgedefinieerde operatoren en integriteitsbeperkingen.
+- interne laag:
+    - bevat het interne datamodel, dat vastlegt hoe data fysiek georganiseerd en opgeslagen wordt.
 
+
+> In het beste geval leiden wijzigingen in de ene laag tot slechts minimale wijzigingen in de andere lagen.
+
+##### Gegevensonafhankelijkheid
+
+> Will zeggen dat wijzigingen aan de gegevensbeschrijving weinig to geen impact hebben op de applicaties.
+
+- *Fysieke gegevensonafhankelijkheid*: wijzigingen van de opslagspecificaties hebben geen invloed op het logische model noch op de applicatie. Deze worden opgevangen door het DBMS
+- *Logische gegevensonafhankelijkheid*: minimale aanpassingen aan de applicaties bij wijzigingen aan het logische model
+
+##### Gestructureerde, ongestructureerde en semi-gestructureerde gegevens
+
+Niet alle soorten data kunnen beschreven worden volgens een logisch datamodel. Dit is enkel mogelijk voor **gestructureerde gegevens**.
+
+Met gestructureerde gegevens kunnen individuele kenmerken van gegevensitems worden geïdentificeerd en formeel worden gespecifieerd, zoals:
+- nummer
+- naam
+- adres
+- e-mailadres
+- nummer en naam van een cursus
+
+> Voordeel van gestructureerde gegevens is de mogelijkheid om integriteitsregels uit te schrijven en zo de correctheid van de gegevens af te dwingen.
+
+Bij **ongestructureerde gegevens** zijn er geen onderlinge subcomponenten die op een zinvolle manier geïnterpreteerd kunnen worden. 
+Stel een document met biografieën van bekende inwoners van New York. Het is mogelijk om te zoeken naar verschillende termen (bv. naam) maar het is onmogelijk te achterhalen indien ze in New York woonden, studeerden,... Veel recente databasemanagementsystemen kunnen dergelijk plain-text documenten efficiënt opslaan en doorzoeken.
+
+Dit is belangrijk omdat vele bedrijven meer ongestructureerde data bevatten. Ook de ongestructuureerde gegevens kunnen veel nuttige informatie bevatten, indien ze efficiënt kunnen worden geëxtraheerd.
+
+Denk bijvoorbeeld aan het opslaan en analyseren van klachtenbrieven op basis van hun inhoud.
+
+Bovendien beperken de meest recente DBMS'en zich niet enkel tot geschreven gegevens, maar ook beelden zoals video en audio.
+
+Tot slot zijn er ook **semi-gestructureerde gegevens**. Dit zijn gegevens die een bepaalde structuur hebben, maar de structuur kan zeer onregelmatig zijn. Typische voorbeelden zijn webpagina's van individuele gebruikers op een groot social media platform of cv-documenten in een personeelsdatabank.
+
+##### Dataredundantie beheren
+
+één van de belangrijkste nadelen van de bestandsgebaseerde benadering van gegevensbeheer was ongewenste redundantie van gegevens, wat gemakkelijk kan leiden tot inconsistente gegevens.
+
+Het dupliceren van data kan in sommige wenselijk zijn omwille van de veiligheid en om de prestaties bij het ophalen van de gegevens te verbeteren. (bv. lokale verbindingen tov. netwerkverbindingen) Het DBMS is verantwoordelijk voor het beheer van redundantie door synchronisatiemogelijkheden te bieden. 
+
+Een update van lokale gegevenskopie wordt bijvoorbeeld automatisch doorgevoerd naar alle duplicaatgegevens.
+
+##### Integriteitsregels
+
+- Kunnen expliciet gedefinieerd worden
+- Kunnen gebruikt worden om correctheid van gegevens af te dwingen
+- Syntactische regels specifieren hoe de gegevens opgeslagen moeten worden
+- Semantische regels richten zich tot semantische correctheid of betekenis van de gegevens (Bv. klantID moet uniek zijn, saldo > 0)
+
+Deze regels worden gespecificeerd als onderdeel van het conceptuele/logische datamodel en centraal opgeslagen in de cataloog. 
+
+> Dit verbetert de efficiëntie en de onderhoudbaarheid omdat de regels direct afgedwongen worden.
+
+##### Cataloog
+
+> **De cataloog** is het hart van de DBMS. Het bevat de datadefinities, of metadata, van je databasetoepassing. Het slaat de definities op van de views, logische en interne datamodellen en synchroniseert deze drie datamodellen om huin consistentie te garanderen. Het is een opslagplaats voor integriteitsregels en andere informatie, zoals gebruikers,... 
+
+## 'Goede' databank
+
+Voorwaarden voor een goede databank:
+
+- Vanuit perspectief van de gebruikers:
+    - betrouwbaar: gegevens moeten up-to-date en juist zijn
+    - volledig: de databank moet alle gegevens bevatten die de applicatie(s) nodig hebben
+    - efficiënt: een gebruiker moet antwoord krijgen binnen een 'redelijke' termijn
+    - verstaanbaar: de gegevens moeten voldoen aan vooraf bepaalde eisen voor verstaanbaarheid. Het kan zijn dat in specifieke gevallen een scholing nodig is. In de meeste gevallen zou de databank verstaanbaar moeten zijn in de gebruikers hun eigen taal.
+
+- Vanuit perspectief van de ontwerpers, bouwers en beheerders:
+    - testbaar: de applicaties op een databank moeten goed te debuggen zijn, er moeten hulpmiddelen zijn om de software te ontdoen van fouten.
+    - aanpasbaar: er kunnen altijd wijzigingen in gegevensstructuren en applicaties nodig zijn. Het mag niet onnodig moeilijk zijn deze wijzigingen aan te brengen.
+
+- Vanuit het perspectief van de organisatie als een geheel:
+    - apparatuuronafhankelijk: organisaties kopen nieuwe apparatuur. Databanken moeten daartegen bestand zijn: het database management systeem moet op allerlei hardware en onder allerlei besturingssystemen kunnen draaien.
+    - organisatieonafhankelijk: wanneer er fusies of samenwerkingsverbanden onstaan worden dikwijls gegevens gedeeld tussen de betrokken organisaties. Het is dan erg waardevol wanneer de gegevensdefinities die men hanteert met elkaar overeenstemmen.
+
+## Geschiedenis
+
+- Eerst waren er bestandsgesbaseerde systemen
+
+- In 1964 (rond de tijd van het Apollo maanlandingsproject) ontwikelde IBM GUAM (Generalized Update Access Methode)
+    - GUAM is een hiërarchisch model en was gebaseerd op het concept dat kleinere concepten samengebracht kunnen worden als onderdelen van grotere componenten. 
+    > Deze structuur stemt overeen met een boomstructuur
+    - kenmerken van een hiërarchisch model:
+        - Elk record in een databank (parent) kan verwijzen naar een n-aantal andere records (children)
+        - Elk recordtype heeft één een niet meer dan één eigenaar (owner)
+        - Het hiërarchische model kent maar één boomstructuur per databank
+        - De takken hebben zijdelings geen samenhang (alleen parent en children)
+        - De enige ingang (root) van de boomstructuur is van bovenaf
+    - nadelen van een hiërarchisch model:
+        - Er bestaan enkel één-op-veel verbanden
+        - De gegevens zijn niet direct toegankelijk. Navigatie is enkel mogelijk via de parent-child-relaties
+
+- GUAM werd verder ontwikkeld naar IMS (Information Management System)
+
+- Charles Bachman ontwierp een meer flexibel model: de hiërarchische structuur werd vervangen door een netwerkmodel en de kinderen in de boom konden meerdere ouders hebben.
+
+- In 1969 legt de CODASYL (Conference on Data Systems Languages) Databank Task Group (DBTG) de standaarden vast voor netwerkdatabanken. 
+
+- In 1970 schrijft E.F. (Ted) Codd (IBM) een paper over het relationeel datamodel. Hij past concepten uit de relationele algebra toe op het opslaan van grote hoeveelheden data.
+    - Een relationeel datamodel wordt georganiseerd met behulp van eenvoudige tabellen die gerelateerde informatie bevatten
+    - Niet langer gebruik van pointers
+    - Tabellen zijn verbonden via overeenkomstige datavelden
+    - wordt gebruik gemaakt van **vreemde sleutels** om logische ipv. fysieke verbanden
+    - Gemakkelijker om data terug te vinden, te wijzigen of samen te voegen.
+
+- Gedurende de jaren '70 bleef men onderzoek uitvoeren naar het relationeel model. Initieel was er veel weerstand.
+
+- C.J. Daten (IBM) en Codd schreven samen verschillende papers over het relationele model. Doordat het concurreerde met een winstgevend product van IBM was er oorspronkelijk veel tegenwerk door IBM.
+
+- In 1973 maakte het team van Michael Stonebraker gebruik van Codd's idee om de INGRES relationele databank te creëren.  Deze was beschikbaar tegen een beperkte vergoeding en werd door vele bedrijven gebruikt als basis voor commerciële succesvolle producten.
+
+- 1975 creëerde IBM een eerste relationele databank. (System /R)
+    - Gebruikte SEQUEL
+        - taal om gestructureerd databank queries voor opzoeken en wijzigen van data
+        - Structured English Query Language
+        - Ontwikkeld door Don Chamberlin (IBM) en Raymond Boyce (IBM)
+
+- In 1977 richtte Larry Ellison samen met Rob Miner en Ed Oates een nieuw software bedrijf 'Relational Software Laboratories' op.
+    - In 1979 veranderde de naam naar 'Relational Software Inc.'
+    - Doel: eerste commercieel beschikbare databank ontwikkelen en verkopen, die compatibel was met System /R
+    - Belangrijkste product 'Oracle' (ontstaan 1979)
+        - eerst enkel voor op mini-computers
+        - 1983 compatibel op IBM PC's en mainframes
+    - In 1983 werd de naam 'Relational Software Inc.' omgedoopt naar 'Oracle System Corporation'
+
+- In 1980 werd 'Relational Technology Inc.' op gericht door enkel academici die Berkeley verlieten. Met als doel een commerciële versie van Ingres te bouwen
+    - Ingres kon nooit concurreren met Oracle (door aggressieve marketingsstrategie van Oracle)
+
+- In 1983 bracht IBM een commerciële relationele databank uit, DB2 voor mainframes.
+    - Dit was echter te laat om de minicomputers markt te domineren
+
+- In de late '80 wint SQL aan populariteit
+
+- Begin '90 maakten gestaag verbeterde SQL-implementaties en drastische verbeteringen in processorsnelheden SQL tot een praktische oplossing voor transactieverwerkingstoepassingen.
+    - Dezelfde periode was er een toename in populariteit van Object Georiënteerd programmeren. Men verwachtte hetzelfde van object-relationele databanken (relationele DBMSen met object georiënteerde faciliteiten) en object-georiënteerde databanken (OODBMS)
+    - SQL en relationele databanken hebben de uitdaging echter meer dan doorstaan
+
+- De hoeveelheden data die verwerkt worden door social media en hun typische eigenschappen (foto's, video's) hebben bijgedragen tot de groei van NoSQL (Not Only SQL) databanken.
 
