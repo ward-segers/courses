@@ -115,4 +115,31 @@ Het ER model beschrijft data met behulp van entiteiten, relaties en attributen.
 
 #### Attribuuttype
 
+> Een attribuuttype vertegenwoordigt een eigenschap van een entiteittype. 
 
+Bijvoorbeeld: Voornaam, familienaam, adres, telefoonnummer, geboortedatum en salaris zijn attribuuttypes van het entiteittype WERKNEMER.
+
+Een bepaalde entiteit heeft een waarde voor elk van zijn attribuuttypes (bv. de voornaam is Jan en familienaam Janssens).
+Een attribuut definieert een verzameling van gelijksoortige attributen, of, een attribuut is een instantie van een attribuuttype. De attribuutwaarden die elke entiteit beschrijven, vormen een belangrijk deel van de gegevens die in de databank zijn opgeslagen.
+
+#### Domein
+
+> Een domein specifieert de verzameling waarden die een attribuuttype van een individuele entiteit, kan krijgen.
+
+Bv. Het maandsalaris van een WERKNEMER kan een positief getal zijn tussen 1000 EUR en 10000 EUR. 
+
+Een domein kan ook nulwaarden bevatten. Dit betekend dat de waarde niet bekend is, niet van toepassing is of niet relevant is. 
+
+> Dit is niet hetzelfde als de waarde 0 of een lege string ("").
+
+Denk bijvoorbeeld aan een e-mailadres van een domein dat nulwaarden toestaat voor het geval dat het e-mailadres niet bestaat.
+
+> Bij conventie wordt het domein niet weergegeven in het ER-model.
+
+In een ER-model komen er verschillende types attributen voor:
+
+- **Enkelvoudige of atomaire versus samengestelde attributen**:
+    - Enkelvoudige attributen kunnen niet verder opgesplitst worden? (bv. familienaam)
+    - Samengestelde attributen kunnen opgesplitst worden in betekenisvolle subdelen (bv. attribuut adres van entiteit WERKNEMER kan onderverdeeld worden in straat, huisnummer, postcode,...)
+        - geen nood om onder te verdelen als alleen naar het geheel verwezen wordt.
+        - adres kan als één attribuut bestaan als niet naar de straat, huisnummer,... verwezen wordt.
