@@ -183,3 +183,33 @@ Sleutels die gebaseerd zijn op attributen die van nature bij de entiteit horen, 
 Velen pleiten voor het gebruik van natuurlijke sleutels om te beschermen tegen onbedoelde duplicatie. Zo mogen geen twee personen hetzelfde e-mailadres hebben. Wordt dit toch toegevoegd aan de database, geeft het databankbeheersysteem een foutmelding. 
 
 Anderen beweren dat sleutels willekeurig moeten zijn. Ze stellen dat het moeilijk is om steeds een natuurlijke sleutel te vinden en dat ontwerpers vaak een toevlucht moeten nemen to moeilijk samengestelde sleutels. Zij pleiten om een uniek nummer te geven aan elk exemplaar van een entiteit. Dit worden *surrogaatsleutels* genoemd.
+
+#### Relatietype
+
+Een relatie stelt een verband tussen twee of meer entiteiten voor. (bv. ACTEUR speelt in een FILM)
+
+> Een relatietype is een verzameling van relaties tussen instanties van één, twee, of meer al dan niet verschillende entiteittypes. (elk relatietype krijgt een naam)
+
+Voorbeeld: relatie tussen WERKNEMER en PROJECT
+
+Deze kan als volgt beschreven worden: een WERKNEMER kan meewerken aan veel PROJECTen en aan een PROJECT wordt door veel WERKNEMERs gewerkt.
+
+#### Graad
+
+> De graad van een relatietype is het aantal verschillende entiteittypes dat deelneemt aan het relatietype.
+
+- Een unair (n=1) of recursief relatietype heeft graad één.
+
+<p align='left'><img src='src/unair_relatietype.png' alt='Unair relatietype' width='25%'></p>
+
+- Een binair (n=2) relatietype heeft twee deelnemende entiteittypen
+
+<p align='left'><img src='src/binair_relatietype.png' alt='Binair relatietype' width='25%'></p>
+
+
+- Een n-air relatatie type heeft *n*-deelnemende entiteitstypen
+
+<p align='left'><img src='src/ternair_relatietype.png' alt='Ternair Relatietype' width='25%'></p>
+
+> In deze cursus beperken we ons to unaire en binaire relatietypes
+
