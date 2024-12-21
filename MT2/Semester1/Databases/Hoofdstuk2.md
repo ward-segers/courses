@@ -207,7 +207,7 @@ Deze kan als volgt beschreven worden: een WERKNEMER kan meewerken aan veel PROJE
 <p align='left'><img src='src/binair_relatietype.png' alt='Binair relatietype' width='25%'></p>
 
 
-- Een n-air relatatie type heeft *n*-deelnemende entiteitstypen
+- Een n-air relatie type heeft *n*-deelnemende entiteitstypen
 
 <p align='left'><img src='src/ternair_relatietype.png' alt='Ternair Relatietype' width='25%'></p>
 
@@ -226,5 +226,43 @@ Rolnamen zijn technisch gezien niet noodzakelijk in relatietypen waarbij alle de
 >[!important]
 >In het geval van unaire of recursieve relaties, neemt één entiteitstype meer dan één keer deel aan de relatie. In deze gevallen is het essentieel om de rolnaam te vermelden voor het onderscheiden van de betekenins die elke deelnemende entiteit speelt.
 >
-> Voorbeeld: relatietype *Is Baas Van* relateert een WERKNEMER aan een BAAS (beide zijn entiteiten van het entiteittype WERKNEMER). De WERKNEMER neemt tweemaal deel aan de relatie, één keer in de rol van baas, en één maal in de rol van ondergeschikte.
+> **Voorbeeld**: relatietype *Is Baas Van* relateert een WERKNEMER aan een BAAS (beide zijn entiteiten van het entiteittype WERKNEMER). De WERKNEMER neemt tweemaal deel aan de relatie, één keer in de rol van baas, en één maal in de rol van ondergeschikte.
 ><p align='left'><img src='src/unair_relatietype.png' alt='Unair relatietype om het belang van rolnaam te illustreren' width='25%'></p>
+
+#### Relatie-attributen
+
+Ook relatietypes kunnen eigenschappen hebben, wanneer een kenmerk een eigenschap is van het relatietype en niet van één van de betrokken entiteittypes. We spreken van ***relatie-attribuut***.
+
+**Voorbeeld**: om bij te houden hoeveel uren een WERKNEMER aan een bepaald PROJECT werkt.
+
+<p align='left'><img src='src/relatie-attribuut.png' alt='Relatie-attribuut' width='25%'></p>
+
+#### Maximumcardinaliteit en minimumcardinaliteit
+
+Elk relatietype kan worden gekarakteriseerd in termen van cardinaliteit.
+
+> Met het begrip **cardinaliteit** wordt het aantal entiteiten bedoeld dat kan deelnemen aan de relatie.
+
+- **Minimumcardinaliteit**:
+    - Kan twee waarden aannemen: 
+        - *0*: entiteit kan voorkomen zonder via een relatie verbonden te zijn met een andere entiteit. (de relatie is optioneel)
+        - *1*: er moet een entiteit altijd in relatie staan met ten minste één andere entiteit.
+
+- **Maximumcardinaliteit**:
+    - Kan twee waarden aannemen:
+        - *1*: één entiteit kan in relatie staan met maximaal één andere entiteit. 
+        - *N*: een entiteit kan met maximaal *N* ($N \in Z>1 $) andere entiteiten in relatie staan.
+
+#### *1:1*, *1:N* en *M:N* - relaties
+
+Drie mogelijke relaties:
+
+- *één-op-één relatie*: *1:1* of *1..1*
+    - één instantie van een entiteit wordt geassocieerd met slechts één instantie van de gerelateerde entiteit. 
+    - voorbeeld: elke WINKEL wordt geleid door één MEDEWERKER. Elke winkelmanager (MEDEWERKER), is manager in slechts één WINKEL
+- *één-op-veel relatie*: *1:N* of *1..N*
+    - een instantie van één entiteit wordt geassocieerd met vele instanties van de gerelateerde entiteit.
+    - voorbeeld: SCHILDER maakt verschillende SCHILDERIJEN, maar elk SCHILDERIJ is geschilderd door één SCHILDER
+- *veel-op-veel relatie*: *M:N* of *M..N*
+    - Associatie tussen 2 of meer entiteiten waarbij één voorkomen van een entiteit geassocieerd is met veel voorkomens van een verwante entiteit en één voorkomen van de gerelateerde entiteit geassocieerd is met veel voorkomens van de eerste entiteit.
+    - voorbeeld: WERKNEMER kan werken aan meerdere PROJECTen, elk PROJECT kan door verschillende WERKNEMERs aan gewerkt worden.
