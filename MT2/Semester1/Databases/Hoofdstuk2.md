@@ -143,3 +143,43 @@ In een ER-model komen er verschillende types attributen voor:
     - Samengestelde attributen kunnen opgesplitst worden in betekenisvolle subdelen (bv. attribuut adres van entiteit WERKNEMER kan onderverdeeld worden in straat, huisnummer, postcode,...)
         - geen nood om onder te verdelen als alleen naar het geheel verwezen wordt.
         - adres kan als één attribuut bestaan als niet naar de straat, huisnummer,... verwezen wordt.
+
+    > Wij werken in het conceptueel model steeds op het niveau van enkelvoudige attribuuttypes
+
+- **Enkelwaardige versus meerwaardige attributen**:
+    - Meeste attributen hebben één waarde voor een bepaalde entiteit, deze noemen we **enkelwaardige attributen** (bv. geboortedatum van WERKNEMER)
+    - In sommige gevallen kan een attribuut een reeks aan waarden hebben, deze noemen we **meerwaardige attributen** (bv. hobby's of talenkennis van een WERKNEMER)
+
+    > In een ERD mogen beide principes voorkomen. In deze cursus worden ze de meerwaardige attributen vermeden omdat ze niet opgenomen kunnen worden in een RDBMS.
+
+- **Berekende of afgeleide attributen**:
+    - Waarde van een afgeleid attribuut kan berekend worden op basis van de waarden van andere attributen. (bv. leeftijd wordt berekend op basis van de huidige datum en geboortedatum)
+    - Afgeleide attributen worden niet opgeslagen in de databank. (kan inconsistent zijn) Dit wordt vervangen door de basisinfo waaruit de waarde van het attribuuttype kan berekend worden.
+
+- **NULL waarden**:
+    - Soms heeft een bepaalde entiteit geen toepasselijke waarde voor een attribuut. (bv. busnummer van een adres)
+    - Attribuut krijgt de speciale waarde *NULL*.
+
+#### Kandidaatsleutelattributen
+
+> 1 attribuut dat de entiteiten van een entiteittype op een unieke manier kan identificeren, vormt een kandidaatsleutel van het entiteittype (attribuut met één waarden die verschillend is voor elke individuele entiteit)
+
+Voorbeelden: leveranciersnummer voor LEVERANCIER, productnummer voor PRODUCT, ...
+
+In het ERD worden kandidaatsleutels onderlijnd. Er kunnen meerdere kandidaatsleutels zijn. Later wordt er één primaire sleutel gekozen.
+
+Is er geen afzonderlijk attribuut dat kan fungeren als kandidaatsleutel, dan kunnen verschillende attributen samen een kandidaatsleutel vormen. (combinatie van attribuutwaarden moet uniek zijn.)
+
+Een samengestelde sleutel moet minimaal zijn. Overige attributen, die niet bijdragen aan de uniciteit van de entiteit mogen niet opgenomen worden in een sleutel.
+
+Voorbeeld: entiteit POI (Point Of Interest), naam is hier geen goede keuze. (citadelpark zowel in Namen als in Gent) De beste keuze hier is de combinatie van lengtegraad en breedtegraad als unieke sleutel.
+
+In het ERD wordt een samengestelde kandidaatsleutel aangeduid met *de u-constraint*
+
+<p align='center'><img src='src/u_constraint.png' alt='u_constraint' width='25%'></p>
+
+Sleutels die gebaseerd zijn op attributen die van nature bij de entiteit horen, noemen we *natuurlijke sleutels*.
+
+Velen pleiten voor het gebruik van natuurlijke sleutels om te beschermen tegen onbedoelde duplicatie. Zo mogen geen twee personen hetzelfde e-mailadres hebben. Wordt dit toch toegevoegd aan de database, geeft het databankbeheersysteem een foutmelding. 
+
+Anderen beweren dat sleutels willekeurig moeten zijn. Ze stellen dat het moeilijk is om steeds een natuurlijke sleutel te vinden en dat ontwerpers vaak een toevlucht moeten nemen to moeilijk samengestelde sleutels. Zij pleiten om een uniek nummer te geven aan elk exemplaar van een entiteit. Dit worden *surrogaatsleutels* genoemd.
