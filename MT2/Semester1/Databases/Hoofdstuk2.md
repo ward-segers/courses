@@ -213,3 +213,18 @@ Deze kan als volgt beschreven worden: een WERKNEMER kan meewerken aan veel PROJE
 
 > In deze cursus beperken we ons to unaire en binaire relatietypes
 
+#### Rolnamen
+
+Elke entiteitstype dat deelneemt in een relatietype speelt een bepaalde rol in de relatie. De rolnaam geeft aan welke rol de deelnemende entiteit speelt in elke relatie-instantie. 
+
+> Een rolnaam helpt ons uitleggen wat de relatie betekent.
+
+Voorbeeld: binnen het relatietype *Werkt Aan* speelt de WERKNEMER de rol van werknemer en PROJECT de rol van project of opdracht.
+
+Rolnamen zijn technisch gezien niet noodzakelijk in relatietypen waarbij alle deelnemende entiteitstypen verschillend zijn (n>=2), aangezien de naam van elk deelnemend entiteitstype kan worden gebruikt als rolnaam.
+
+>[!important]
+>In het geval van unaire of recursieve relaties, neemt één entiteitstype meer dan één keer deel aan de relatie. In deze gevallen is het essentieel om de rolnaam te vermelden voor het onderscheiden van de betekenins die elke deelnemende entiteit speelt.
+>
+> Voorbeeld: relatietype *Is Baas Van* relateert een WERKNEMER aan een BAAS (beide zijn entiteiten van het entiteittype WERKNEMER). De WERKNEMER neemt tweemaal deel aan de relatie, één keer in de rol van baas, en één maal in de rol van ondergeschikte.
+><p align='left'><img src='src/unair_relatietype.png' alt='Unair relatietype om het belang van rolnaam te illustreren' width='25%'></p>
