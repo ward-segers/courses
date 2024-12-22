@@ -74,9 +74,19 @@ Een relatie kunnen we ook zien als een gestructureerde verzameling gegevens. Het
 
 In een relatie moet elk tupel uniek zijn. 
 
-Attribuuttypen die toelaten de tupels van elkaar te onderscheiden worden **sleutelattribuuttypen** (of sleutels) genoemd. Er zijn verschillende soorten sleutels:
+Attribuuttypen die toelaten de tupels van elkaar te onderscheiden worden **sleutelattribuuttypen** (of sleutels) genoemd. 
 
-- **kandidaatsleutel**:
-- **Primaire sleutel**:
-- **Alternatieve sleutel**:
-- **Vreemde sleutel**:
+We spreken van een sleutel wanneer een minimale verzameling van attributen als combinatie de tupel binnen de relatie uniek kan identificeren.
+
+Er zijn verschillende soorten sleutels:
+
+- **Kandidaatsleutel**: verschillende mogelijke combinaties, deze mogelijke sleutels zijn kandidaatsleutels
+- **Primaire sleutel**: een gekozen kandidaatsleutel die primair wordt aangeduid. Deze waarde kan niet *NULL* zijn. In het relationeel model wordt deze onderstreept.
+- **Alternatieve sleutel**: Elke kandidaatsleutel die geen primaire sleutel is.
+    - waarde kan *NULL* zijn, verliest echter dan welk de functie van sleutel
+- **Vreemde sleutel**: sleutel gebruikt om verbanden te leggen met andere relaties in het relationeel model. Deze sleutel heeft niets te maken met de idenificatie vna de tupel.
+    - De verbindende schakel tussen twee relaties.
+    - Met deze waarde kunnen we in een andere tabel de juiste tupel opzoeken
+
+<p align='center'><img src='src/foreign_key.png' alt='Foreign Key' width='50%'></p>
+
