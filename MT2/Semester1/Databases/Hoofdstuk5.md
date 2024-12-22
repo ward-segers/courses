@@ -90,3 +90,80 @@ Er zijn verschillende soorten sleutels:
 
 <p align='center'><img src='src/foreign_key.png' alt='Foreign Key' width='50%'></p>
 
+## Vergelijking met het ER-model
+
+### Entiteittypes en attribuuttypes
+
+Elke tabel vertegenwoordigt een entiteittype, en de kolommen van de tabel vertegenwoordigen de attributen van het entiteittype. 
+
+<table align="center">
+    <thead>
+        <tr>
+            <th>ER-model</th>
+            <th>Relationeel model</th>
+            <th>Databank</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Entiteittype</td>
+            <td>Relatie</td>
+            <td>Tabel</td>
+        </tr>
+        <tr>
+            <td>Entiteit</td>
+            <td>Tupel</td>
+            <td>Rij</td>
+        </tr>
+        <tr>
+            <td>Attribuuttype</td>
+            <td>Attribuut</td>
+            <td>Kolom</td>
+        </tr>
+        <tr>
+            <td>Attribuutwaarde</td>
+            <td>Attribuutwaarde</td>
+            <td>Kolomwaarde</td>
+        </tr>
+    </tbody>
+</table>
+
+**Relatietypes**
+
+Relaties tussen entiteiten worden in het ER-model weergegeven als lijnen of verbindingen tussen deze entiteiten. (vaak geassocieerd met cardinaliteiten)
+
+## Regels van een relationeel model
+
+Het relationeel model is een logisch model dat aan volgende regels voldoet:
+- Elke tupel in een relatie is uniek
+- Elk attribuut is enkelvoudig (samengestelde attribuutwaarden zijn niet toegestaan)
+- Elk attribuut is enkelwaardig (meerwaardige attribuutwaarden zijn niet toegestaan)
+- Verbanden tussen relaties worden gelegd aan de hand van **vreemde sleutels**
+
+## Mapping
+
+Het omzetten (mapping) van het conceptueel model naar het logisch model gebeurt in enkele stappen en volgens strikte regels. Door het volgen van volgende stappen is het relatief eenvoudig:
+
+- STAP 1: Elk entiteittype wordt een relatie. Bij het mappen van een EERD waar specialisatie in voorkomt, kan het gebeuren dat entiteittypes verdwijnen.
+
+- STAP 2: Enkelvoudige attribuuttypes overnemen
+
+- STAP 3: Samengestelde attribuuttypes opsplitsen in enkelvoudige attribuuttypes
+
+- STAP 4: Als er nog meerwaardige attributen in het conceptueel model aanwezig zijn, dienen deze in een nieuwe relatie geplaastst te worden.
+
+- STAP 5: Primaire sleutel bepalen. Opgelet bij zwakke entiteiten
+
+- STAP 6: Voor elke relatie: vreemde sleutel(s) bepalen op volgende wijze:
+    - 1-op-1 relatie: vreemde sleutel in de één of andere relatie (afhankelijk van de minimumcardinaliteit)
+    - 1-op-N relatie: vreemde sleutel in de relatie aan N-zijde
+    - M-op-N relatie: aparte relatie met beide vreemde sleutels als samengestelde primaire sleutel
+    - unaire 1-op-1 of 1-op-N relatie: vreemde sleutel in zelfde relatie
+
+- STAP 7: Bij elke vreemde sleutel de integriteitregels bepalen:
+    - naar welke primaire sleutel deze vreemde sleutel verwijst
+    - of de vreemde sleutel verplicht of optioneel is
+    - eventueel of de vreemde sleutel uniek is
+
+### Mapping van entiteittypes
+
