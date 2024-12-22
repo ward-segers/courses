@@ -167,3 +167,575 @@ Het omzetten (mapping) van het conceptueel model naar het logisch model gebeurt 
 
 ### Mapping van entiteittypes
 
+De eerste stap is om elk entiteittype in een relatie te mappen. Eenvoudige attribuuttypes kunnen direct omgezet worden naar een kolom. Een samengesteld attribuuttype moet worden opgesplits in enkelvoudige attribuuttype. Een van de kandidaatsleutels van het entiteittype kan worden ingesteld als de primaire sleutel van de relatie.
+
+<p align='center'><img src='src/entiteittype.png' alt='Entiteittype' width='25%'></p>
+
+Hieronder tonen we een aantal voorbeeld tuples die intuïtief laten aanvoelen dat het bovenstaande entiteittype gemapt moet worden naar een relatie die er als volgt uitziet:
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>straat</td>
+        <td>huisnummer</td>
+        <td>postcode</td>
+        <td>woonplaats</td>
+        <td>geboortedatum</td>
+        <td>emailadres</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>Fonteinstraat</td>
+        <td>7</td>
+        <td>9000</td>
+        <td>Gent</td>
+        <td>1/02/1960</td>
+        <td>jan.janssens@bedrijf.be</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>Marktweg</td>
+        <td>5</td>
+        <td>9700</td>
+        <td>Oudenaarde</td>
+        <td>5/12/1970</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>Steenstraat</td>
+        <td>11</td>
+        <td>8000</td>
+        <td>Brugge</td>
+        <td>2/09/1975</td>
+        <td>eva.mertens@bedrijf.be</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>Kerkstraat</td>
+        <td>10</td>
+        <td>9090</td>
+        <td>Melle</td>
+        <td>22/11/1985</td>
+        <td>fatma.arici@bedrijf.be</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>Brouwerijstraat</td>
+        <td>5</td>
+        <td>9850</td>
+        <td>Aalter</td>
+        <td>12/03/1990</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+    </tr>
+</table>
+
+Het entiteittype WERKNEMER wordt daarom formeel gemapt naar volgende relatie:
+
+WERKNEMER(<u>wncode</u>, voornaam, familienaam, straat, huisnummer, postcode, woonplaats, geboortedatum)
+
+> Het samengestelde attribuut adres werd opgesplits in straat, huisnummer, postcode en woonplaats
+
+### Mapping van Relatietypes
+
+Het mappen van de attribuuttypes hangt af van de maximumcardinaliteit.
+
+#### 1:1 - relatie met aan één kant minimumcardinaliteit=1
+
+<p align='center'><img src='src/mapping_relatietypes_minimumcardinaliteit.png' alt='Mapping relatietypes met minimumcardinaliteit = 1' width='50%'></p>
+
+**Voorbeeldtuples voor Werknemer en Bedrijfswagen**
+
+*WERKNEMER*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*BEDRIJFSWAGEN*
+
+<table>
+    <tr>
+        <th>nummerplaat</th>
+        <td>merk</td>
+        <td>type</td>
+    </tr>
+    <tr>
+        <td>1-POL-189</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+    </tr>
+    <tr>
+        <td>1-OUL-784</td>
+        <td>Mercedes</td>
+        <td>A-Klasse</td>
+    </tr>
+    <tr>
+        <td>1-MPO-965</td>
+        <td>Ford</td>
+        <td>Puma</td>
+    </tr>
+</table>
+
+*Hoe kunnen we de entiteittypes WERKNEMER en BEDRIJFSWAGEN mappen naar het relationeel model?*
+
+Er zijn twee mogelijkheden:
+
+- **Mogelijkheid 1**: we voegen een kolom nummerplaat toe aan de WERKNEMER tabel. Elke nummerplaat kan slechts eenmaal voorkomen in de kolom nummerplaat in de WERKNEMER tabel. Omdat niet elke WERKNEMER een bedrijfswagen heeft (minimumcardinaliteit = 0) zijn er mogelijks wel *NULL* waarden
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+        <td>nummerplaat</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+        <td>1-POL-189</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+        <td>1-OUL-784</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+        <td>1-MPO-965</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+        <td></td>
+    </tr>
+</table>
+
+*BEDRIJFSWAGEN*
+
+<table>
+    <tr>
+        <th>nummerplaat</th>
+        <td>merk</td>
+        <td>type</td>
+    </tr>
+    <tr>
+        <td>1-POL-189</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+    </tr>
+    <tr>
+        <td>1-OUL-784</td>
+        <td>Mercedes</td>
+        <td>A-Klasse</td>
+    </tr>
+    <tr>
+        <td>1-MPO-965</td>
+        <td>Ford</td>
+        <td>Puma</td>
+    </tr>
+</table>
+
+- **Mogelijkheid 2**: we voegen een kolom wncode toe aan de tabel BEDRIJFSWAGEN. Elke wncode kan slechts eenmaal voorkomen in de kolom wncode in de tabel BEDRIJFSWAGEN. Omdat elke BEDRIJFSWAGEN aan ten minste 1 WERKNEMER toebehoort (minimumcardinaliteit = 1) zijn er geen *NULL* waarden
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*BEDRIJFSWAGEN*
+
+<table>
+    <tr>
+        <th>nummerplaat</th>
+        <td>merk</td>
+        <td>type</td>
+        <td>wncode</td>
+    </tr>
+    <tr>
+        <td>1-POL-189</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+        <td>JJA60</td>
+    </tr>
+    <tr>
+        <td>1-OUL-784</td>
+        <td>Mercedes</td>
+        <td>A-Klasse</td>
+        <td>EME75</td>
+    </tr>
+    <tr>
+        <td>1-MPO-965</td>
+        <td>Ford</td>
+        <td>Puma</td>
+        <td>FAR85</td>
+    </tr>
+</table>
+
+> Mogelijkheid 2 geniet de voorkeur omdat er geen *NULL* waarden voorkomen. (ookal zijn beide mogelijkheden correct).
+
+*Formele notatie*:
+
+Werknemer(<u>wncode</u>, voornaam, familienaam, emailadres, geboortedatum) <br>
+Bedrijfswagen(nummerplaat, merk, type,wncode) <br>
+IR: Vreemde sleutel wncode verwijst naar wncode uit Werknemer, verplicht, uniek
+
+#### 1:1 - relatie met aan beide kanten minimumcardinaliteit = 0
+
+<p align='center'><img src='src/mapping_relatietypes_minimumcardinaliteit_0.png' alt='relatie met aan beide kanten minimumcardinaliteit 0' width='50%'></p>
+
+**Voorbeeldtuples voor Werknemer en Bedrijfswagen**
+
+*WERKNEMER*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*BEDRIJFSWAGEN*
+
+<table>
+    <tr>
+        <th>nummerplaat</th>
+        <td>merk</td>
+        <td>type</td>
+    </tr>
+    <tr>
+        <td>1-POL-189</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+    </tr>
+    <tr>
+        <td>1-OUL-784</td>
+        <td>Mercedes</td>
+        <td>A-Klasse</td>
+    </tr>
+    <tr>
+        <td>1-MPO-965</td>
+        <td>Ford</td>
+        <td>Puma</td>
+    </tr>
+</table>
+
+*Hoe kunnen we de entiteittypes WERKNEMER en BEDRIJFSWAGEN mappen naar het relationeel model?*
+
+Er zijn twee mogelijkheden:
+
+- **Mogelijkheid 1**:  we voegen een kolom nummerplaat toe aan de WERKNEMER tabel. Elke nummerplaat kan slechts eenmaal voorkomen in de kolom nummerplaat in de WERKNEMER tabel. Omdat niet elke WERKNEMER een bedrijfswagen heeft (minimumcardinaliteit = 0) zijn er mogelijks wel *NULL* waarden
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+        <td>nummerplaat</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+        <td>1-POL-189</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+        <td>1-MPO-965</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+        <td></td>
+    </tr>
+</table>
+
+*BEDRIJFSWAGEN*
+
+<table>
+    <tr>
+        <th>nummerplaat</th>
+        <td>merk</td>
+        <td>type</td>
+    </tr>
+    <tr>
+        <td>1-POL-189</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+    </tr>
+    <tr>
+        <td>1-OUL-784</td>
+        <td>Mercedes</td>
+        <td>A-Klasse</td>
+    </tr>
+    <tr>
+        <td>1-MPO-965</td>
+        <td>Ford</td>
+        <td>Puma</td>
+    </tr>
+</table>
+
+- **Mogelijkheid 2**: we voegen een kolom wncode toe aan de tabel BEDRIJFSWAGEN. Elke wncode kan slechts eenmaal voorkomen in de kolom wncode in de tabel BEDRIJFSWAGEN. Omdat elke BEDRIJFSWAGEN niet noodzakelijk toebehoort aan een WERKNEMER (minimumcardinaliteit = 0) zijn er mogelijks *NULL* waarden
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*BEDRIJFSWAGEN*
+
+<table>
+    <tr>
+        <th>nummerplaat</th>
+        <td>merk</td>
+        <td>type</td>
+        <td>wncode</td>
+    </tr>
+    <tr>
+        <td>1-POL-189</td>
+        <td>Toyota</td>
+        <td>Corolla</td>
+        <td>JJA60</td>
+    </tr>
+    <tr>
+        <td>1-OUL-784</td>
+        <td>Mercedes</td>
+        <td>A-Klasse</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>1-MPO-965</td>
+        <td>Ford</td>
+        <td>Puma</td>
+        <td>FAR85</td>
+    </tr>
+</table>
+
+> Beide oplossingen zijn juist, maar mogelijkheid 2 geniet de voorkeur doordat hier minder *NULL* waarden zijn.
+
+*Formele notatie*:
+
+Werknemer(<u>wncode</u>, voornaam, familienaam, emailadres, geboortedatum) <br>
+Bedrijfswagen(nummerplaat, merk, type,wncode) <br>
+IR: Vreemde sleutel wncode verwijst naar wncode uit Werknemer, verplicht, optioneel
