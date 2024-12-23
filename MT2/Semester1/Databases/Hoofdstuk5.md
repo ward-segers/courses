@@ -739,3 +739,891 @@ Er zijn twee mogelijkheden:
 Werknemer(<u>wncode</u>, voornaam, familienaam, emailadres, geboortedatum) <br>
 Bedrijfswagen(nummerplaat, merk, type,wncode) <br>
 IR: Vreemde sleutel wncode verwijst naar wncode uit Werknemer, verplicht, optioneel
+
+#### 1:N - relatie
+
+<p align='center'><img src='src/1Nrelatie.png' alt='1:N - relatie' width='50%'></p>
+
+Elke werknemer werkt op maximaal één departement (= maximumcardinaliteit 1) Het kan ook zijn dat een werknemer aan geen enkel departement is toegewezen (= minimumcardinaliteit 0)
+
+Een departement telt N werknemers (= maximumcardinaliteit N), maar kan ook geen werknemers hebben
+
+**Voorbeeldtuples voor Werknemer en Departement**
+
+*WERKNEMER*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*DEPARTEMENT*
+
+<table>
+    <tr>
+        <th>departementcode</th>
+        <td>naam</td>
+        <td>plaats</td>
+    </tr>
+    <tr>
+        <td>D1</td>
+        <td>Marketing</td>
+        <td>Brussel</td>
+    </tr>
+    <tr>
+        <td>D2</td>
+        <td>IT</td>
+        <td>Aalst</td>
+    </tr>
+    <tr>
+        <td>D3</td>
+        <td>HR</td>
+        <td>Gent</td>
+    </tr>
+</table>
+
+*Hoe kunnen we de entiteittypes WERKNEMER en DEPARTEMENT mappen naar het relationeel model?*
+
+Er zijn twee mogelijkheden:
+
+- **Mogelijkheid 1**: de departementcode wordt toegevoegd aan de WERKNEMER tabel. Aangezien de werknemer op maximaal 1 DEPARTEMENT werkt, kan er zich maar één waarde in deze kolom bevinden. Een WERKNEMER is niet noodzakelijk aan een DEPARTEMENT toegewezen, dus kunnen hier ook *NULL* waarden in voorkomen. De vreemde sleutel departementcode is optioneel.
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+        <td>departementcode</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+        <td>D2</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+        <td>D5</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+        <td>D2</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+        <td>D2</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>departementcode</th>
+        <td>naam</td>
+        <td>plaats</td>
+    </tr>
+    <tr>
+        <td>D1</td>
+        <td>Marketing</td>
+        <td>Brussel</td>
+    </tr>
+    <tr>
+        <td>D2</td>
+        <td>IT</td>
+        <td>Aalst</td>
+    </tr>
+    <tr>
+        <td>D3</td>
+        <td>HR</td>
+        <td>Gent</td>
+    </tr>
+</table>
+
+- **Mogelijkheid 2**: wncode wordt toegevoegd aan het DEPARTEMENT. Aangezien er vaak meerdere WERKNEMERs op één DEPARTEMENT werken, ontstaat er op die manier een lijstje met wncode's in de kolom wncode. Hierdoor wordt wncode een meerwaardig attribuut in de tabel DEPARTEMENT.
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <th>departementcode</th>
+        <td>naam</td>
+        <td>plaats</td>
+        <td>wncode</td>
+    </tr>
+    <tr>
+        <td>D1</td>
+        <td>Marketing</td>
+        <td>Brussel</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>D2</td>
+        <td>IT</td>
+        <td>Aalst</td>
+        <td>JJA60, MER70, FAR85</td>
+    </tr>
+    <tr>
+        <td>D3</td>
+        <td>HR</td>
+        <td>Gent</td>
+        <td>EME75</td>
+    </tr>
+</table>
+
+> Enkel optie 1 is hier een geldige mogelijkheid. Er mogen geen meerwaardige attributen aanwezig zijn in het logisch model
+
+*Formele notatie*:
+
+Werknemer(<u>wncode</u>, voornaam, familienaam, emailadres, geboortedatum) <br>
+IR: Vreemde sleutel departementcode verwijst naar departementcode uit Departement,  optioneel <br>
+Departement(<u>departementcode</u>, naam, plaats) <br>
+
+#### 1:N - unaire relatie
+
+<p align='center'><img src='src/1N_unaire_relatie.png' alt='1:N unaire relatie' width='50%'></p>
+
+**Voorbeeldtuples voor Werknemer**
+
+*WERKNEMER*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*Hoe kunnen we de baas toevoegen?*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+        <td>baas</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+        <td>EME75</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+        <td>EME75</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+        <td>EME75</td>
+    </tr>
+</table>
+
+We voegen een nieuwe kolom baas toe die de wncode van de baas bevat. Aangezien een WERKNEMER baas kan zijn van verschillende werknemers zijn de wncode's in de kolom baas niet uniek. Omwille van de minimumcardinaliteit = 0, heeft niet elke WERKNEMER een baas, waardoor er ook *NULL* waarden kunnen optreden, met andere woorden baas is optioneel.
+
+*Formele notatie*:
+
+Werknemer(<u>wncode</u>, voornaam, familienaam, emailadres, geboortedatum, baas) <br>
+IR: Vreemde sleutel bass verwijst naar wncode uit Werknemer, optioneel
+
+#### N:M - relatie
+
+<p align='center'><img src='src/NM_relatie.png' alt='N:M - relatie' width='50%'></p>
+
+**Voorbeeldtuples voor WERKNEMER en PROJECT**
+
+*WERKNEMER*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <td>voornaam</td>
+        <td>familienaam</td>
+        <td>emailadres</td>
+        <td>geboortedatum</td>
+    </tr>
+    <tr>
+        <td>JJA60</td>
+        <td>Jan</td>
+        <td>Janssens</td>
+        <td>jan.janssens@bedrijf.be</td>
+        <td>1/02/1960</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>Mohamed</td>
+        <td>Erdogan</td>
+        <td>mohamed.erdogan@bedrijf.be</td>
+        <td>5/12/1970</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>Eva</td>
+        <td>Mertens</td>
+        <td>eva.mertens@bedrijf.be</td>
+        <td>2/09/1975</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>Fatma</td>
+        <td>Arici</td>
+        <td>fatma.arici@bedrijf.be</td>
+        <td>22/11/1985</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>Maarten</td>
+        <td>Pauwels</td>
+        <td>maarten.pauwels@bedrijf.be</td>
+        <td>12/03/1990</td>
+    </tr>
+</table>
+
+*PROJECT*
+
+<table>
+    <tr>
+        <th>projectcode</th>
+        <td>naam</td>
+        <td>duur</td>
+    </tr>
+    <tr>
+        <td>P101</td>
+        <td>B2B</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>P102</td>
+        <td>Analytics</td>
+        <td>660</td>
+    </tr>
+    <tr>
+        <td>P103</td>
+        <td>Website</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>P104</td>
+        <td>Spark</td>
+        <td>900</td>
+    </tr>
+</table>
+
+*Hoe leggen we de connectie tussen Werknemer en Project*
+
+*En wat met het relatie-attribuut aantal uur?*
+
+*WERKNEMER/PROJECT*
+
+<table>
+    <tr>
+        <th>wncode</th>
+        <th>projectcode</th>
+        <td>aantal uur</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>P101</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>MER70</td>
+        <td>P103</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>P102</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>EME75</td>
+        <td>P104</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>P101</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>MPA90</td>
+        <td>P102</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>FAR85</td>
+        <td>P103</td>
+        <td>10</td>
+    </tr>
+</table>
+
+Het relatietype "Werkt Aan" is een voorbeeld van een N:M relatietype. Een WERKNEMER werkt aan nul tot N PROJECTen, terwijl aan een PROJECT wordt gewerkt door 0 tot M WERKNEMERs. We beginnen, zoals altijd, met het creëren van relaties door de beide entiteittypen. We kunnen geen vreemde sleutel toevoegen aan de WERKNEMER relatie omtdat we dan een meerwaardig attribuut zouden krijgen aangezien een WERKNEMER aan meerdere PROJECTen kan werken. Op dezelfde manier kunnen we geen vreemde sleutel toevoegen aan de relatie PROJECT, omdat aan een PROJECT wordt gewerkt door meerdere WERKNEMERs. Met andere woorden, we moeten een nieuwe relatie, een 'tussentabel', maken om het ER-relatietype WerktAan te mappen. De primaire sleutel van deze nieuwe relatie bestaat uit de twee vreemde sleutels, namelijk wncode en projectcode en kunnen daarom niet *NULL* zijn, en zijn dus verplicht. De relatie attributen worden ook toegevoegd aan de nieuwe relatie.
+
+*Formele notatie*:
+
+Werknemer(<u>wncode</u>, voornaam, familienaam, emailadres, geboortedatum) <br>
+Project(<u>projectcode</u>, naam, duur) <br>
+Werknemer/Project(<u>wncode</u>,<u>projectcode</u>, duur) <br>
+wncode: VS naar Werknemer.wncode, verplicht <br>
+projectcode: VS naar Project.projectcode, verplicht <br>
+
+#### Zwakke entiteiten
+
+<p align='center'><img src='src/zwakke_entiteiten_mapping.png' alt='Mapping van zwakke entiteiten' width='50%'></p>
+
+**Voorbeeldtuples voor HOTEL en KAMER**
+
+*HOTEL*
+
+<table>
+    <tr>
+        <th>naam</th>
+        <th>plaats</th>
+        <td>aantal sterren</td>
+    </tr>
+    <tr>
+        <td>The Post</td>
+        <td>Gent</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>Astor</td>
+        <td>Oostende</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Ibis</td>
+        <td>Gent</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>Mariott</td>
+        <td>Aalst</td>
+        <td>3</td>
+    </tr>
+</table>
+
+*KAMER*
+
+<table>
+    <tr>
+        <th>kamernummer</th>
+        <th>hotelnaam</th>
+        <th>hotelplaats</th>
+        <td>aantal bedden</td>
+        <td>type</td>
+    </tr>
+    <tr>
+        <td>12</td>
+        <td>Ibis</td>
+        <td>Gent</td>
+        <td>2</td>
+        <td>Suite</td>
+    </tr>
+    <tr>
+        <td>14</td>
+        <td>Astor</td>
+        <td>Oostende</td>
+        <td>4</td>
+        <td>Zicht op zee</td>
+    </tr>
+    <tr>
+        <td>15</td>
+        <td>Astor</td>
+        <td>Oostende</td>
+        <td>2</td>
+        <td>Klassiek</td>
+    </tr>
+</table>
+
+Een zwakke entiteit is een entiteittype dat geen sleutelattribuut heeft om zichzelf te identificeren en bestaansafhankelijk is van een ander entiteittype. Men begint met een relatie te creëren waaraan alle attributen van de zwakke entiteit worden toegevoegd. Hieraan moet de primaire sleutel van het entiteittype waarvan het bestaansafhankelijk is, worden toegevoegd. Dit is een vreemde sleutel. Vanwege de bestaansafhankelijk moet deze vreemde sleutel *NOT NULL* zijn en is deze vreemde sleutel dus verplicht. De primaire sleutel van deze relatie is dan de combinatie van de partiële sleutel en de vreemde sleutel.
+
+*Formele schrijfwijze:*
+
+Hotel(<u>hotelnaam</u>, <u>plaats</u>, aantal sterren) <br>
+Kamer(<u>hotelnaam</u>, <u>plaats</u>, <u>kamernummer</u>, aantal bedden, type) <br>
+IR: hotelnaam, plaats: VS naar hotelnaam, plaats in Hotel, verplicht
+
+#### {Mandatory, And}
+
+In dit voorbeeld is een ARTIEST ofwel ZANGER, ofwel ACTEUR ofwel ZANGER en ACTEUR. Er kunnen geen ARTIESTen zijn die geen ZANGER of ACTEUR zijn.
+
+<p align='center'><img src='src/mandatory_and.png' alt='Mandatory And mapping' width='25%'></p>
+
+**Voorbeeldtuples**
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>naam</td>
+        <td>geboortejaar</td>
+        <td>muziekstijl</td>
+        <td>toneelschool</td>
+        <td<isZanger</td>
+        <td>isActeur</td>
+    </tr>
+    <tr>
+        <td>LT</td>
+        <td>Laura Tesoro</td>
+        <td>1996</td>
+        <td>pop</td>
+        <td></td>
+        <td>True</td>
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>SVS</td>
+        <td>Stan Van Samang</td>
+        <td>1979</td>
+        <td>pop</td>
+        <td>Studio Herman Teirlinck</td>
+        <td>True</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>TE</td>
+        <td>Tine Embrechts</td>
+        <td>1975</td>
+        <td></td>
+        <td>Studio Herman Teirlinck</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>KDG</td>
+        <td>Koen De Graeve</td>
+        <td>1972</td>
+        <td></td>
+        <td>Studio Herman Teirlinck</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+</table>
+
+Alle informatie van het supertype en de subtypes wordt bijgehouden in één relatie. Er worden booleans gebruikt om de subtypes te onderscheiden van elkaar. Mandatory impliceert dat één van de subtypes True moet zijn. And kan bekomen worden door beide booleans op True te zetten. Het nadeel van deze oplossing is dat er veel *NULL* waarden kunnen zijn indien de ARTIEST enkel ZANGER of ACTEUR is en niet beide.
+
+*Formele schrijfwijze:*
+
+Artiest(<u>artiestcode</u>, naam, geboortejaar, muziekstijl, toneelschool, isZanger, isActeur)
+
+#### {Optional, And}
+
+In dit voorbeeld is een ARTIEST ofwel ARTIEST zonder meer, ofwel ACTEUR ofwel ZANGER ofwel ZANGER en ACTEUR. Er kunnen dus ARTIESTen zijn die geen ZANGER of ACTEUR zijn.
+
+<p align='center'><img src='src/optional_and.png' alt='Optional and mapping' width='25%'></p>
+
+**Voorbeeldtuples**
+
+*ARTIEST*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>naam</td>
+        <td>geboortejaar</td>
+    </tr>
+    <tr>
+        <td>PA</td>
+        <td>Panamarenko</td>
+        <td>1940</td>
+    </tr>
+    <tr>
+        <td>RR</td>
+        <td>Roger Raveel</td>
+        <td>1921</td>
+    </tr>
+    <tr>
+        <td>LT</td>
+        <td>Laura Tesoro</td>
+        <td>1996</td>
+    </tr>
+    <tr>
+        <td>WT</td>
+        <td>Will Tura</td>
+        <td>1940</td>
+    </tr>
+    <tr>
+        <td>TE</td>
+        <td>Tine Embrechts</td>
+        <td>1975</td>
+    </tr>
+    <tr>
+        <td>KDG</td>
+        <td>Koen De Graeve</td>
+        <td>1970</td>
+    </tr>
+</table>
+
+*ARTIESTDETAILS*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>muziekstijl</td>
+        <td>toneelschool</td>
+        <td<isZanger</td>
+        <td>isActeur</td>
+    </tr>
+    <tr>
+        <td>LT</td>
+        <td>pop</td>
+        <td></td>
+        <td>True</td>
+        <td>False</td>
+    </tr>
+    <tr>
+        <td>SVS</td>
+        <td>pop</td>
+        <td>Studio Herman Teirlinck</td>
+        <td>True</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>TE</td>
+        <td></td>
+        <td>Studio Herman Teirlinck</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+    <tr>
+        <td>KDG</td>
+        <td></td>
+        <td>Studio Herman Teirlinck</td>
+        <td>False</td>
+        <td>True</td>
+    </tr>
+</table>
+
+Er wordt begonnen met één relatie voor het supertype te creëren. Daarnaast worden de details van subtypes bijgehouden in één aparte relatie. Er worden booleans gebruikt om de subtypes te onderscheiden van elkaar. Vanuit de 'subtabel' wordt er verwezen naar de 'supertabel'. Optional impliceert dat enkel een tuple aan de supertabel wordt toegevoegd. And kan bekomen worden door beide booleans op True te zetten. Het nadeel van deze oplossing is dat er veel *NULL* waarden kunnen zijn indien ARTIEST enkel ZANGER of ACTEUR is en niet de beide.
+
+
+*Formele schrijfwijze:*
+
+Artiest(<u>artiestcode</u>, naam, geboortejaar) <br>
+ArtiestDetails(<u>artiestcode</u>, muziekstijl, toneelschool, isZanger, isActeur) <br>
+artiestcode: VS naar Artiest.artiestcode, verplicht
+
+#### {Mandatory, Or}
+
+<p align='center'><img src='src/mandatory_or.png' alt='Mandatory Or mapping' width='25%'></p>
+
+In dit voorbeeld is een ARTIEST ofwel ZANGER, ofwel ACTEUR, maar niet beide tegelijk. Er kunnen bovendien geen ARTIESTen bestaan die geen ZANGER noch ACTEUR zijn. Met andere woorden: er zijn enkel ZANGERs en ACTEURs.
+
+**Voorbeeldtuples**
+
+*ZANGER*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>naam</td>
+        <td>geboortejaar</td>
+        <td>muziekstijl</td>
+    </tr>
+    <tr>
+        <td>LT</td>
+        <td>Laura Tesoro</td>
+        <td>1996</td>
+        <td>pop</td>
+    </tr>
+    <tr>
+        <td>WT</td>
+        <td>Will Tura</td>
+        <td>1940</td>
+        <td>vlaams</td>
+    </tr>
+</table>
+
+*ACTEUR*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>naam</td>
+        <td>geboortejaar</td>
+        <td>toneelschool</td>
+    </tr>
+    <tr>
+        <td>TE</td>
+        <td>Tine Embrechts</td>
+        <td>1975</td>
+        <td>Studio Herman Teirlinck</td>
+    </tr>
+    <tr>
+        <td>KDG</td>
+        <td>Koen De Graeve</td>
+        <td>1972</td>
+        <td>Studio Herman Teirlinck</td>
+    </tr>
+</table>
+
+Net omdat er enkel ZANGERs en ACTEURs kunnen bestaan volstaat het om gescheiden relaties te creëren voor alle subtypes, die bovendien elk alle attributen bevatten van het supertype.
+
+*Formele schrijfwijze:*
+
+Zanger(<u>artiestcode</u>, naam, geboortejaar, muziekstijl) <br>
+Acteur(<u>artiestcode</u>, naam, geboortejaar, toneelschool) <br>
+
+#### {Optional, Or}
+
+<p align='center'><img src='src/optional_or.png' alt='Optional or mapping' width='25%'></p>
+
+In dit voorbeeld bestaan er ARTIESTen zonder meer, dit zijn ARTIESTen die geen ZANGER en geen ACTEUR zijn. Een ZANGER en een ACTEUR erven alle attributen van een ARTIEST. Een ZANGER kan niet ook een ACTEUR zijn, en omgekeerd.
+
+**Voorbeeldtuples**
+
+*ARTIEST*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>naam</td>
+        <td>geboortejaar</td>
+    </tr>
+    <tr>
+        <td>PA</td>
+        <td>Panamarenko</td>
+        <td>1940</td>
+    </tr>
+    <tr>
+        <td>RR</td>
+        <td>Roger Raveel</td>
+        <td>1921</td>
+    </tr>
+    <tr>
+        <td>LT</td>
+        <td>Laura Tesoro</td>
+        <td>1996</td>
+    </tr>
+    <tr>
+        <td>WT</td>
+        <td>Will Tura</td>
+        <td>1940</td>
+    </tr>
+    <tr>
+        <td>TE</td>
+        <td>Tine Embrechts</td>
+        <td>1975</td>
+    </tr>
+    <tr>
+        <td>KDG</td>
+        <td>Koen De Graeve</td>
+        <td>1972</td>
+    </tr>
+</table>
+
+*ZANGER*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>muziekstijl</td>
+    </tr>
+    <tr>
+        <td>LT</td>
+        <td>pop</td>
+    </tr>
+    <tr>
+        <td>WT</td>
+        <td>vlaams</td>
+    </tr>
+</table>
+
+*ACTEUR*
+
+<table>
+    <tr>
+        <th>artiestcode</th>
+        <td>toneelschool</td>
+    </tr>
+    <tr>
+        <td>TE</td>
+        <td>Studio Herman Teirlinck</td>
+    </tr>
+    <tr>
+        <td>KDG</td>
+        <td>Studio Herman Teirlinck</td>
+    </tr>
+</table>
+
+Omdat er ARTIESTen kunnen zijn, die geen ZANGER en geen ACTEUR zijn, wordt daarvoor een aparte relatie voorzien. Voor elk subtype wordt ook een aparte relatie voorzien waarbij in het subtype verwezen wordt naar het supertype. Zo komt Panamarenko enkel in het supertype voor en wordt er vanuit geen enkel subtype gerefereerd naar Panamarenko.
+
+*Formele schrijfwijze:*
+
+Artiest(<u>artiestcode</u>, naam, geboortejaar) <br>
+Zanger(<u>artiestcode</u>, muziekstijl) <br>
+artiestcode: VS naar Artiest.artiestcode, verplicht <br>
+Acteur(<u>artiestcode</u>, toneelschool) <br>
+artiestcode: VS naar Artiest.artiestcode, verplicht 
