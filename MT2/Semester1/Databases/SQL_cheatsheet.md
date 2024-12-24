@@ -9,7 +9,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT *
@@ -17,7 +17,7 @@ FROM Werknemer
 ```
 
 </td>
-<td>
+<td style="min-width: 250px;">
 
 Selecteert alle gegevens uit de tabel Werknemers
 > Na ' * ' worden de specifieke kolommen vermeld die we willen selecteren. ' * ' wijst op alle kolommen.
@@ -27,7 +27,7 @@ Selecteert alle gegevens uit de tabel Werknemers
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT *
@@ -44,7 +44,7 @@ Selecteert alle gegevens uit de tabel Werknemer waar het AfdNr D11 is.
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, Fnaam, Afd
@@ -52,7 +52,7 @@ FROM Werknemer
 ```
 
 </td>
-<td style="max-width:50%;">
+<td>
 
 We selecteren slechts een beperkt aantal kolommen uit de tabel Werknemer.
 > Ook hier maken we een subset, door het specifiëren na de SELECT Tag
@@ -60,7 +60,7 @@ We selecteren slechts een beperkt aantal kolommen uit de tabel Werknemer.
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, Fnaam, Afd
@@ -79,7 +79,7 @@ Combineert beide subsets, we selecteren een beperkt aantal kolommen waar de waar
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, VNaam, Fnaam, Afd
@@ -109,7 +109,7 @@ In het voorbeeld selecteren we het nummer, naam en afdelingsnummer van alle werk
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, Vnaam, FNaam
@@ -125,7 +125,7 @@ Selecteert het nummer, de voornaam, familienaam van de werknemers met een jobcod
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, Vnaam, Fnaam
@@ -142,7 +142,7 @@ Selecteert werknemers die ofwel in afdeling D11 of D21 werken en met een code gr
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Vnaam, FNaam, Afd, Niv
@@ -163,7 +163,7 @@ Geeft op twee verschillende manieren de werknemers met code 54 die in een willek
 </td>
 </tr>
 <tr>
-<td colspan="2">
+<tdcolspan="2">
 
 > [!important]
 > SQL evalueert eerst de `NOT`, dan de `AND` en dan de `OR`. We kunnen de verwerkingsvolgorde wijzigen door haakjes te gebruiken. 
@@ -173,7 +173,7 @@ Geeft op twee verschillende manieren de werknemers met code 54 die in een willek
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, Vnaam, Fnaam, Afd
@@ -191,7 +191,7 @@ Geeft het nummer, de naam en het afdelingsnummer van alle werknemers met een num
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, Vnaam, Fnaam, Niv
@@ -209,7 +209,7 @@ Geeft het nummer, de naam en het opleidingsniveau van werknemers met niveau 16,1
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT Nr, VNaam, FNaam
@@ -231,7 +231,7 @@ Selecteert alle Werknemers met als jobcode `NULL`
 </td>
 </tr>
 <tr>
-<td style="max-width:50%;">
+<td>
 
 ```sql
 SELECT FNaam, Code, Niv, Salaris, Afd
