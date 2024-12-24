@@ -342,15 +342,440 @@ Geeft de naam en voornaam van een werknemer in 1 kolom weer als werknemers. We b
 <td>
 
 ```sql
-
+CURDATE()
 ```
 
 </td>
 <td>
 
-*Enkele bestaande functie*
+geeft de huidige datim in formaat 'JJJJ-MM-DD'
 
 </td>
+<tr>
+<td>
+
+```sql
+CURTIME()
+```
+
+</td>
+<td>
+
+geeft het huidig tijdstip in formaat 'UU-MM-SS'
+
+</td>
+<tr>
+<td>
+
+```sql
+DATEDIFF(expr1,expr2)
+```
+
+</td>
+<td>
+
+geeft het verschil tussen expr1 - expr2 in aantal dagen
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+DATE_FORMAT(datum,format)
+```
+
+</td>
+<td>
+
+geeft de datum weer volgens de formaatspecificaties.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+DAY()
+```
+
+</td>
+<td>
+
+is synomiem voor `DAYOFMONTH()` en geeft de dag van de maand weer als getal tussen 1 en 31
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+DAYOFWEEK(datum)
+```
+
+</td>
+<td>
+
+geeft het dagnummer van de week van de datum (1=zondag, ..., 7=zaterdag)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+NOW()
+```
+
+</td>
+<td>
+
+geeft de huidige datum en tijd in het formaat 'JJJJ-MM-DD HH-MM-SS'
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CONCAT(str1,str2,...)
+```
+
+</td>
+<td>
+
+geeft een string weer bestaande ui de concatenatie van alle argument
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+LEFT(str, len)
+```
+
+</td>
+<td>
+
+geeft een string bestaande uit de eerste *len*-tekens van str
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+LENGTH(str)
+```
+
+</td>
+<td>
+
+geeft de lengte van de string *str* in bytes
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+MID(str, pos, len)
+```
+
+</td>
+<td>
+
+is een synoniem voor `SUBSTRING(str, pos, len)` en geeft de substring van *str* vanaf positie *pos* met lengte *len*
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+RIGHT(str,len)
+```
+
+</td>
+<td>
+
+geeft de laatste *len* karakters van de string *str*
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+STRCMP(str1,str2)
+```
+
+</td>
+<td>
+
+geeft 0 indien beide gelijk zijn, -1 indien de eerste string kleiner is dan de tweede volgens de gehanteerde sorteringscode, zoniet is het resultaat +1
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT
+    CASE
+        WHEN price IS NULL THEN
+            'Not yet priced'
+        WHEN price<10 THEN
+            'Very Reasonable Title'
+        WHEN price>=10 AND 
+            price<10 THEN
+            'Coffee Table Title'
+        ELSE 'Expensive book!'
+    END AS "Price Category", 
+        CONVERT(varchar(20), title)
+        AS "Shortened Title"
+FROM pubs.dbo.titles
+ORDER BY price
+```
+
+</td>
+<td>
+
+`CASE` kan gebruikt worden wanneer we een kolom willen toevoegen gebaseerd op de waarden van een andere kolom. 
+
+In het voorbeeld voegen we een kolom "Shortened Title" toe gebaseerd op de waarde van de kolom price
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+IF(expr1,expr2, expr3)
+```
+
+</td>
+<td>
+
+geeft expr2 indien expr1 waar is (en verschillend van 0), zoniet is het resultaat expr3
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+IFNULL(expr1,expr2)
+```
+
+</td>
+<td>
+
+geeft expr2 indien expr2 `NULL` is, zoniet geeft het expr1
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+NULLIF(expr1,expr2)
+```
+
+</td>
+<td>
+
+geeft `NULL` indien expr1 = expr2, zoniet geeft het expr1
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CEIL(x)
+```
+
+</td>
+<td>
+
+synoniem van CEILING(x), geeft het kleinste geheel getal niet kleiner dan x.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+FLOOR(x)
+```
+
+</td>
+<td>
+
+geeft het grootste geheel getal niet groter dan x
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+POWER(x,y)
+```
+
+</td>
+<td>
+
+synomiem voor POW(x,y) geeft x tot de macht y
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+ROUND(x)
+```
+
+</td>
+<td>
+
+geeft het geheel getal afgerond volgens de klassieke regels
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CAST(expr AS type)
+CONVERT(expr, type)
+```
+
+</td>
+<td>
+
+Beide functies zetten de expr om volgens het gespecifieerde type
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+AVG() -- berekent het gemiddelde
+SUM() -- berekent de som
+MIN() -- bepaald het minimum
+MAX() -- bepaald het maximum
+COUNT() -- bepaald aantal rijen/kolommen
+
+-- voorbeeld:
+
+SELECT COUNT(*), AVG(Salaris), 
+    MIN(Salaris), MAX(Salaris),
+    COUNT(DISTINCT Code), SUM(Salaris)
+FROM Werknemer
+WHERE Afd='D11'
+```
+
+</td>
+<td>
+
+Statische functies die gebruikt kunnen worden in het `SELECT`-commando. Ze houden met uitzondering van `COUNT` geen rekening met `NULL`-waarden.
+
+- `AVG()` en `SUM()` kunnen enkel op numerieke kolommen toegepast worden
+- `AVG(DISTINCT item)` of `SUM(DISTINCT item)` tellen de duplicaten niet mee.
+- `COUNT(*)` - telt totaal aantal rijen (`NULL`-waarden included)
+- `COUNT(kolomnaam)` - telt het aantal velden in een kolom, incl. duplicaten, `NULL`-waarden worden niet meegerekend
+- `COUNT(DISTINCT kolomnaam)` - telt het aantal verschillende velden in een kolom, zonder de `NULL`-waarden
+
+Voorbeeld: Telt het aantal Werknemers uit de afdeling D11 en geeft het maximum, minimum en gemiddelde salaris, alsook de verschillende jobcodes voor deze afdeling.
+
+> Deze functies mogen niet voorkomen in de `WHERE`of `GROUP BY` clausule. Wel in de `HAVING` clausule
+
+> Wanneer we functies in het `SELECT`-clausule gebruiken moeten alle kolommen een argument van een functie zijn.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Afd, MAX(Salaris), MIN(Salaris), 
+    AVG(Salaris)
+FROM Werknemer
+GROUP BY Afd
+```
+
+</td>
+<td>
+
+Geeft het maximum, het minimum en het gemiddeld salaris van alle werknemers per afdeling.
+
+Het resultaat is hier gegroupeerd in een rij per afdeling.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Afd, Gesl, COUNT(*)
+FROM Werknemer
+GROUP BY Afd, Gesl
+ORDER BY Afd, Gesl DESC
+```
+
+</td>
+<td>
+
+Telt per afdeling het aantal mannen en vrouwen en sorteert oplopend de afdeling en afdalend het geslacht.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Afd, MAX(Salaris), MIN(Salaris), 
+    AVG(Salaris)
+FROM Werknemer
+WHERE Geslacht='M'
+GROUP BY Afd
+```
+
+</td>
+<td>
+
+Het maximum, minumum en gemiddeld loon wordt berekend voor alle mannelijke werknemers per afdeling
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Afd, MAX(Salaris), MIN(Salaris), 
+    AVG(Salaris)
+FROM Werknemer
+WHERE Geslacht='M'
+GROUP BY Afd
+HAVING COUNT(*)>2 AND MAX(Salaris)>2
+    *MIN(Salaris)
+```
+
+</td>
+<td>
+
+Geeft een lijst die per afdeling het afdelingsnummer, het maximum, het minimum en het gemiddelde salaris bevat van de mannelijke werknemers.
+
+Een afdeling komt enkel voor afdruk in aanmerking, indien ze meer dan 2 mannelijke werknemers heeft en indien het maximum mannelijk salaris meer dan 2 maal het minimum mannelijk salaris overtreft.
+
+> `HAVING` komt steeds voor samen met `GROUP BY` en selecteert of verwerpt groepen.
+
+</td>
+</tr>
 <tr>
 <td>
 
@@ -364,6 +789,21 @@ Geeft de naam en voornaam van een werknemer in 1 kolom weer als werknemers. We b
 
 
 </td>
+</tr>
+<tr>
+<td>
+
+```sql
+
+```
+
+</td>
+<td>
+
+
+
+</td>
+</tr>
 <tr>
 <td>
 
