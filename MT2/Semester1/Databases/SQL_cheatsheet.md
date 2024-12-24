@@ -63,6 +63,132 @@ We selecteren slechts een beperkt aantal kolommen uit de tabel Werknemer.
 <td>
 
 ```sql
+SELECT Nr, Fnaam, Afd
+FROM Werknemer
+WHERE AfdNr='D11'
+```
+
+</td>
+<td>
+
+Combineert beide subsets, we selecteren een beperkt aantal kolommen waar de waarde AfdNr D11 is uit de tabel Werknemer.
+
+>[!important]
+>Vraag enkel die kolommen en rijen op die je nodig hebt.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Nr, VNaam, Fnaam, Afd
+FROM Werknemer
+WHERE Fnaam LIKE 'P%' AND Afd LIKE 'D_1'
+```
+
+</td>
+<td>
+
+In SQL kunnen we karakterstrings opsporen. We gebruiken de kernwoorden `LIKE` en `NOT LIKE`. 
+- een '%'- teken stelt om het even welke string van 0 of meer karakters voor:
+    - string beginnend met P: 'P%'
+    - string eindigend op P: '%P'
+    - string beginnend met ABC: 'ABC%'
+    - string eidigend op ABC: '%ABC'
+    - string beginnend met A en eidigend op B: 'A%B'
+    - string die ABC bevat: '%ABC%'
+- een '_'-teken stelt in een string 1 enkel karakter voor
+    - naam van 5 karakters beginnend met P: 'P____'
+    - telefoonnummer van 5 cijfers met op de middelste plaats een 8: ' 8 '
+
+> Indien je wildcard-symbolen wil opsporen dien je deze vooraf te laten gaan door een '.'
+
+In het voorbeeld selecteren we het nummer, naam en afdelingsnummer van alle werknemers waarvan de familienaam start met een P en die in een afdeling werk beginnend met D en als 3<sup>de</sup> karakter een 1 hebben. 
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Nr, Vnaam, FNaam
+FROM Werknemer
+WHERE Afd='D11' AND Code=56
+```
+
+</td>
+<td>
+
+Selecteert het nummer, de voornaam, familienaam van de werknemers met een jobcode 56 uit de afdeling D11
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Nr, Vnaam, Fnaam
+FROM Werknemer
+WHERE (Afd='D11' OR Afd='D21') AND (Code>54 OR Niv>15)
+```
+
+</td>
+<td>
+
+Selecteert werknemers die ofwel in afdeling D11 of D21 werken en met een code groter dan 54 of een opleidingsniveau hoger dan 15
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Vnaam, FNaam, Afd, Niv
+FROM Werknemer
+WHERE Code=54 AND NOT(AFD='D11')
+
+SELECT Vnaam, FNaam, Afd, Niv
+FROM Werknemer
+WHERE Code=54 AND (AFD<>'D11')
+```
+
+</td>
+<td>
+
+Geeft op twee verschillende manieren de werknemers met code 54 die in een willekeurige afdeling werken met uitsluiting van afdeling D11
+
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+> [!important]
+> SQL evalueert eerst de `NOT`, dan de `AND` en dan de `OR`. We kunnen de verwerkingsvolgorde wijzigen door haakjes te gebruiken. 
+
+> Vermijd het gebruik van de `NOT` operator, dit vereist het doorzoeken van alle rijen uit de tabel.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+
+```
+
+</td>
+<td>
+
+
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
 
 ```
 
