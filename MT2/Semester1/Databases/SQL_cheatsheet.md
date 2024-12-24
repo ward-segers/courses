@@ -130,7 +130,8 @@ Selecteert het nummer, de voornaam, familienaam van de werknemers met een jobcod
 ```sql
 SELECT Nr, Vnaam, Fnaam
 FROM Werknemer
-WHERE (Afd='D11' OR Afd='D21') AND (Code>54 OR Niv>15)
+WHERE (Afd='D11' OR Afd='D21') 
+    AND (Code>54 OR Niv>15)
 ```
 
 </td>
@@ -168,6 +169,98 @@ Geeft op twee verschillende manieren de werknemers met code 54 die in een willek
 > SQL evalueert eerst de `NOT`, dan de `AND` en dan de `OR`. We kunnen de verwerkingsvolgorde wijzigen door haakjes te gebruiken. 
 
 > Vermijd het gebruik van de `NOT` operator, dit vereist het doorzoeken van alle rijen uit de tabel.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Nr, Vnaam, Fnaam, Afd
+FROM Werknemer
+WHERE Nr BETWEEN '100' AND '230'
+```
+
+</td>
+<td>
+
+Geeft het nummer, de naam en het afdelingsnummer van alle werknemers met een nummer tussen 100 en 200
+
+> [!note]
+> `BETWEEN` of `NOT BETWEEN` impliceert een gesloten interval (inclusief de grenzen)
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Nr, Vnaam, Fnaam, Niv
+FROM Werknemer
+WHERE Niv IN(16,18,20)
+```
+
+</td>
+<td>
+
+Geeft het nummer, de naam en het opleidingsniveau van werknemers met niveau 16,18 of 20
+
+> Door `IN` kunnen we de inhoud van een veld vergelijken met een lijst van waarden
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Nr, VNaam, FNaam
+FROM Werknemer
+WHERE Code IS NULL
+```
+
+</td>
+<td>
+
+Selecteert alle Werknemers met als jobcode `NULL`
+> `NULL` is met geen enkele vergelijking mogelijk. We moeten hier dus `IS` schrijven en niet vergelijken met '='
+
+> `NULL` is een speciale waarde: ofwel bestaat de informatie niet ofwel is de informatie nog onbekend.
+
+`NULL`-waarden komen voor wanneer er bij input in een bepaalde kolom geef waarde werd ingebracht en geen default waarde werd voorzien.
+
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT FNaam, Code, Niv, Salaris, Afd
+FROM Werknemer
+WHERE (Afd='D11' OR Afd='E21')
+    AND Niv IN (12,14,16,18)
+    AND Salaris BETWEEN 15600 AND 23700
+    AND (Fnaam NOT LIKE 'P%' OR FNaam LIKE '%DE%')
+    AND Code IS NOT NULL
+```
+
+</td>
+<td>
+
+Een voorbeeld van gecombineerde predicaten
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+
+```
+
+</td>
+<td>
+
+
 
 </td>
 </tr>
