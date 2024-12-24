@@ -84,7 +84,8 @@ Combineert beide subsets, we selecteren een beperkt aantal kolommen waar de waar
 ```sql
 SELECT Nr, VNaam, Fnaam, Afd
 FROM Werknemer
-WHERE Fnaam LIKE 'P%' AND Afd LIKE 'D_1'
+WHERE Fnaam LIKE 'P%' AND Afd 
+    LIKE 'D_1'
 ```
 
 </td>
