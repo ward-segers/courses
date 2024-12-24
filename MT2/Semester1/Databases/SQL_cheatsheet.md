@@ -235,7 +235,8 @@ Selecteert alle Werknemers met als jobcode `NULL`
 <td>
 
 ```sql
-SELECT FNaam, Code, Niv, Salaris, Afd
+SELECT FNaam, Code, Niv, Salaris, 
+    Afd
 FROM Werknemer
 WHERE (Afd='D11' OR Afd='E21')
     AND Niv IN (12,14,16,18)
