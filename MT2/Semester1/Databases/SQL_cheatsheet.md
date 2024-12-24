@@ -238,8 +238,10 @@ SELECT FNaam, Code, Niv, Salaris, Afd
 FROM Werknemer
 WHERE (Afd='D11' OR Afd='E21')
     AND Niv IN (12,14,16,18)
-    AND Salaris BETWEEN 15600 AND 23700
-    AND (Fnaam NOT LIKE 'P%' OR FNaam LIKE '%DE%')
+    AND Salaris BETWEEN 15600 
+        AND 23700
+    AND (Fnaam NOT LIKE 'P%' 
+        OR FNaam LIKE '%DE%')
     AND Code IS NOT NULL
 ```
 
