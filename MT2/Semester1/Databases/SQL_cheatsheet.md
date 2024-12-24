@@ -164,7 +164,7 @@ Geeft op twee verschillende manieren de werknemers met code 54 die in een willek
 </td>
 </tr>
 <tr>
-<tdcolspan="2">
+<td colspan="2">
 
 > [!important]
 > SQL evalueert eerst de `NOT`, dan de `AND` en dan de `OR`. We kunnen de verwerkingsvolgorde wijzigen door haakjes te gebruiken. 
@@ -258,13 +258,83 @@ Een voorbeeld van gecombineerde predicaten
 <td>
 
 ```sql
-
+SELECT Fnaam, Afd, Salaris/12
+FROM Werknemer
+WHERE Afd='A00' OR Afd='B01' 
+    OR Afd='C01' OR Afd='D01'
+ORDER BY Afd, 3 DESC
 ```
 
 </td>
 <td>
 
+Geeft alle Werknemers uit de afdelingen A00, B01, C01, D01, geordend volgens afdelingsnummer. Binnen een afdeling moeten de rijen geordend zijn in afdalende volgorde van het maandelijks salaris.
 
+`ORDER BY`:
+
+- ASC (default) / DESC (oplopend vs. aflopend)
+- kolom-specificatie: dit kan de kolomnaam zijn of een nummer (nummer van de kolom in het SELECT-commando)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT DISTINCT Fnaam
+FROM Werknemer
+WHERE Fnaam='De Bruyn'
+```
+
+</td>
+<td>
+
+Geeft alle "unieke" Werknemers waarbij de familienaam De Bruyn is.
+
+`DISTINCT` zorgt ervoor dat dubbele rijen (waar de Fnaam 2x gelijk is) niet worden weergegeven.
+
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT DISTINCT VNaam AS 'Voornaam', 
+    Fnaam AS 'FamilieNaam'
+FROM Werknemer
+WHERE FNaam='De Bruyn'
+```
+
+</td>
+<td>
+
+Standaard worden de kolomnamen, zoals ingesteld bij de creatie van de tabel, gebruikt. Via `AS` kunnen we een andere naam specifiëren voor de kolommen in het `SELECT` commando.
+
+> Deze aliassen kunnen we overigens ook gebruiken in de `ORDER BY`
+
+</td>
+<tr>
+<td>
+
+```sql
+SELECT Vnaam + ""+ Fnaam AS werknemer, 
+    Salaris*12 AS 'JaarSalaris'
+FROM Werknemer
+WHERE (salaris*12) > 12000
+ORDER BY jaarsalaris
+```
+
+</td>
+<td>
+
+Geeft de naam en voornaam van een werknemer in 1 kolom weer als werknemers. We berekenen het jaarsalaris ipv het maandsalaris. En tonen enkel de rijen waarvoor het jaarsalaris > 12000 is en sorteren dit alls op jaarsalaris
+
+</td>
+<tr>
+<td colspan=2>
+
+### Enkele uitgeschreven functies in SQL
 
 </td>
 </tr>
@@ -278,10 +348,22 @@ Een voorbeeld van gecombineerde predicaten
 </td>
 <td>
 
+*Enkele bestaande functie*
+
+</td>
+<tr>
+<td>
+
+```sql
+
+```
+
+</td>
+<td>
+
 
 
 </td>
-</tr>
 <tr>
 <td>
 
