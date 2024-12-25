@@ -775,17 +775,85 @@ Een afdeling komt enkel voor afdruk in aanmerking, indien ze meer dan 2 mannelij
 > `HAVING` komt steeds voor samen met `GROUP BY` en selecteert of verwerpt groepen.
 
 </td>
+
+<tr>
+<td colspan=2>
+
+## Werken met meerdere tabellen
+
+</td>
+</tr>
 </tr>
 <tr>
 <td>
 
 ```sql
-
+SELECT Vnaam, Fnaam, Afd, AfdNaam
+FROM Werknemer JOIN Afdeling 
+    ON Werknemer.Afd=Afdeling.Afdnr
 ```
 
 </td>
 <td>
 
+Samenvoegen van de tabellen Werknemer en Afdeling via de overeenstemmende afdelingsnummers. (*Dit is de meest recente manier*)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Vnaam, Fnaam, Afd, AfdNaam
+FROM Werknemer, Afdeling
+WHERE Werknemer.Afd=Afdeling.Afdnr
+```
+
+</td>
+<td>
+
+Samenvoegen van de tabellen Werknemer en Afdeling via de overeenstemmende afdelingsnummers. (*Dit een verouderde versie, die door sommige DBMS nog steeds gebruikt wordt.*)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT X.FNaam, X.Code, Y.FNaam, Y.Code
+FROM Werknemer X JOIN Werknemer Y
+    ON X.Afd=Y.Afd
+WHERE X.Code>=Y.Code+5
+```
+
+</td>
+<td>
+
+We joinen een kolom met zichzelf. Dit voorbeeld selecteerd alle werknemers die werken in dezelfde afdeling, maar hun jobcode verschilt minstens 5.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT afdnr, afdNaam, COUNT(FNaam)
+FROM afdeling LEFT OUTER JOIN werknemer
+    ON afd=afdNr
+GROUP BY afdnr, afdNaam
+ORDER BY afdnr
+```
+
+</td>
+<td>
+
+Hier tellen per afdeling de werknemers die tot de afdeling behoren, ook voor de afdeling zonder werknemers.
+
+*OUTER JOIN*: linkt alle rijen aan de gejoinde tabel (ook die niet voldoen aan de `ON` conditie)
+
+- `LEFT OUTER JOIN` - retourneert alle rijen van de eerst genoemde tabel in de FROM clause
+- `RIGHT OUTER JOIN` - retourneert alle rijen van de tweede tabel in de FROM clause
+- `FULL OUTER JOIN` - retourneert ook rijene uit beide tabellen die geen corresponderende entry hebben in de andere tabel. (dus, dit bevat steeds alle rijen van beide tabellen)
 
 
 </td>
@@ -794,13 +862,40 @@ Een afdeling komt enkel voor afdruk in aanmerking, indien ze meer dan 2 mannelij
 <td>
 
 ```sql
-
+SELECT Vnaam, Fnaam, afdnr, afdNaam
+FROM Werknemer CROSS JOIN Afdeling
+    ON afd=afdnr
 ```
 
 </td>
 <td>
 
+Het resultaat is gelijk aan het aantal rijen in de eerste tabel maal het aantal rijen in de tweede tabel.
 
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+SELECT Vnaam, Fnaam
+FROM WerknemerInDienst
+UNION
+SELECT Vnaam, Fnaam
+FROM WerknemerUitDienst
+```
+
+</td>
+<td>
+
+Gegegens uit twee verschillende tabellen worden gecombineerd tot een tabel.
+Hiervoor moeten wel volgende regels gerespecteerd worden:
+- Resultaten uit `SELECT` moeten evenveel kolommen bevatten
+- Overeenkomstige kolommen uit `SELECT` moeten hetzelfde data type zijn en `NOT NULL` toelaten of niet
+- Kolommen komen in dezelfde volgorde voor
+- De kolomnamen van `UNION` zijn steeds die van de eerste `SELECT`
+- Het resultaat bevat echter steeds alleen unieke rijen
+- Aan het einde van de `UNION` kan je een `ORDER BY` toevoegen. In deze clausule mag geen kolomnaam of uitdrukking voorkomen indien kolomnamen van beide `SELECT` verschillend zijn. In dat geval gebruik je kolomnummers.
 
 </td>
 </tr>
