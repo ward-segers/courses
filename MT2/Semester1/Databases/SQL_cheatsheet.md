@@ -899,17 +899,393 @@ Hiervoor moeten wel volgende regels gerespecteerd worden:
 
 </td>
 </tr>
+
+<tr>
+<td colspan=2>
+
+## Wijzigen van de inhoud van tabellen
+
+</td>
+</tr>
+
 <tr>
 <td>
 
 ```sql
-
+INSERT INTO Afdeling
+VALUES ('D41','Systeem Test', 100)
 ```
 
 </td>
 <td>
 
+Wanneer we alles op de juiste volgorde en volledig ingeven wordt dit code-snippet in de tabel als een rij toegevoegd. Enkel de tabel naam is nodig wanneer elk veld ingevuld wordt.
 
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+INSERT INTO Werknemer(Nr,VNaam,Init,
+    FNaam,Afd,Indienst,Gesl)
+VALUES('410','Hugo','','Jansen',
+    'D41',820308,'M')
+```
+
+</td>
+<td>
+
+Een eerste manier van een rij toevoegen aan een tabel wanneer in eerste instantie niet alle waarden gekend zijn. We vermelden een lijst van kolomnamen die een waarde zullen krijgen. De kolommen die niet vermeld zijn krijgen dan automatisch `NULL`-waarden toegewezen.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+INSERT INTO Werknemer
+VALUES ('420','Caroline','H','Goderis',
+    'D41',NULL,820312,NULL,NULL,
+    'V',NULL,NULL)
+```
+
+</td>
+<td>
+
+We vermelden geen lijst van kolomnamen en gebruiken het sleutel-woord voor de onbekende velden.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CREATE TABLE AFDD41(
+    NR CHAR(3) NOT NULL,
+    VNaam VARCHAR(12) NOT NULL,
+    Init CHAR(1) NOT NULL,
+    FNaam VARCHAR(15) NOT NULL,
+    Afd CHAR(3) NOT NULL,
+    Tel CHAR(4),
+    InDienst INT,
+    Gesl CHAR(1),
+    Salaris DECIMAL(8,2)
+);
+```
+
+</td>
+<td>
+
+We maken een nieuwe tabel 'AFDD41' met volgende eigenschappen:
+- de eerste 5 kolommen kunnen geen `NULL`-waarden bevatten (bij `INSERT` moeten deze waarden dus ingegeven worden)
+- bij de laatste 4 kolommen zullen `NULL`-waarden ingevuld worden wanneer we zelf geen data invullen.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+INSERT INTO AFDD41(Nr,Vnaam,Init,FNaam,
+    Afd,Indienst,Gesl)
+SELECT NR,VNaam,Init,FNaam,Afd,Indienst,
+    Gesl
+FROM Werknemer
+WHERE Nr LIKE '4_'
+    OR Nr IN (SELECT ManNr FROM Afdeling
+        WHERE AfdNr='D41')
+```
+
+</td>
+<td>
+
+We voegen 2 nieuwe bedienden in de tabel 'AFDD41' die een nummer van gedaante '4_' uit de tabel Werknemer hebben. Bovendien weten we ook dat in de tabel Afdeling de manager zit van D41. Via MANNR uit de rij met als AfdNr 'D41' uit de tabel Afdeling leggen we de relatie met de tabel Werknemer. Zo bekomen we de 3<sup>de</sup> werknemer ter invulling van AFDD41. We maken hier gebruik van een `SUBSELECT`
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+UPDATE Werknemer
+SET Code=52,Salaris=450,InDienst=NULL
+WHERE Nr='410' OR Nr='420'
+```
+
+</td>
+<td>
+
+We passen de waarden in de tabel Werknemer aan van de bedienden met nummer 410 en 420.
+
+>[!tip]
+> Let op, wanneer hier geen `WHERE`-clause opgegeven wordt, zullen alle rijen gewijzigd worden.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+UPDATE Werknemer
+SET Salaris=1.075*Salaris
+```
+
+</td>
+<td>
+
+Update de tabel en past elk salaris aan. (opslag van 7,5%)
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+DELETE
+FROM Werknemer
+WHERE Nr='410' OR Nr='420'
+
+DELETE
+FROM Afdeling
+WHERE AfdNr='D41'
+
+DELETE
+FROM AFDD41
+```
+
+</td>
+<td>
+
+Verwijderd de werknemers '410' en '420' uit de werknemer tabel, de afdeling 'D41' uit de Afdeling tabel en verwijderd alle rijen uit de tabel AFDD41. (de tabel blijft leeg wel nog bestaan)
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+## Aanmaken, wijzigen en verwijderen van tabellen
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CREATE TABLE AFDD41(
+    NR CHAR(3) NOT NULL,
+    VNaam VARCHAR(12) NOT NULL,
+    Init CHAR(1) NOT NULL,
+    FNaam VARCHAR(15) NOT NULL,
+    Afd CHAR(3) NOT NULL,
+    Tel CHAR(4) NULL,
+    InDienst INT NULL,
+    Gesl CHAR(1) NULL,
+    Salaris DECIMAL(8,2) NULL
+);
+```
+
+</td>
+<td>
+
+`CREATE TABLE` heeft een logische regelstructuur. Een logische regel bevat een volledige kolomdefinitie, of een constraint zoals de definitie van een primaire of vreemde sleutel.
+
+Wanneer we een tabel aanmaken moeten we minstens het volgende specifiëren:
+- Tabelnaam
+- Kolomnamen
+- Datatypes van de kolommen
+- `NULL` of `NOT NULL`
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+ALTER TABLE AFDD41
+ADD Adres VARCHAR(40) NULL
+```
+
+</td>
+<td>
+
+Voegt een kolom Adres toe aan de tabel AFDD41.
+
+> We kunnen enkel kolommen die `NULL`-waarden accepteren toevoegen aan een niet lege tabel.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+ALTER TABLE AFDD41
+ALTER Adres VARCHAR(50) NULL
+```
+
+</td>
+<td>
+
+Wijzigt de toegestane lengte van de kolom Adres
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+ALTER TABLE AFDD41
+DROP COLUMN Adres
+```
+
+</td>
+<td>
+
+Verwijderd de kolom Adres
+
+> Alle indexen en constraints op een kolom moeten eerst verwijderd zijn alvorens je de kolom kan verwijderen.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+DROP TABLE AFDD41
+```
+
+</td>
+<td>
+
+Verwijderd de volledige tabel AFDD41.
+
+Alles wordt verwijderd, tabeldefinitie, indexen en rechten gebouwd op de tabel.
+
+>We kunnen een tabel enkel verwijderen indien er geen afhankelijkheden (relaties) meer zijn met andere tabellen.
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CREATE TABLE users(
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(40),
+    password VARCHAR(255),
+    email VARCHAR(255)
+);
+```
+
+</td>
+<td>
+
+Maakt een tabel users aan waarin het user_id veld als primary key automatisch gegenereerd wordt door het systeem.
+
+> Een kolom `AUTO_INCREMENT` laat geen `NULL`-waarden toe.
+
+> Wanneer we de `AUTO_INCREMENT` waarde ergens anders willen laten starten kunnen we dit door een waarde mee te geven: `AUTO_INCREMENT=100`
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CREATE TABLE AFDD41(
+    Nr INT AUTO_INCREMENT PRIMARY KEY 
+        NOT NULL,
+    VNaam VARCHAR(12) NOT NULL,
+    Init CHAR(1) NOT NULL,
+    FNaam VARCHAR(15) NOT NULL,
+    Afd CHAR(3) NOT NULL,
+    Tel CHAR(4) NULL,
+    Postc CHAR(4) NULL,
+    InDienst INT NULL,
+    Gesl CHAR(1) DEFAULT 'M' 
+        CHECK(Gesl IN ('M','V')) NULL,
+    Salaris DECIMAL(8,2) NULL
+    CONSTRAINT Postc_fk FOREIGN KEY(Postc)
+        REFERENCES Postcode(PC)
+)
+```
+
+</td>
+<td>
+
+Maakt een tabel aan met verschillende constraints. Mogelijke constraints:
+- `NULL`, `NOT NULL`
+- `PRIMARY KEY`: definitie van de primary key
+- `FOREIGN KEY`: opleggen van referentiële integriteit
+- `CHECK`: specificatie van toegelaten waarden in een kolom bij `INSERT` en `UPDATE`
+- `UNIQUE`: specifieert of de waarden binnen 1 of meerdere kolommen al dan nieet uniek moeten zijn
+- `DEFAULT`: specifieert de defaultwaarde voor een kolom wanneer er bij `INSERT` geen waarde wordt opgegeven.
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+## Sleutels
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CREATE TABLE PRODUKT(
+    ProdNr SMALLINT NOT NULL PRIMARY KEY,
+    ProdNaam CHAR(16),
+    Hoev_in_voorr SMALLINT
+)
+```
+
+</td>
+<td>
+
+Stelt de kolom 'ProdNr' in als de `PRIMARY KEY`
+
+> Een `PRIMARY KEY` kan een combinatie van kolommen zijn of een individuele kolom
+
+- de kolom/combinatie van kolommen mag geen dubbele waarden bevatten.
+- de primary key mag geen `NULL`-waarden hebben
+
+</td>
+</tr>
+<tr>
+<td colspan="2">
+
+## View
+
+</td>
+</tr>
+<tr>
+<td>
+
+```sql
+CREATE VIEW DEELTAB AS
+    SELECT *¨
+    FROM Werknemer
+    WHERE Afd='D114'
+        AND Code=55
+        AND Niv=16
+        AND Gesl='M'
+```
+
+</td>
+<td>
+
+Maakt een `VIEW` aan gebaseerd op een subset van de tabel Werknemer.
+Het voordeel van een view is dat deze query opgeslagen is en we deze verder gemakkelijk kunnen gebruiken.
+
+Door bv:
+
+```sql
+SELECT VNaam,FNaam
+FROM DEELTAB
+WHERE Salaris>9000
+```
 
 </td>
 </tr>
