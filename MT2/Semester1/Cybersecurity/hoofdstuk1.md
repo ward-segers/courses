@@ -189,6 +189,7 @@ bv. encoderen/decoderen, compressie/decompressie, encryptie/decryptie
 | 1 time every 5 seconds with 1 hour penalty after 10 attempts | `Blablabla_1` | 1800 years | Very secure    |
 
 > [!tip]
-> **Voor systeembeheerders**
+> **Voor systeembeheerders:**
+>
 > Introduceer programma's die bepaalde verbindingen blokkeren bij teveel pogingen
 > Bv. Als iets 5x probeert in te loggen met een foutief wachtwoord in 20 minuten, wordt deze genegeerd voor 6 uur
