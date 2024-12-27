@@ -181,3 +181,112 @@ Voorbeeld one-time pad waarbij een random sleutel (pad) toegevoegd wordt aan de 
 
 - Met behulp van een public key kan je controleren of de handtekening klopt.
 - Je genereerd ze met jouw private key
+
+#### Diffie Hellman
+
+- Wordt gebruikt om met asymmetrische algoritmen een symmetrische sleutel te genereren
+    - De private key word nooit getoond
+    - Toch bekomen beide partijen dezelfde sleutel als resultaat
+
+## Cryptoanalyse
+
+### Het kraken van cryptografie
+
+- Bij het kraken van cryptografie probeer je een onleesbaar bericht (ciphertext) om te vormen naar een leesbaar bericht (plaintext) zonder dat je de geheime sleutel kent.
+- In sommige gevallen zelfs zonder dat je weet welk algoritme gebruikt is voor de encryptie
+- In theorie kan je elk algoritme kraken, maar de kans op succes hangt af van 2 factoren:
+    - De hoeveelheid tijd die je hebt voor het bericht irrelevant wordt
+    - De hoeveelheid bronnen (bv. CPU, GPU, storage) die je kan gebruiken
+
+#### Technieken
+
+- Soms is het mogelijk om algoritmen te kraken door op zoek te gaan naar bepaalde patronen in de ciphertext (zo is de Enigma gekraakt door Alan Turing)
+- Voor het kraken van moderne algoritmen worden vaak volgende technieken gebruikt:
+    - **Directory attack**: uitproberen van verschillende waarden uit een opgegeven lijst
+        - bv. woordenboek of dump van wachtwoorden
+    - **Brute-force attack**: uitproberen van alle mogelijke waarden voor de geheime sleutel
+        - heel tijdsintensief
+    - **Rainbow tables**: gebruikt vooraf gemaakte, gesorteerde lijsten met ciphertext en de overeenkomstige plaintext
+        - wordt gebruikt voor het kraken van hashing algoritmen
+
+#### CPU, GPU, AI of quanum computing
+
+- De bewerkingen nodig voor het kraken van een modern algoritme zijn vaak veel efficiënter uit te voeren op een GPU dan een CPU (en dus veel sneller!)
+- De opkomst van AI kan mogelijks in de toekomst een grote rol spelen bij het kraken van encryptie, als AI modellen hiervoor getraind kunnen worden (bv. door training met vaak gebruikte wachtwoorden)
+- Verwacht wordt dat ook quantum computing veel algoritmen voor encryptie onbruikbaar zal maken, maar dit is nog niet voor morgen
+    - Toch wordt op dit moment al veel geëncrypteerde data opgeslagen zodat deze later gekraakt kan worden
+
+#### Enkele tools
+
+- John The Ripper
+    - kraken van zwakke wachtwoorden via een hash (bv. het kraken van geëncrypteerde ZIP-file via hashwaarde)
+    - maakt gebruik van **directory attacks** via een woordenboek en/of **bruteforce attacks**
+    - Geoptimaliseerd voor kraken via CPU, beperkte ondersteuning voor GPU
+
+- Hashcat
+    - functionaliteit vergelijkbaar met John The Ripper
+    - Geoptimaliseerd coor kraken van wachtwoorden via **GPU**
+
+
+## Data verduisteren
+
+### Gegevensmaskering (masking)
+
+- gevoelige data vervangen door niet-gevoelige data
+- Niet-gevoelige versie ziet eruit en gedraagt zich als het origineel
+    - Geen wijzigingen nodig aan applicaties of dataopslagfaciliteiten
+- Vaak gebruikt voor testen en analyse zonder privacyrisico
+- Verschillende technieken om gegevens te wijzigen, maar zinvol te houden:
+    - **vervanging** vervangt gegevens door authentiek ogende waarden (garanderen anonimiteit)
+    - **shuffling** verwisselt data van verschillende gebruikers
+        - werkt goed voor bv. financiële data in een testdatabase
+
+### Steganografie
+
+- **Verbergt** gegevens in een ander bestand
+    - bv. grafisch, audio-, of ander tekstbestand
+- voordeel: Geheime boodschap valt niet op
+    - niemand zou ooit weten dat een foto daadwerkelijk een geheime boodschap bevatte door het bestand elektronisch of op papier te bekijken
+
+<p align='center'><img src='src/voorbeeld_steganografie.png' alt='Voorbeeld Steganografie' width='50%'></p>
+
+- verschillende componenten betrokken:
+    - **ingebedde** gegevens = geheim bericht
+    - **Omslagtekst** verbergt gegevens die de **stego-tekst** produceren
+        - Omslag en/of verborgen gegevens kunnen ook afbeelding of audio zijn
+    - **Stego-key** regelt het verbergingsproces
+
+### Gegevensverduistering
+
+- Toepassen gegevensmaskering en steganografietechnieken
+    - **verduistering** maakt de boodschap verwarrend, dubbelzinnig of moeilijker te begrijpen
+    - Systeem kan opzettelijk berichten door elkaar halen.
+    - Zo voorkomen we ongeautoriseerde toegang tot gevoelige informatie
+
+#### Voorbeeld: JavaScript Obfuscator
+
+*Effectief geschreven code*
+
+```javascript
+function hi() {
+    console.log("Hello World!");
+}
+hi();
+```
+
+*Obfuscation code*
+
+```javascript
+(function(_0x3769eb,_0x23bae9){var _0xda3c79=_0x3291,_0x12283b=_0x3769eb();while(!![]){try{var _0x244366=parseInt(_0xda3c79(0x13f))/0x1+-parseInt(_0xda3c79(0x138))/0x2*(parseInt(_0xda3c79(0x13c))/0x3)+
+parseInt(_0xda3c79(0x142))/0x4+-
+parseInt(_0xda3c79(0x141))/0x5*(parseInt(_0xda3c79(0x13e))/0x6)+
+parseInt(_0xda3c79(0x13d))/0x7+-
+parseInt(_0xda3c79(0x13a))/0x8+-
+parseInt(_0xda3c79(0x139))/0x9*(
+parseInt(_0xda3c79(0x140))/0xa);if(_0x244366===_0x23bae9)break;else _0x12283b['push'](_0x12283b['shift']());}catch(_0xfc1341){_0x12283b['push'](_0x12283b['shift']());}}}(_0x5ed3,0xb180b));function hi(){var 
+_0x289339=_0x3291;console[_0x289339(0x13b)](_0x289339(0x143));}function _0x5ed3()
+{var _0x3c41ee=['7801712AKCSru','log','3qjtjdY','8726522UjJliE','5213586ChpIqU','1186209XwtNov','7440XEBidU','5TbAVFc','4305648VWGpzc','Hello\x20World!','1611278QJXdTF','1602bezzPL'];_0x5ed3=function(){return _0x3c41ee;};return _0x5ed3();}function _0x3291(_0x41aaaf,_0x2efa74)
+{var _0x5ed382=_0x5ed3();return _0x3291=function(_0x3291eb,_0x5197cf){_0x3291eb=_0x3291eb-0x138;var _0x5c36e3=_0x5ed382[_0x3291eb];return _0x5c36e3;},_0x3291(_0x41aaaf,_0x2efa74);}hi();
+```
+
+Bron: [obfuscator.io](https://obfuscator.io/#code)
