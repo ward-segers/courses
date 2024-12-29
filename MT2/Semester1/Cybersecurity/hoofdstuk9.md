@@ -219,3 +219,206 @@ Een gelijkaardig voorbeeld in *Webhosting*.
 > Voorbeeld **Docker**
 
 ### Server hardening
+
+#### Beveiligde toegang op afstand
+
+- Inloggen op een toestel en commando's uitvoeren (CLI op afstand):
+    - **Telnet**
+        - Verouderd
+        - Data verzonden in plaintext
+            - ook o.a. login en wachtwoord
+            - ⚠️ Niet veilig!
+    - **SSH** (Secure Shell)
+        - Opvolger Telnet
+        - Encryptie van data tijdens verzending
+
+*Voorbeeld SSH:*
+
+<p align='center'><img src='src/voorbeeld_ssh.png' alt='Voorbeeld SSH' width='50%'></p>
+
+- bestanden overzetten tussen toestellen
+    - **SCP** (Secure Copy Protocol)
+        - Maakt onderliggend gebruik van **SSH**
+            - Authenticaties + bescherming van data tijdens verzendin
+    - **SFTP** (SSH File Transfer Protocol)
+        - Gelijkaardig aan SCP
+        - Maakt ook onderliggend gebruik van SSH
+        - Makkelijker in gebruik met visuele programma's
+
+*Voorbeeld SCP:*
+
+<p align='center'><img src='src/voorbeeld_scp.png' alt='Voorbeeld SCP' width='50%'></p>
+
+*Voorbeeld SFTP:*
+
+<p align='center'><img src='src/voorbeeld_sftp.png' alt='Voorbeeld SFTP' width='80%'></p>
+
+- Vanop een publiek netwerk veilig verbinden met een privaat netwerk
+    - **VPN**
+        - Geëncrypteerde "tunnel" opzetten
+            - Authenticatie + bescherming van data in beweging
+        - Meer mogelijk dan CLI of overdracht bestanden
+
+#### Administratieve maatregelen
+
+- Poorten en services beveiligen
+    - Via open poorten kunnen cybercriminelen achterhalen welke services er draaien op een host
+    - Op veel systemen draaien meer services dan nodig
+    - Beheerder moet elke service bekijken en nagaan of deze noodzakelijk is, alsook de mogelijke risico's inschatten
+
+- Geprivilegieerde accounts
+    - bv. `root`, `admin`, `superuser`
+    - **Krachtigste** accounts op een systeem
+    - Hebben vaak verhoogde of zelfs onbeperkte toegang
+    - Beheerder moet deze accounts voldoende beveiligen of eventueel verwijderen om risico's te vermijden
+
+- Group Policies
+    - Onderdeel van Active Directory
+    - Voor gebruik in **Windows** omgeving
+    - Laat toe om bepaalde **veiligheidsmaatregelen** in te stellen voor een groep gebruikers
+        - bv. password policy, vergendelingsbeleid, toegang tot bronnen
+
+- Logboeken en waarschuwingen
+    - Een logboek registreert **gebeurtenissen** op een systeem
+    - Bevatten uitgebreide informatie voor elke gebeurtenis
+    - Belangrijk voor computerbeveiliging (AA**A**: accounting)
+
+
+### Network Hardening
+
+#### Netwerkapparaten beschermen
+
+- Network Operations Centers (NOC)
+    - Op één of meerdere locaties
+    - Bieden gedetailleerde status van netwerk
+    - Ground zero voor oplossen van netwerkproblemen, prestatiebewaking, softwaredistributie en updates, communicatiebeheer en apparaatbeheer
+
+- Netwerkapparaten: switches, routers,...
+    - Hart van het moderne netwerk
+    - kwetsbaar voor diefstal, hacking en toegang op afstand
+    - Doelwit voor aanvallen op netwerkprotocollen of DOS aanvallen
+
+- Firewalls
+    - hardware- of software die het netwerk beveiligen
+    - Voorkomt dat ongeautoriseerd of potentieel gevaarlijk verkeer het netwerk binnenkomt
+    - Zorgt ervoor dat alleen de noodzakelijke poorten zichtbaar en beschikbaar zijn
+
+- IDS (Intrusion Detection System)
+
+<p align='center'><img src='src/ids.png' alt='IDS' width='50%'></p>
+
+- IPS (Intrusion Prevention System)
+
+<p align='center'><img src='src/ips.png' alt='IPS' width='50%'></p>
+
+#### Een modern beveiligingsoperatiecentrum
+
+- Security Operations Centers (SOC) zijn gelijkaardig aan NOC's maar dan voor security
+- SOC's bieden een aantal diensten aan zoals monitoring, beheer, oplossingen voor bedreigingen, gehoste beveiliging
+- Als bedrijf kun je zelf een SOC opzetten of die uitbesteden aan gespecialiseerde firma's.
+
+#### Security Information and Event Management (SIEM) systemen
+
+- Software gebruikt in SOC's:
+    - Verzamel en filter gegevens
+    - Detecteer en classificeer bedreigingen
+    - Analyseren en onderzoeken van bedreigingen
+    - Uitvoeren van preventieve maatregelen
+    - Pak toekomstige bedreigingen aan
+
+## Assets management
+
+- Bedrijven moeten weten welke hardware- en software assets in het bedrijf aanwezig zijn. Deze assets moeten immers beveiligd worden
+- Assets management
+    - omvat het beheren van al deze assets
+    - Een volledig overzicht (inventaris) te zijn alle hard- en software
+- Het bedrijf kan zo een inschatting maken van welke beveiligingsgevaren er zouden kunnen zijn
+- Moet minstens het volgende in de gaten houden:
+    - Elk hardware systeem
+    - Elk besturingssysteem
+    - Elk hardware netwerk toestel
+    - Elk network operating system
+    - Elke software applicatie
+    - Elke firmware
+    - Alle language runtime environments (Java, C#, Python,...)
+- Sommige bedrijven kiezen voor software die automatisch deze zaken bijhoudt (bv. naturalhr)
+- voordelen:
+    - Beveiliging
+    - Updatebeleid
+        - Welke hardware- of software is (binnenkort) verouderd?
+    - Helpdesk
+        - Log van vorige problemen
+        - Weet alle specs van klant/toestel met probleem
+
+## Nood aan experten
+
+### Hoe wordt je een cybersecurity expert?
+
+- *Wees een levenslange leerling*: 
+    - leer basis door IT cursussen te volgen
+    - blijf up-to-date
+    - cybersecurity veranderd constant
+
+- *Behaal certificeringen*:
+    - van bv. Microsoft en Cisco
+    - bewijs van kennis
+
+- *Stages*:
+    - zoeken van stage binnen cybersecurity domein kan leiden tot mogelijkheden in de toekomst
+
+- *Professionele organisaties, conferenties, CTF's*:
+    - word lid van computerbeveiligingsorganisaties
+    - woon vergaderingen en conferenties bij
+    - sluit je aan op forums
+
+### Certificeringen
+
+- De IT-industrie heeft standaarden opgesteld voor cybersecurity specialisten om professionele certificeringen te verkrijgen die het bewijs leveren van vaardigheden en kennisniveau.
+- Enkel bekende certificaten:
+    - **CompTIA Security+**:
+        - Een door CompTIA gesponsord testprogramma dat de competenties van IT-beheerders op het gebied van informatieborging cerificeert.
+    - EC-Council **Certified Ethical Hacker** (CEH): certificering op gemiddeld niveau die beweert Cybersecurityspecialisten met deze referentie over de vaardigheden en kennis beschikken voor verschillende hackpraktijken
+    - **SANS GIAC Security Essentials** (GSEC): 
+        - goede keuze als instapmodel voor Cybersecurityspecialisten
+        - toont aan dat ze de beveiligingsterminologie en -concepten begrijpen
+        - toont aan dat ze beschikken over de vaardigheden en expertise voor 'hands-on' beveiligingsrollen
+        - aanvullende specifieke certificeringen op gebied van beveiliginsadministratie, forensisch onderzoek en auditing
+    - **ISC2 Certified Information Systems Security Professional** (CISSP): 
+        - leverancier-neutrale certificering voor Cybersecurityspecialisten met veel technische en management ervaring
+        - formeel goedgekeurd door het Amerikaans ministerie van Defensie (DoD)
+        - wereldwijd erekende branchecertificering op gebied van beveiliging
+    - **ISACA Certified Information Security Manager** (CISM):
+        - Cybersecurityspecialisten die verantwoordelijk zijn voor het beheren, ontwikkelen en toezichthouden op informatiebeveiligingssystemen op bedrijfs niveau
+        - of, voor diegene die beste beveiligingspraktijken ontwikkelen
+    - **Cisco Certified Network Associate Security** (CCNA Security):
+        - valideert dat een cyberbeveiligingspecialist over de kennis en vaardigheden beschikt die nodig zijn om cisco-netwerken te beveiligen
+
+### Websites van cybersecurity organisaties
+
+-   National Vulnerability Database (NVD)
+    -   https://nvd.nist.gov
+-   Computer Emergency Response Team (CERT)
+    -   https://sei.cmu.edu/about/divisions/cert
+    -   https://cert.be
+-   Internet Storm Center (ISC)
+    -   https://isc.sans.edu
+-   The Advanced Cyber Security Center (ACSC)
+    -   https://www.acscenter.org
+
+### Websites over cybersecurity nieuws
+
+> Het is enorm belangrijk om op de hoogte te blijven van de laatste bedreigingen en verdedigingen!
+
+-   https://www.reddit.com/user/goretsky/m/security
+    -   (verzameling van reddit threads i.v.m. cybersecurity)
+-   https://www.csoonline.com
+-   https://www.darkreading.com
+-   https://www.bleepingcomputer.com
+-   https://news.ycombinator.com
+-   https://nakedsecurity.sophos.com
+-   https://threatpost.com
+-   https://blog.erratasec.com
+-   https://krebsonsecurity.com
+-   https://medium.com/mitre-attack
+-   https://risky.biz
+-   https://latesthackingnews.com
