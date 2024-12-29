@@ -359,3 +359,63 @@ Nmap done: 1 IP address (1 host up) scanned in 10.77 seconds
 <p align='center'><img src='src/cyber_attack_cycle.png' alt='Cyber Attack Cycle' width='25%'></p>
 
 ## Pentests en audit reports
+
+### Pentests
+
+- Van de 5 fases is enkel **passieve reconnaissance** standaard toegelaten
+- Elke andere interactie heeft **expliciete toestemming** van het doelwit nodig
+    - Daarbij hoort vaak een **non-disclosure agreement (NDA)**
+        - gevoelige informatie
+    - Tegelijk wordt ook een scope afgesproken
+        - Wat mag? Wat mag niet?
+- Dit onderzoek heet dan een **pentest** (penetration test) of **security audit**
+
+### White / Grey / Black box
+
+- **White box**: het red team kent het systeem volledig, en zal die kennis gebruiken bij de aanval
+    - documentatie, broncode, werknemers
+- **Black box**: het red team begint zonder enige informatie, net zoals een externe hacker dat zou moeten doen
+    - duurt vaak langer, dus ook duurder
+- **Grey box**: het red team heeft een beetje informatie
+    - bv. welke IP range is mogelijk kwetsbaar
+
+### Audit report
+
+Vaak wordt de pentest afgesloten met een geschreven rapport, het **Audit report**
+- Dit rapport bevat meestal:
+    - Een conclusie die begrijpbaar is voor niet-technisch personeel
+    - Een gedetailleerde lijst van vulnerbilities, exploits en threats waar het IT-team mee aan de slag kan
+- Dit is een momentopname, en is nooit compleet
+
+### Vulnerabilites en exploits
+
+- **Vulnerabilites** zijn foutjes in software of configuratie die een zwakke plek vormen
+- **Exploits** zijn manieren om vulnerbilities te misbruiken
+
+### Threats en risk
+
+- Een **threat** is dan het gebruik van een exploit door een aanvaller
+- **Risk** is de maat van ernst van een bepaalde vulnerability, gebaseerd op hoe waarschijnlijk het is dat er een threat komt, hoe ernstig het is al dat gebeurt
+- Methodes om risk te berekenen: bv. van [NIST](https://doi.org/10.6028/NIST.SP.800-30r1)
+
+<p align='center'><img src='src/threat_vulnerability_risk.png' alt='Threats en risk' width='80%'></p>
+
+### Risk matrix
+
+<p align='center'><img src='src/risk_matrix.png' alt='Risk matrix' width='80%'></p>
+
+- Dit soort matrices wordt gebruikt om te bepalen wat de risk is, gebaseerd op de *likelihood* (=kans op een threat) en *impact* (=ernst van de threat)
+- likelihood en impact worden bepaald door het bedrijf zelf, ze zijn relatief
+- voorbeeld:
+    - High impact threat (website dag down) met een very low likelihood (moeilijk te exploiten) heeft als totale risk-score low
+
+
+- Vulnerabilites die niet gekend zijn kan je ook niet in rekening brengen.
+    - best enkele defensieve tactieken toe te passen
+    - verder focussen op gekende vulnerbilities
+- Niet alle vulnerbilities hebben exploits
+- vulnerbilities met exploits hebben een hogere likelihood en dus hogere risk
+- Vulnerabilites waar je op focust:
+    - Die bij jou voorkomen
+    - Die gekend zijn
+    - EN die een exploit hebben
