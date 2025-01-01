@@ -1265,6 +1265,7 @@ Stelt de kolom 'ProdNr' in als de `PRIMARY KEY`
 
 ```sql
 CREATE VIEW DEELTAB AS
+    SELECT *
     FROM Werknemer
     WHERE Afd='D114'
         AND Code=55
