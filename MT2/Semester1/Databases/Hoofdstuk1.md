@@ -174,7 +174,7 @@ Een databankmodel bestaat uit verschillende datamodellen, die elk de data vanuit
     - data items zijn steeds begrijpelijk voor niet IT'ers
     - leunen aan bij hoe de data fysiek wordt opgeslagen (men maak bv. reeds de keuze om een NoSQL database te gebruiken
 
-- **Het fysiek databankmodel** beschrijft hoe de data in de databank zal worden opgeslagen: welke data waar zullen worden opgeslagen, wat de grootte is van de datavelden, welke indexen er worden voorzien voorzien voor het zoeken van de data te vereenvoudigen. 
+- **Het fysiek datamodel** beschrijft hoe de data in de databank zal worden opgeslagen: welke data waar zullen worden opgeslagen, wat de grootte is van de datavelden, welke indexen er worden voorzien voorzien voor het zoeken van de data te vereenvoudigen. 
 
 ##### drielagen architectuur
 
