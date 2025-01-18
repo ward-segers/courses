@@ -1433,7 +1433,7 @@ In dit voorbeeld is een ARTIEST ofwel ARTIEST zonder meer, ofwel ACTEUR ofwel ZA
         <th>artiestcode</th>
         <td>muziekstijl</td>
         <td>toneelschool</td>
-        <td<isZanger</td>
+        <td>isZanger</td>
         <td>isActeur</td>
     </tr>
     <tr>
