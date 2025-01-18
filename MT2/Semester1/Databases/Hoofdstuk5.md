@@ -1331,7 +1331,7 @@ In dit voorbeeld is een ARTIEST ofwel ZANGER, ofwel ACTEUR ofwel ZANGER en ACTEU
         <td>geboortejaar</td>
         <td>muziekstijl</td>
         <td>toneelschool</td>
-        <td<isZanger</td>
+        <td>isZanger</td>
         <td>isActeur</td>
     </tr>
     <tr>
