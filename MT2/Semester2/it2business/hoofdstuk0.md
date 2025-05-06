@@ -192,3 +192,261 @@ Elk bedrijf heeft 1 of meerdere bedrijfsdoelen:
 - Social verantwoordelijkheid (Corporate social responsibility) tov mens en milieu
 
 > Deze worden uitgedrukt in een mission statement
+
+### Bedrijfsdoelen
+
+> S.M.A.R.T. gedefinieerd
+
+1. *Strategische doelen*
+
+    - lange termijn doelen
+    - 5 - 10 jaar
+
+2. *Tactische doelen*
+
+    - middellange termijn
+    - 1 - 3 jaar
+
+3. *Operationele doelen*
+
+    - nu
+
+Strategische doelstellingen worden opgesplitst in verschillende Tactische doelstellingen. 
+
+Tactische doelstellingen op zijn beurt wordt opgesplitst in verschillende Operationele doelstellingen
+
+#### Voorbeelden van business onderwerpen
+
+> Vaak wordt er in de bedrijfsdoelen niet gesproken over de IT
+
+- resultaten, groei, verkoopcijfers, winstmarge, productiekost
+- klantentevredenheid
+- productontwikkeling, business development, innovatie
+- personeel (retentie, opleiding, kost)
+- imago (groen, sociaal, ...)
+- risico en continuiteit
+
+#### Voorbeelden van IT strategie
+
+- nieuwe applicaties / wijzigigen
+- vervangen oude applicaties
+- vernieuwing / uitbreiding infrastructuur
+- datacenters
+- backup & restore
+- security policy
+- user support (helpdesk, pc's installeren)
+- kosten
+- Disaster recovery
+
+## Kloof Business en IT
+
+Kennis en agenda tussen business en IT zijn verschillend:
+
+- business heeft geen kennis van it
+    - Kunnen moeilijk requirements definiëren / voortschrijdend inzicht
+        - business kan mogelijks nieuwe inzichten krijgen naar mate het project vorderd
+
+- it medewerkers hebben een technische focus
+    - begrijpen business, processsen en gevoeligheden onvoldoende
+
+- communicatie verloopt moeizaam:
+    - iedereen heeft zijn jargon
+    - it communiceert onvoldoende (vaak vanzelfsprekend voor it'ers)
+    - men denkt dat de andere het begrepen heeft
+
+- Vele IT projecten lopen niet goed af:
+    - Verwachtingen onduidelijk en verschillend
+    - Vertraging en extra kost
+    - Slechte afspraken
+    - Business neemt zijn verantwoordelijkheid niet op (voorbeeld masterdata beheer, testen en acceptatie)
+    - Silo-thinking in IT (work in isolation)
+
+- Een project is veel meer dan een IT project:
+    - Aanpassing processen
+    - Opleiding
+    - Change management
+    - End to end testen, validatie en acceptatie
+
+=> dikwijls onderschat
+
+### Dooddoeners
+
+- We gaan deze applicatie herschrijven want:
+    - technologie B is beter dan technologie A
+    - dat is eenvoudiger dan de logica om uit te zoeken van de vorige programmeur
+    - *not invented here* syndroom
+- Onvoldoende testen
+- Server rebooten tijdens werkuren 
+- Geen communicatie over openstaande problemen
+- Een pc correct installeren duurt weken
+- Mail werkt niet
+- Backup onvolledig => gegevensverlies
+- Applicatie performantie is traag maar IT heeft geen eenduidig antwoord (netwerk, memory, cpu's,...)
+- Kloof tussen infrastructuur team en applicatieontwikkelaars
+
+### Hoe kloof Business en IT verkleinen?
+
+- Business IT alignering: gestructureerd overleg
+    - Vaak meeting organiseren
+        - agenda met punten IT en business
+- Communicatie
+- Kwaliteit dienstverlening verbeteren
+- Proactief handelen
+
+#### Nood aan gestructureerd overleg tussen business en IT
+
+> Volgende punten kunnen agenda punten zijn bij het aligneren tussen de business en IT
+
+- *Kwaliteit van de dienstverlening (user support)*:
+    - Service kataloog en service level agreement (SLA)
+    - IT moet procesmatig werken:
+        - incident, change and probleem management (ITIL)
+
+- *Projectwerking*:
+    - Keuze maken over (business) prioriteit van projecten
+    - Methodologie
+    - Project initiatie en opvolging
+
+- *IT strategie*:
+    - Applicatiearchitectuur: **ERP** of eigen ontwikkeling?
+    - Cloud of eigen datacenter/infrastructuur?
+
+- *Bedrijfprocessen*:
+    - Business analyst, key user langs business zijde moeten samenwerken met technische analyst en ontwikkelaars
+        - Nood aan gemeenschappelijke taal -> **Business Process modeling**
+
+##### Service Kataloog
+
+Wordt vaak voorgesteld in een tabel
+
+- eerste kolom: lijst van diensten
+- tweede kolom: lead time (levertijd)
+- derde kolom: de prijs
+
+*IT als interne leverancier van diensten*
+
+- Andere afdeling is klant van de ICT afdeling
+
+*IT als leverancier van diensten aan externe klant*
+
+*Service cataloog*
+
+- Lijst van diensten die kunnen geleverd worden:
+    - Passwoord reset, User creëren
+    - PC of telefoon beschikbaar stellen
+    - Restore van gegevens of backup
+- Lead time (levertijd) en prijs
+
+## Information Technology Infrastructure Library
+
+> **ITIL** = afkorting voor Information Technology Infrastructur Library
+
+> Is een reeks van praktijken voor IT-service management (ITSM) die zich richt op het afstemmen van IT-services op de behoeften van het bedrijf.
+
+- ITIL beschrijft processen, procedures, taken en checklists die niet organisatiespecifiek zijn, maar door een organisatie kunnen worden toegepast om integratie met de strategie van de organisatie tot stand te brengen, waarde te leveren en een minimaal competentieniveau te handhaven. Het stelt de organisatie in staat om een baseline vast te stellen van waaruit het kan plannen, implementeren en meten. Het wordt gebruikt om naleving aan te tonen en om verbetering te meten
+
+- **Belangrijke ITIL processen**:
+    - Incident management
+    - Problem management
+    - Change management
+    - Service management
+
+### Service Level agreement
+
+> Onderling akkoord tussen klant (interne of externe klant) en IT over de kwaliteit van de dienstverlening
+
+## Bedrijfprocessen
+
+### Processen per business domein
+
+- Finance en administratie:
+    - Voeren van Boekhouding
+    - Afsluiten van Maand en Jaar
+    - Order to cash (bestel- en leverproces)
+
+- Aankoop:
+    - Purchase to pay (van aankoop --> betaling van factuur)
+    - Prospecteren van nieuwe klanten
+    - Onderhouden van klantrelaties
+    - Opvolgen van verkoopsopportuniteiten
+
+- Klantenondersteuning
+
+### Processen per domein
+
+- ICT:
+    - Incident management
+        - Incidenten registreren en oplossen
+    - Change management
+        - Ontvangen, goedkeuren en uitvoeren van veranderingen in de IT architectuur
+    - Problem management
+        - Vaststellen en oplossen van IT problemen
+
+- Kwaliteit:
+    - Klantenklachten behandelen
+    - Beheer ISO en QS Certificaten
+
+- Operations:
+    - Productieprocessen
+    - Stockbeheer (inkomend uitgaand)
+    - Uitleveren van goederen
+    - Organiseren van transport voor leveringen
+    - Plannen van productie
+    - Onderhouden gebouwen en machines
+
+- HR:
+    - In / Uit / mutaties van personeel
+    - Evalueren van medewerkers
+    - Berekenen payroll en betalen salaris en lonen + RSZ
+
+### Business Proces Re-engineering
+
+- Processen worden minder effinciënt door allerhande aanpassingen:
+    - suboptimaal
+    - Over-administratie
+    - Automatiseren van slechte gewoonten...
+
+- Nood om af en toe processen grondig te herorganiseren = re-engineering
+    - Optimaliseren
+    - Bureaucratie en overtallige stappen elimineren
+    - Best practises introduceren
+    - BPR werd geïntroduceerd door Hammer & Champy in 1993
+        - Nood aan **uniforme Methodologie** om processen te beschrijven
+
+            => BPMN (Business process modeling notation)
+
+### Business Processen en ERP
+
+ERP is ontstaan uit noodzaak om typische bedrijfprocessen te integreren en als standaard aan te bieden in een pakket
+
+- Dit pakket ondersteunt (bijna) alle bedrijfsprocessen op ene geïntegreerde manier
+    - Informatie van 1 proces word gebruikt in andere processen => dit leidt to meer efficientie
+
+- Vb. SAP, MS Dynamics (Axapta en CRM), Oracle JDE, Teamleader, ...
+- ERP bevat best practices:
+    - Per proces
+    - Per sector
+
+- Nog steeds ongoing evoluties in ERP
+
+#### SAP
+
+- Finance:
+    - FI (Finance = boekhouding)
+    - CO (Controlling)
+    - AM (Asset management)
+
+- Sales:
+    - SD (Sales & Distribution)
+    - CRM (Customer relationship management)
+        - opportuniteiten
+        - klanten en prospecten
+        - marketing campagnes
+        - customer contact center
+
+- Operations:
+    - MM: materials management (stock, aankoop, MRP run)
+        - MRP = Material resource planning
+    - PP (of APO): Productie planning
+    - APO: Supply chain management / planning
+    - sD: Shipping & deliveries & transport
