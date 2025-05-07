@@ -111,7 +111,7 @@ Zowel het identificeren van deze veranderingen als het correct reageren erop, ve
     - vaak heef het bedrijf hier weinig keuze: legale wijziging, competitief blijven, verouderde software
 - Interne veranderingen: komen voort uit beslissingen van het management
     - strategische doelen vragen ook vaak om operationele wijzigingen
-
+    
 #### Programma's versus projecten
 
 - Vandaag lopen er op elk bedrijf verschillende projecten tegelijkertijd, er is dus vaak de noodzaak om deze projecten gezamenlijk en gestructureerd te gaan leiden
