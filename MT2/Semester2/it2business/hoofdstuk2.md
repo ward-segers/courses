@@ -1,4 +1,4 @@
-# It2business : Hoofdstuk 1 - Project Management - Deel 1
+# It2business : Hoofdstuk 1 - Project Management - Deel 2
 
 ## Hoe gaan we van initiatie tot oplevering?
 
