@@ -4,7 +4,9 @@
 
 >#organiseren
 
-### Projectsuccess
+### Projectsucces
+
+Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van de projectmanager.
 
 - Visie van de klant: klantentevredenheid
   - Verwachtingen, vereisten en voorwaarden
@@ -13,6 +15,7 @@
 > De **succesvolle oplevering** van een project wordt gekenmerkt door een 100%-match met de vereisten van de klant. Daarin staat de goedkeuring van deliverables door de klant centraal.
 
 - Behoeften van de klant in kaart brengen is dus belangrijk om het project succesvol af te ronden
+  
 - Visie van de projectmanager:
   - Niet enkel de deliverables zijn belangrijk
   - Ook de manier waarop het project wordt uitgevoerd
@@ -126,11 +129,89 @@
    - Voeren de (technische) testen uit en lossen eventuele bugs op
    - Staan mee in voor de support na go-live
 9.  *(Data-)Architect*
+    - Bewaakt de "big picture" inzake IT-architectuur
+    - Zorgt ervoor dat nieuwe keuzes passen in de bestaande architectuur
+    - Zorgt dat de communicatie tussen verschillende systemen op een uniforme manier gebeurd
+    - Is vooral tijdens de eerste fases betrokken bij het project in een advies rol
 10. *Testmanager*
+    - Stelt het testplan op
+    - Kiest de testing tools
+    - Coördineert het uitwerken van testscenario's
+    - Volgt het uitvoeren van de testen en de resultaten ervan op
+    - Zorgt ervoor dat de acceptance criteria worden gerespecteerd en gehaald alvorens het project live gaat
 11. *Tester*
+    - Voert de testen uit
+    - Maakt in principe niet zelf de testscenario's om objectiviteit te garanderen
+    - Rapporteert aan de testmanager
+    - Vooral aanwezig in de testfase
+    - Testers kunnen zowel interne als externe medewerkers zijn
 12. *Transitiemanager*
+    - Bereidt het cut-over plan voor en zorgt voor de validatie ervan
+    - Organiseert de cut-over en waakt over de uitvoering ervan
+    - Werkt nauw samen met de projectmanager tijdens de cut-over fase
 13. *Change Control Board (CCB)*
+    - Wordt samengeroepen om wijzigingen te bespreken en goed te keuren
+    - Zorgt er dus voor dat scope creep onder controle wordt gehouden
+  
+    > **Scope creep**: betekent dat er tijdens een project * onverwachte of ongeplande uitbreidingen* van de afgesproken scope plaatsvinden 
+    - Frequentie van samenkomen is niet vast maar zal bepaald worden op basis van de vragen
+    - Bestaat uit de sponsor, architecten, functionele managers, team leads, ...
+    - De projectmanager legt de vragen voor en verantwoordt ze  
 14. *UX/IU Designer*
+    - Legt zich toe op het visuele aspect en het gebruiksgemak van een oplossing
+    - Komt vooral in beeld tijdens de conceptfase en de ontwerpfase voor het afleveren van mock-ups en designs
+    - Ook de employee experience mag niet vergeten worden bij de invoering van digitale tools
 15. *Project Manager*
-16. *Scrum master*
-17. *(Proxy) Product owner*
+    - Opvolging en evaluatie va project activiteiten
+    - Zorgen dat teamleden optimaal kunnen werken
+16. *Scrum master* (Agile)
+    - Zorgt ervoor dat scrum teams optimaal kunnen werken en zal de zogeheten "impediments" wegnemen
+17. *(Proxy) Product owner* (Agile)
+    - Brug tussen business en IT
+    - Stelt prioriteiten aangaande user stories
+    - Geeft verduidelijkingen aan het technische team
+    - Levert feedback op basis van demo's en testen
+    - > Indien dit profiel bij het IT team zit, spreken we van **een proxy product owner**
+
+<p align='center'><img src='src/stakeholders.png' alt='Stakeholders in het project' width='50%'></p>
+
+#### Competentie
+
+Een competentie is de combinatie van:
+- kennis
+- vaardigheden
+- houding
+- gedrag
+die nodig is om in een bepaalde beroeps-situatie goed te kunnen functioneren.
+
+*Competenties van de projectleider*
+
+- enthousiast anderen te kunnen motiveren
+- het lef hebben zich als een leider te gedragen
+- taakgericht kunnen werken
+- goede communicatieve vaardigheden bezitten
+- om kunnen gaan met conflicten
+- hoofd- en bijzaken van elkaar onderscheiden (helikoperview)
+- afhankelijkheden kunnen identificeren
+- vooruitkunnen denken
+- pro-actief zijn
+- kunnen onderhandelen, bijvoorbeeld met de opdrachtgever
+- kunnen omgaan met onzerkeheden
+- kunnen organiseren en delegeren
+
+*Verantwoordelijkheden van de projectleider*
+
+- Onderhandelen met opdrachtgever
+- Zorgen voor het juiste plan van aanpak (PvA)
+- Bekend maken van PvA
+- Goedkeuring verkrijgen PvA
+- Voortgang rapporteren
+- Zorgen voor externe communicatie
+- De dagelijkse leiding nemen binnen het team
+- Werkverdeling binnen het projectteam
+- Voorzitten van de projectteamvergaderingen
+- Zorgen voor een goede motivatie binnen projectteam
+- Oplossen van conflicten
+- Projectleden "uit de wind houden"
+- Bewaken van de planning,  budget en kwaliteit
+- Voorschrijven hulpmiddelen en technieken
