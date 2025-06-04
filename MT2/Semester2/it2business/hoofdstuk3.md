@@ -36,7 +36,7 @@ Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van
    - Oplossingen moeten voldoen aan de wens van de klant
 2. *Slechte planning van resources:*
    - Resources zijn: vaak niet ongelimiteerd beschikbaar en sterk bevraagd
-   - Goede planning opmaken die rekening houdt met de beschikbaarheden van de resources
+   - Goede planning opmaken die rekening houdt met de beschikbaarheden van de resources is daarom belangrijk
 3. *Slechte communicatie en stakeholdermanagement in de organisatie:*
    - Een project is enkel succesvol als het eindresultaat gebruikt wordt en voldoet aan de wensen van de gebruikers
    - Spendeer voldoende tijd aan het identificeren van en de communicatie met deze betrokkenen
@@ -48,7 +48,7 @@ Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van
    - het inschatten van de benodigde tijd en kost is een moeilijke oefening
    - de juiste experten moeten betrokken worden bij deze inschattingen
 6. *Slecht risicomanagement:*
-   - risico's zin gebeurtenissen die zich kunnen voortdoen en die een impact kunnen hebben op het project
+   - risico's zijn gebeurtenissen die zich kunnen voortdoen en die een impact kunnen hebben op het project
    - risico's moeten vooraf geidentificeerd worden om de impact op het project te minimaliseren
 7. *Onervaren projectmanagers:*
    - de rol van projectmanager is niet iets dat aangeleerd kan worden
@@ -56,16 +56,25 @@ Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van
 8. *Gebrek aan gestructureerde opvolging:*
    - een belangrijke taak van de projectmanager is opvolging en evaluatie van de projectvoortgang
 
+> Bovenstaande factoren zijn niet limitatief. Dit zijn de meest voorkomende factoren waarom een project kan falen.
+
+- Een project leiden wil ook zeggen dat men zeer opmerkzaam moet zijn voor veranderingsaanvragen.
+  - Waken over correctheid en volledigheid van de analyse van de veranderingsaanvraag
+  - Impact dient onderzocht te worden alvorens de aanvraag goedgekeurd wordt 
+  - Vaak blijkt de impact achteraf groter dan voorzien
+
 ![alt text](image.png)
 
 ### Projecten in een organisatie
 
 - projecten worden uitgevoerd in een organisatie
 - de organisatie heeft dus ook een directe invloed op het al dan niet succesvol afronden van een project
+  - projectmanager heeft vaak niet een mandaat om alle medewerkers aan te sturen of in te zetten op het project
 - het is belangrijk dat de organisatie achter het project staat
 - cultuur is hierbij ook belangrijk:
   - een sterke hiërarchie leidt vaak tot lange goedkeuringsprocessen
   - in de pharmaceutische sector zullen de kwaliteitseisen heel hoog liggen
+  - extra testruns kunnen nodig zijn naar gelang het risco binnen de sector (financiële/farmaceutische sector...)
   
 #### Ownership van digitale initiatieven
 
@@ -75,9 +84,19 @@ Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van
 
 ![alt text](image-2.png)
 
+> Sterke tadem tussen IT en business. Op deze 3 speerpunten. Elke partij heeft min of meer inspraak op de speerpunten, maar heeft steeds een stem.
+> - behoefte zal eerst en vooral door de business uitgesproken worden
+> - business kan suggesties voor technologische keuzes doen
+> - eind oordeel voor technische keuze zal bij de it-experten liggen
+> - op gebied van UX slaan business en IT best de handen in elkaar
+
 #### Rollen binnen een IT project
 
-1. *Projectmanagement Office (PMO)*
+> Veel rollen kunnen actief zijn op een project. Afhankelijk van de scope en omvang van het project kunnen deze aanwezig zijn.
+> Juiste mensen aanboord krijgen is van groot belang
+
+
+1. *Projectmanagement Office (PMO)* (projectbureau)
    - Zorgt voor consistentie op vlak van methodologie, templates, tools en rapportering
    - Staat in voor het ontwikkelen van project management expertise in de onderneming
    - Zorgt voor het afstemmen van de staffing over verschillende projecten heen
@@ -85,7 +104,7 @@ Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van
    - Belangrijk bij de planningsfase en de projectopvolging
 2. *Functionele manager*
    - Leidt een afdeling binnen een bedrijf waar het project wordt uitgevoerd
-   - Balans tussen dagelijks werk en project werk
+   - Balans tussen dagelijks werk en project werk (medewerkers niet alle tijd laten opnemen door het project)
    - Input voor de scope en de vereisten
    - Verantwoordelijk voor de bedrijfsprocessen die aan de basis liggen van de oplossing
    - Zetelt vaak in de stuurgroep van het project
@@ -98,7 +117,7 @@ Moeilijk eenduidig te schetsen, enerzijds is er de visie van de klant en die van
    - De sleutelgebruiker (of keyuser of kerngebruiker) is een ervaren gebruiker van een proces of subproces
    - Leveren de vereisten in concept- en ontwerpfase
    - Spelen cruciale rol bij de oplevering omdat ze eerste aanspreekpunt zij voor collega's
-   - Staan bij go-lice in voor de verificatie van de applicatie
+   - Staan bij go-live in voor de verificatie van de applicatie
    - Voeren de eerste (functionele) testen uit
    - Zijn het klankbord op de werkvloer en dragen boodschappen van het project uit naar de collega's
 5. *Sponsor*
