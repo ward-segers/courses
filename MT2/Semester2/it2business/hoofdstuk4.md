@@ -100,8 +100,30 @@ Na het ontvangen van de informatie in het bevragingsproces, moeten we die gaan a
 > Zijn de documenten van de vereisten
 
 1. Scope statement
+   - Geeft een samenvatting van alle op te leveren onderdelen (features) en het aantal resources dat daarvoor nodig zijn.
+   - Doel: eenduidige afspraak maken rond het einddoel
+   - Bevat: beschrijving wat er moet opgeleverd worden en de prijs hiervan, constraints en features
+   - Aangezien het scope statement de doelstellingen omvat, wordt het vaak aanzien als de deliverable die de business requirements omvat
 2. User stories
+   - Beschrijft op welke manier een gebruiker wenst te interageren met de oplossing en waarom die gebruiker dat wil doen.
+   - Doel: zorgt ervoor dat voor elke gewenste handeling een functionaliteit in de oplossing voorzien is
+   - Geeft de mogelijkheid testscenario's op te stellen
+   - Werkt vooral bij oplossingen die gebruikers gebonden zijn.
+   - Nadeel: bevatten beperkte informatie (enkel wat de gebruiker wil doen, niet hoe)
 3. Software requirements specification (SRS)
+   - Andere namen: functionele specificatie, productspecificatie of requirements document
+   - Bevat: functies van een applicatie met karakteristieken en beperkingen, het gedrag van de applicatie, performance, security, usability,...
+   - Beschrijft: functionele, niet-functionele en system requirements
+   - Template:
+     - Introductie: beschrijft het doel en de context van het document
+     - Algemene omschrijving: beschrijft context van de oplossing meer in detail
+     - Features: inclusief bijbehorende functionaliteiten en hun meerwaarde. Er kan bepaald worden om een prioriteit te geven
+     - Datavereisten: datamodel met de verschillende data-elementen en hoe met elkaar verbonden.
+       - welke rapporten en analyses
+       - op welke manier wordt de data bekomen?
+     - Vereisten aangaande externe interfaces: welk connecties met externe toepassingen worden er gelegd?
+     - Kwaliteitsattributen: niet-functionele vereisten
+     - Specifieke vereisten
 
 ### Beheersen van een project
 
