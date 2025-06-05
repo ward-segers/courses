@@ -74,3 +74,58 @@ De **projectplanning** is een dynamische verzameling van tools en documenten die
   - Projectmanagement mag niet vergeten worden in de WBS
   - Een WBS bevat geen afhankelijkheden of volgorde
   - Activiteiten in de WBS kunnen achteraf ook gebruikt worden voor tijdsregistratie
+
+<p align='center'><img src='src/wbs_voorbeeld.png' alt='WBS voorbeeld' width='50%'></p>
+
+### Planningmethodes
+
+- GANTT-Chart
+- Network Diagram
+
+#### Opstellen planning
+
+<p align='center'><img src='src/opstellen_planning.png' alt='Opstellen planning' width='50%'></p>
+
+#### GANTT-Chart
+
+- Techniek om gedetailleerde tijdsplanningen op te stellen
+- Sequentie van de verschillende activiteiten is makkelijk te herkennen
+- Moeilijk wijzigingen aan te brengen
+
+*Lag time*: is the amount of time whereby a successor activity is required to be delayed with respect to a predecessor activity. (wachttijd)
+
+*Lead time*: is the amount of time whereby a successor activity can be advanced with respect to a predecessor activity (overlaptijd)
+
+#### Network Diagram
+
+- Flowchart die aangeeft in welke volgorde activiteiten dienen uitgevoerd te worden
+- Afhankelijkheden zijn zeer snel te herkennen
+
+TODO: Kritisch pad nog beschrijven
+
+TODO: berekening slack time nog beschrijven
+
+
+### Afhankelijkheden
+
+- De planning bepaalt wanneer de fases starten, wie er aan zal meewerken en welke middelen er worden ingezet
+- Planning blijft echter dynamisch
+  - Na de analyse kan bijsturing noodzakelijk zijn
+  - Resultaten van de testen kunnen de planning veranderen
+- Planning wordt ook beïnvloed door externe factoren
+  - Beschikbaarheid van resources: ziekte, ontslag, levertijd,...
+  - Economische situatie: budgetten kunnen wijzigen
+  - Organisatorische wijzigingen: andere procedures, nieuwe structuur,...
+
+### Aandachtspunten
+
+- Veranderingen in het project hebben een impact op de planning
+  - Change request procedure is dus belangrijk
+  - Flexibel omgaan met wijzigingen om project realistisch te houden
+- Een goede planning is een realistische planning
+  - Timing en budget is belangrijk maar haalbaarheid ook
+  - Juiste mensen betrekken bij het opmaken van de planning
+  - Kosten van een niet gehaald project zijn soms hoger dan wat extra investeringen (geen ROI)
+- Projectplanning is dynamisch
+  - Monitoring is belangrijk
+  - Tijdig vastellen van vertragingen en hier op anticiperen/reageren
