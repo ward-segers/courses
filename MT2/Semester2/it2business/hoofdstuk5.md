@@ -87,3 +87,57 @@
 - *Sleutelgebruikers*:
   - Specifieke groep van eindgebruikers met een zeer goede kennis van het proces
   - Nemen deel aan het project als vertegenwoordigers van de eindgebruikers
+
+### Deliverables
+
+*Process flowcharts*
+  - Beschrijft de verschillende stappen van een project
+  - Beschrijft welke gegevens er worden doorgegeven
+  - Beschrijft welke output er gegenereerd wordt
+  - Geeft afhankelijkheden weer met andere processen
+  - Geeft de verschillende rollen weer aan de hand van swimlanes
+  - Voorbeeld: <p align='center'><img src='src/process_flowchart.png' alt='Voorbeeld process flowchart' width='50%'></p>
+  - Het opmaken van een flowchart kan soms zeer complex worden, daarom splitsen we deze vaak op in subprocessen of werken we met verschillende niveau's
+    - Niveau 1: ondernemingsprocessen
+      - Grote processen zoals productie, sales, warehousing
+      - Geeft vooral volgorde en afhankelijkheden weer
+      - Nog geen rollen
+    - Niveau 2: afdelingsprocessen
+      - Verschillende processen per afdeling
+      - Bijvoorbeeld binnen sales onderscheiden we: bestelling, facturatie, dienst-na-verkoop
+    - Niveau 3: deelprocessen
+      - Wanneer we kijken naar het proces van de bestelling kan dit bestaan uit: bestelbon opmaken, bestelling klaarmaken, bestelling verzenden
+    - Niveau 4: taken
+      - Hier bekijken we dan één deelproces in detail met de taken die tot dat deelproces behoren en de rollen die nodig zijn om deze taken ui te voeren.
+
+### Afhankelijkheden
+
+- In deze fase worden niet alle vereisten in detail bepaalt. Het maken van proces requirements is vooral belangrijk om de opportuniteiten te identificeren voor het project. Het bepalen van de functionele requirements is onderdeel van de requirementsanalyse
+- Procesbeschrijvingen kunnen in de volgende fases gebruikt worden als input voor analyse, testen en change management
+- Het is wel belangrijk te onthouden dat dit voorbereidend werk is en verder zal uitgewerkt worden als het project effectief wordt uitgevoerd
+- Processen worden meestal niet uitgetekend in het kader van een specifieke digitale oplossing
+
+### Aandachtspunten
+
+- Reserveer voldoende tijd voor het analyseren van processen
+  - Opstellen van processen kan zeer veel tijd kosten
+  - Het hoe en waarom van bepaalde taken is niet altijd duidelijk
+  - Processen worden uitgevoerd door verschillende personen die allemaal moeten betrokken worden
+- Betrek de juiste gebruikers
+  - Diegenen die het hardts roepen zijn vaak ontevreden
+  - Onderscheid maken tussen proces en persoonlijke problemen
+- Beheers de complexiteit
+  - Te complexe procesbeschrijvingen zijn niet leesbaar door alle deelnemers aan het project
+  - Gebruik software of splits processen op in deelprocessen
+  - Gebruik een gemeenschappelijke terminologie en stem het gebruik van iconen af
+- Houd rekening met de vervaldatum
+  - Beperkte houdbaarheid: reorganisatie of wettelijke wijzigingen wijzigen ook de processen
+  - Zeker wanneer er een lange tijd zit tussen de voorbereiding en het eigenlijke project
+- Controleer afhankelijkheden met andere processen
+  - Een proces staat zelden op zichzelf
+  - Breng de impact in kaart van wijzigingen in het proces op andere processen
+  - Belangrijk voor de business case!
+
+### BPMN
+
+**BPMN** is een standaard in business process modeling ontwikkeld door de Object Management Group die tracht de kloof tussen het ontwerpen van bedrijfsprocessen en het implementeren ervan te overbruggen. BPMN maakt businessprocessen begrijpelijk voor zowel business analisten als ontwikkelaars en zorgt ervoor dat de processen gemakkelijk te onderhouden zijn door eindgebruikers en managers.
