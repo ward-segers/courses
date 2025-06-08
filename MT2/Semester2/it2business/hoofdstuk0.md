@@ -40,29 +40,29 @@
 > ook wel NACE-code
 > Opgesteld door Centraal Bureau Statistiek
 
-| Code | beschrijving |
-| ---- | ------------ |
-| A | Landbouw, bosbouw en visserij |
-| B | Winning van delfstoffen |
-| C | Industrie |
-| D | Productie en distributie van en handel in elektriciteit, aardgas, stoom en gekoelde lucht |
-| E | Winning en distributie van water; afval- en afvalbeheer en sanering |
-| F | Bouwnijverheid |
-| G | Groot- en detailhandel; reparaties van auto's |
-| H | Vervoer en opslag |
-| I | Logies-, maaltijd- en drankverstrekking |
-| J | Informatie en communicatie |
-| K | Financiële instellingen |
-| L | Verhuur van en handel in onroerend goed |
-| M | Advisering, onderzoek en overige specialistische zakelijke dienstverlening |
-| N | Verhuur van roerende goederen en overige zakelijke dienstverlening |
-| O | Openbaar bestuur; overheidsdiensten en verplichte sociale verzekeringen |
-| P | Onderwijs |
-| Q | Gezondheids- en welzijnzorg |
-| R | Cultuur; sport en recreatie |
-| S | Overige dienstverlening |
-| T | Huishoudens als werkgever; niet-gedifferentieerde productie van goederen en diensten door huishoudens voor eigen gebruik |
-| U | Extraterritoriale organisaties en lichamen |
+| Code | beschrijving                                                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------------------------------ |
+| A    | Landbouw, bosbouw en visserij                                                                                            |
+| B    | Winning van delfstoffen                                                                                                  |
+| C    | Industrie                                                                                                                |
+| D    | Productie en distributie van en handel in elektriciteit, aardgas, stoom en gekoelde lucht                                |
+| E    | Winning en distributie van water; afval- en afvalbeheer en sanering                                                      |
+| F    | Bouwnijverheid                                                                                                           |
+| G    | Groot- en detailhandel; reparaties van auto's                                                                            |
+| H    | Vervoer en opslag                                                                                                        |
+| I    | Logies-, maaltijd- en drankverstrekking                                                                                  |
+| J    | Informatie en communicatie                                                                                               |
+| K    | Financiële instellingen                                                                                                  |
+| L    | Verhuur van en handel in onroerend goed                                                                                  |
+| M    | Advisering, onderzoek en overige specialistische zakelijke dienstverlening                                               |
+| N    | Verhuur van roerende goederen en overige zakelijke dienstverlening                                                       |
+| O    | Openbaar bestuur; overheidsdiensten en verplichte sociale verzekeringen                                                  |
+| P    | Onderwijs                                                                                                                |
+| Q    | Gezondheids- en welzijnzorg                                                                                              |
+| R    | Cultuur; sport en recreatie                                                                                              |
+| S    | Overige dienstverlening                                                                                                  |
+| T    | Huishoudens als werkgever; niet-gedifferentieerde productie van goederen en diensten door huishoudens voor eigen gebruik |
+| U    | Extraterritoriale organisaties en lichamen                                                                               |
 
 ### Bedrijfsdoelstellingen
 
